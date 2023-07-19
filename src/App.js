@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { Piano } from './components/Piano.js';
-import DisplayValueBox from './components/DisplayValue.js';
-import StoreInversion from './components/SetInversion.js'
-import StoreNote from './components/Note.js';
+import React, { useState } from 'react';
 import StoreChords from './components/Chords';
-import StoreScales from './components/Scales'
+import DisplayValueBox from './components/DisplayValue.js';
 import Info from './components/InfoText';
+import StoreNote from './components/Note.js';
+import { Piano } from './components/Piano.js';
+import StoreScales from './components/Scales';
+import StoreInversion from './components/SetInversion.js';
 
 
 
@@ -56,6 +56,7 @@ const App = () => {
       <StoreScales note={note} musictheory={musictheory} setTextValue={setTextValue}/>
       <DisplayValueBox value={textValue}/>      
       <Piano />
+      <br></br>
       <Info />
     </div>
   );

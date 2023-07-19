@@ -85,12 +85,12 @@ const getMajorsScale = (note) =>  {
   return (
     <div>
      <h3>Scales</h3>
-      <Buttons text={"Get Major scale"} onClick={() => getMajorsScale(note)} ></Buttons>
-      <Buttons text={"Get Minor scale"} onClick={() => getMinorsScale(note)} ></Buttons>
-      <Buttons text={"Get Pentatonic Major scale"} onClick={() => getPentatonicScaleMajor(note)} ></Buttons>
-      <Buttons text={"Get Pentatonic Minor scale"} onClick={() => getPentatonicScaleMinor(note)} ></Buttons>
-      <Buttons text={"Get Blues Major scale"} onClick={() => getBluesScaleMajor(note)} ></Buttons>
-      <Buttons text={"Get Blues Minor scale"} onClick={() => getBluesScaleMajor(note)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Major scale"} onClick={() => getMajorsScale(note)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Minor scale"} onClick={() => getMinorsScale(note)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Pentatonic Major scale"} onClick={() => getPentatonicScaleMajor(note)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Pentatonic Minor scale"} onClick={() => getPentatonicScaleMinor(note)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Blues Major scale"} onClick={() => getBluesScaleMajor(note)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Blues Minor scale"} onClick={() => getBluesScaleMajor(note)} ></Buttons>
       <br></br>
     </div>
   );

@@ -1,15 +1,10 @@
-import PropTypes from 'prop-types'
-import { useState, useEffect } from 'react'
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 
-const Buttons  = ({  text, onClick }) => {
+const Buttons  = ({  text, onClick, color }) => {
   
   return (
-    <Button
-      variant = "success"
-      onClick={onClick}
-    >
+    <Button variant = {color} onClick={onClick}>
       {text}
     </Button>
   )

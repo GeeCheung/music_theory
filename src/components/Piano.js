@@ -1,13 +1,13 @@
 import _ from 'lodash';
 import React from 'react';
 
-import './Piano.css';
-import { Key } from './key'
 import {
+  KEY_TO_NOTE,
   NOTES,
   VALID_KEYS,
-  KEY_TO_NOTE,
 } from '../global/constants';
+import './Piano.css';
+import { Key } from './key';
 
 class Piano extends React.Component {
   constructor(props) {
@@ -88,3 +88,4 @@ class Piano extends React.Component {
 }
 
 export { Piano };
+
