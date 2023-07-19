@@ -6,6 +6,7 @@ const NOTES = [
   'e', 'f', 'gf', 'g',
   'af', 'a', 'bf', 'b'
 ];
+
 const NOTE_TO_KEY = {
   c   : 'z',
   df  : 's',
@@ -20,6 +21,7 @@ const NOTE_TO_KEY = {
   bf  : 'j',
   b   : 'm',
 };
+
 const KEY_TO_NOTE = {
   z: 'c',
   s: 'df',
@@ -34,6 +36,7 @@ const KEY_TO_NOTE = {
   j: 'bf',
   m: 'b',
 };
+
 export {
   NOTES,
   VALID_KEYS,
