@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import Buttons from './Buttons';
 
 
 const StoreScales = ({ note, musictheory, setTextValue }) => {
@@ -85,12 +85,12 @@ const getMajorsScale = (note) =>  {
   return (
     <div>
      <h3>Scales</h3>
-      <Button text={"Get Major scale"} onClick={() => getMajorsScale(note)} ></Button>
-      <Button text={"Get Minor scale"} onClick={() => getMinorsScale(note)} ></Button>
-      <Button text={"Get Pentatonic Major scale"} onClick={() => getPentatonicScaleMajor(note)} ></Button>
-      <Button text={"Get Pentatonic Minor scale"} onClick={() => getPentatonicScaleMinor(note)} ></Button>
-      <Button text={"Get Blues Major scale"} onClick={() => getBluesScaleMajor(note)} ></Button>
-      <Button text={"Get Blues Minor scale"} onClick={() => getBluesScaleMajor(note)} ></Button>
+      <Buttons text={"Get Major scale"} onClick={() => getMajorsScale(note)} ></Buttons>
+      <Buttons text={"Get Minor scale"} onClick={() => getMinorsScale(note)} ></Buttons>
+      <Buttons text={"Get Pentatonic Major scale"} onClick={() => getPentatonicScaleMajor(note)} ></Buttons>
+      <Buttons text={"Get Pentatonic Minor scale"} onClick={() => getPentatonicScaleMinor(note)} ></Buttons>
+      <Buttons text={"Get Blues Major scale"} onClick={() => getBluesScaleMajor(note)} ></Buttons>
+      <Buttons text={"Get Blues Minor scale"} onClick={() => getBluesScaleMajor(note)} ></Buttons>
       <br></br>
     </div>
   );

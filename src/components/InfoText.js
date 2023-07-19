@@ -1,6 +1,8 @@
 const Info = ({ }) => {
   return (
-    <div>
+    <div style={{
+            display: 'flex'
+      }}>
      <h3>Diatonic chords</h3>
         <p>A chord which is diatonic is simply a chord built from notes of the key.
            In the key of C again (C, D, E, F, G, A and B), the chord C major (C, E, G) would be 

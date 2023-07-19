@@ -7,6 +7,8 @@ import StoreChords from './components/Chords';
 import StoreScales from './components/Scales'
 import Info from './components/InfoText';
 
+
+
 const App = () => {
 
   const [musictheory] = useState([
@@ -55,7 +57,6 @@ const App = () => {
       <DisplayValueBox value={textValue}/>      
       <Piano />
       <Info />
-         
     </div>
   );
 }
