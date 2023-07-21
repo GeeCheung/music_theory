@@ -18,7 +18,7 @@ const App = () => {
         "D" : "D E Gb G A B Db",
         "Eb" : "Eb F G Ab Bb C D",
         "E" : "E Gb Ab A B Db Eb",
-        "F" : "F G A Bb C D E",
+        "F" : "F G A Bb C D E", 
         "Gb" : "Gb Ab Bb Cb Db Eb F",
         "G" : "G A B C D E Eb",
         "Ab" : "Ab Bb C Db Eb F G",
