@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import React from 'react';
 
-import './Key.css';
 import { NOTE_TO_KEY } from '../global/constants';
+import './Key.css';
 
 class Key extends React.Component {
   noteIsFlat = (note) => {
@@ -39,3 +39,4 @@ class Key extends React.Component {
 }
 
 export { Key };
+

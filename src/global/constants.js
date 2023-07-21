@@ -7,6 +7,12 @@ const NOTES = [
   'af', 'a', 'bf', 'b'
 ];
 
+const NOTES2 = [
+  'C', 'Db', 'D', 'Eb',
+  'E', 'F', 'Gb', 'G',
+  'Ab', 'A', 'Bb', 'B'
+];
+
 const NOTE_TO_KEY = {
   c   : 'z',
   df  : 's',
@@ -38,8 +44,6 @@ const KEY_TO_NOTE = {
 };
 
 export {
-  NOTES,
-  VALID_KEYS,
-  NOTE_TO_KEY,
-  KEY_TO_NOTE,
+  KEY_TO_NOTE, NOTES, NOTES2, NOTE_TO_KEY, VALID_KEYS
 };
+

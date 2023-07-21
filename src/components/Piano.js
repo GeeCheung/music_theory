@@ -15,7 +15,7 @@ class Piano extends React.Component {
     this.state = {
       pressedKeys: [],
     };
-  }
+  }s
 
   playNote = (note) => {
     if (!_.isEmpty(note)) {

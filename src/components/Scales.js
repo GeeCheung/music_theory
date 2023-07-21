@@ -2,26 +2,27 @@ import React from 'react';
 import Buttons from './Buttons';
 
 
-const StoreScales = ({ note, musictheory, setTextValue }) => {
+const StoreScales = ({ note, musictheory, setTextValue, setnoteArray }) => {
 
 // get Major scales 
 const getMajorsScale = (note) =>  {
   
-    var scale = musictheory[0][note];
-  
+    var majorscale = musictheory[0][note];
+     majorscale = majorscale.split(" ");
     if (note) {
-      setTextValue(`${note} Major scale is ${scale}`);
+      setnoteArray(majorscale);
+      setTextValue(`${note} Major scale is ${majorscale}`);
     }
   
   }
   
   // get Minor scales 
   const getMinorsScale = (note) =>  {
-    
-    var scale = musictheory[1][note];
-  
+    var minorscale = musictheory[1][note]
+    minorscale = minorscale.split(" ");
     if (note) {
-      setTextValue(`${note} Minor scale is ${scale}`);
+      setnoteArray(minorscale);
+      setTextValue(`${note} Minor scale is ${minorscale}`);
     }
   
   }
@@ -35,11 +36,12 @@ const getMajorsScale = (note) =>  {
       var myArray = scale.split(" ");
       var newArray = [];
       for (var i = 0; i < myArray.length; i++) {
-        if( i == 3 || i == 6) {
+        if( i === 3 || i === 6) {
           continue;
         }
         newArray.push(myArray[i]);
       }
+      setnoteArray(newArray);
       setTextValue(newArray.join(" "));
     }
   
@@ -54,11 +56,12 @@ const getMajorsScale = (note) =>  {
       var myArray = scale.split(" ");
       var newArray = [];
       for (var i = 0; i < myArray.length; i++) {
-        if( i == 1 || i == 5) {
+        if( i === 1 || i === 5) {
           continue;
         }
         newArray.push(myArray[i]);
       }
+      setnoteArray(newArray);
       setTextValue(newArray.join(" "));
     }
   
@@ -73,7 +76,7 @@ const getMajorsScale = (note) =>  {
         var myArray = scale.split(" ");
         var newArray = [];
         for (var i = 0; i < myArray.length; i++) {
-          if( i != 3 && i != 6) {
+          if( i !== 3 && i !== 6) {
             newArray.push(myArray[i]);
           }
         }

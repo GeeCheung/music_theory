@@ -1,15 +1,15 @@
 import React from 'react';
 import Buttons from './Buttons';
 
-const StoreChords = ({ note, setTextValue, musictheory, inversion }) => {
+const StoreChords = ({ note, setTextValue, musictheory, inversion, setnoteArray }) => {
 
    //get the Dominant fifth note in the scale 
 const getfith = (note) =>  {
     if (note) {
     var fifth = musictheory[0][note];
     var myArray = fifth.split(" ");
-    myArray = myArray[4]
-  
+    myArray = [myArray[4]];
+      setnoteArray(myArray);
       setTextValue(`${note} perfect fifth is ${myArray}`);
     }
   }
@@ -21,18 +21,25 @@ const getfith = (note) =>  {
   
       var inversion = musictheory[0][note];
       var [first, , third, , fifth] = inversion.split(" ");
+      
   
-      if (chord == "Root"){
+      if (chord === "Root"){
+        var newArrayOfChords = [first, third, fifth];
+        setnoteArray(newArrayOfChords);
         setTextValue(`${chord} for ${note} is ${first}, ${third}, ${fifth}`);
       }
   
-      if (chord  != "Root") {
+      if (chord  !== "Root") {
   
-        if (chord == "First"){
+        if (chord === "First"){
+           newArrayOfChords = [third, fifth, first];
+          setnoteArray(newArrayOfChords);
           setTextValue(`${chord} inversion for  ${note} is ${third}, ${fifth}, ${first}`);
         } 
   
-        if (chord == "Second"){
+        if (chord === "Second"){
+          newArrayOfChords = [fifth, first, third];
+          setnoteArray(newArrayOfChords);
           setTextValue(`${chord} inversion for ${note} is ${fifth}, ${first}, ${third}`);
           } 
     }  
@@ -47,6 +54,8 @@ const getfith = (note) =>  {
   
       var inversion = musictheory[0][note];
       var [first, , third, , fifth, ,seventh] = inversion.split(" ");
+      var newArrayOfChords = [first, third, fifth,seventh];
+      setnoteArray(newArrayOfChords);
       setTextValue(`Seventh chord for ${note} is ${first}, ${third}, ${fifth}, ${seventh}`);
   
     }   
@@ -59,6 +68,8 @@ const getfith = (note) =>  {
   
       var inversion = musictheory[0][note];
       var [first, second , third, , fifth, ,seventh] = inversion.split(" ");
+      var newArrayOfChords = [first, second , third, fifth, seventh];
+      setnoteArray(newArrayOfChords);
       setTextValue(`Ninth chord for ${note} is ${first}, ${second}, ${third}, ${fifth}, ${seventh}`);
   
     }   
@@ -71,8 +82,8 @@ const getfith = (note) =>  {
     if (note) {
       var relative = musictheory[0][note];
       var myArray = relative.split(" ");
-      myArray = myArray[5]
-  
+      myArray = [myArray[5]]
+      setnoteArray(myArray);
       setTextValue(`${note} relative minor is ${myArray}m`);
     }
   
