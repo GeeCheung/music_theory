@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { collection, getDocs } from "firebase/firestore";
+import React, { useEffect, useState } from 'react';
 import StoreChords from './components/Chords';
 import DisplayValueBox from './components/DisplayValue.js';
 import Info from './components/InfoText';
@@ -7,46 +8,29 @@ import { Piano } from './components/Piano.js';
 import { Piano2 } from './components/Piano_2.js';
 import StoreScales from './components/Scales';
 import StoreInversion from './components/SetInversion.js';
+import { db } from "./firebase-config";
 
 
 const App = () => {
 
-  const [musictheory] = useState([
-      {
-        "C" : "C D E F G A B",
-        "Db" : "Db Eb F Gb Ab Bb C",
-        "D" : "D E Gb G A B Db",
-        "Eb" : "Eb F G Ab Bb C D",
-        "E" : "E Gb Ab A B Db Eb",
-        "F" : "F G A Bb C D E", 
-        "Gb" : "Gb Ab Bb Cb Db Eb F",
-        "G" : "G A B C D E Eb",
-        "Ab" : "Ab Bb C Db Eb F G",
-        "A" : "A B Db D E Gb Ab",
-        "Bb" : "Bb C D Eb F G A",
-        "B" : "B Db Eb E Gb Ab Bb",
-    },
-      {
-        "C" : "C D Eb F G Ab Bb",
-        "Db" : "Db Eb E Gb Ab A B",
-        "D" : "D E F G A Bb C",
-        "Eb" : "Eb Fb Gb Ab Bb Cb Db",
-        "E" : "E Eb G A B C D",
-        "F" : "F G Ab Bb C Db Eb",
-        "Gb" : "Gb Ab A B Db D E",
-        "G" : "G A Bb C D Eb F",
-        "Ab" : "Ab Bb B Db Eb E Gb",
-        "A" : "A B C D E F G",
-        "Bb" : "Bb C Db Eb F Gb Ab",
-        "B" : "B Db D E Gb G A",
-    }
-  ]
-);
-
+  const [musictheory,setMusictheory] = useState([]);
   var [note, setNote] = useState();
   var [inversion, setInversion] = useState();
   var [textValue, setTextValue] = useState();
   var [noteArray, setnoteArray] = useState([]);
+
+  const musicnotesCollectionRef = collection(db, "musicnotes");
+
+  useEffect (() => {
+     
+    const getMusicnotes = async () => {
+      const data = await getDocs(musicnotesCollectionRef);
+      console.log(data);
+      setMusictheory(data.docs.map((doc) => ({ ...doc.data() , id: doc.id })));
+    };
+   
+    getMusicnotes();
+  }, []);
 
   return (
     <div className="App">

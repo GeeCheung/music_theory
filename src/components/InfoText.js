@@ -1,4 +1,4 @@
-const Info = ({ }) => {
+const Info = () => {
   return (
     <div>
      <h3>Diatonic chords</h3>
