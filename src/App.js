@@ -26,7 +26,7 @@ const App = () => {
     const getMusicnotes = async () => {
       const data = await getDocs(musicnotesCollectionRef);
       console.log(data);
-      setMusictheory(data.docs.map((doc) => ({ ...doc.data() , id: doc.id })));
+      setMusictheory(data.docs);
     };
    
     getMusicnotes();

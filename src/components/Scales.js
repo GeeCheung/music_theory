@@ -2,99 +2,62 @@ import React from 'react';
 import Buttons from './Buttons';
 
 
-const StoreScales = ({ note, musictheory, setTextValue, setnoteArray }) => {
+const StoreScales = ({ note, musictheory, setTextValue, setnoteArray, scales, pentantonic }) => {
 
-// get Major scales 
-const getMajorsScale = (note) =>  {
-  
-    var majorscale = musictheory[0][note];
-     majorscale = majorscale.split(" ");
-    if (note) {
-      setnoteArray(majorscale);
-      setTextValue(`${note} Major scale is ${majorscale}`);
-    }
-  
-  }
-  
-  // get Minor scales 
-  const getMinorsScale = (note) =>  {
-    var minorscale = musictheory[1][note]
-    minorscale = minorscale.split(" ");
-    if (note) {
-      setnoteArray(minorscale);
-      setTextValue(`${note} Minor scale is ${minorscale}`);
-    }
-  
-  }
-  
-  // get pentatonic scale Major
-  const getPentatonicScaleMajor = (note) =>  {
-    
-    if (note) {
-      
-      var scale = musictheory[0][note];
-      var myArray = scale.split(" ");
-      var newArray = [];
-      for (var i = 0; i < myArray.length; i++) {
-        if( i === 3 || i === 6) {
-          continue;
-        }
-        newArray.push(myArray[i]);
-      }
-      setnoteArray(newArray);
-      setTextValue(newArray.join(" "));
-    }
-  
-  }
-  
-  // get pentatonic scale Minor
-  const getPentatonicScaleMinor = (note) =>  {
-  
-    if (note) {
-      
-      var scale = musictheory[1][note];
-      var myArray = scale.split(" ");
-      var newArray = [];
-      for (var i = 0; i < myArray.length; i++) {
-        if( i === 1 || i === 5) {
-          continue;
-        }
-        newArray.push(myArray[i]);
-      }
-      setnoteArray(newArray);
-      setTextValue(newArray.join(" "));
-    }
-  
-  }
-  
-  // get blues scale Major
-  const getBluesScaleMajor = (note) =>  {
-    
-      if (note) {
-      
-        var scale = musictheory[0][note];
-        var myArray = scale.split(" ");
-        var newArray = [];
-        for (var i = 0; i < myArray.length; i++) {
-          if( i !== 3 && i !== 6) {
-            newArray.push(myArray[i]);
+const getScale = (note) =>  {
+  if (note) {
+
+    musictheory.forEach(document => {
+       if(document["id"] === scales){
+           var getscalesnotes = document._document.data.value.mapValue.fields[note].stringValue.split(" ");
+
+          if(pentantonic){
+
+            var newArray = [];
+            
+           for (var i = 0; i < getscalesnotes.length; i++) {
+
+            switch(document["id"]) {
+              case "Major":
+                if( i !== 3 && i !== 6) {
+                  newArray.push(getscalesnotes[i]);
+                }
+                break;
+              case "Minor":
+                if( i !== 1 && i !== 5) {
+                  newArray.push(getscalesnotes[i]);
+                }
+                break;
+            }
+
           }
+          
+          setnoteArray(newArray);
+          setTextValue(newArray.join(" "));
+
+          return;
+          
         }
-        setTextValue(newArray.join(" "));
-      }
-    
+        
+            setnoteArray(getscalesnotes);
+            setTextValue(`${note} scale is ${getscalesnotes}`); 
+       }
+    });
+   
   }
+  
+  }
+  
   
   return (
     <div>
      <h3>Scales</h3>
-      <Buttons color={"danger"} text={"Get Major scale"} onClick={() => getMajorsScale(note)} ></Buttons>
-      <Buttons color={"danger"} text={"Get Minor scale"} onClick={() => getMinorsScale(note)} ></Buttons>
-      <Buttons color={"danger"} text={"Get Pentatonic Major scale"} onClick={() => getPentatonicScaleMajor(note)} ></Buttons>
-      <Buttons color={"danger"} text={"Get Pentatonic Minor scale"} onClick={() => getPentatonicScaleMinor(note)} ></Buttons>
-      <Buttons color={"danger"} text={"Get Blues Major scale"} onClick={() => getBluesScaleMajor(note)} ></Buttons>
-      <Buttons color={"danger"} text={"Get Blues Minor scale"} onClick={() => getBluesScaleMajor(note)} ></Buttons>
-      <br></br>
+      <Buttons color={"danger"} text={"Get Major scale"} onClick={() => getScale(note, scales = "Major", pentantonic = false)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Minor scale"} onClick={() => getScale(note, scales = "Minor" , pentantonic = false)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Pentatonic Major scale"} onClick={() => getScale(note, scales = "Major", pentantonic = true)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Pentatonic Minor scale"} onClick={() => getScale(note,  scales = "Minor", pentantonic = true)} ></Buttons>
+      <Buttons color={"danger"} text={"Get Blues Major scale"} onClick={() => getScale(note,  scales = "Blues_Major")} ></Buttons>
+      <Buttons color={"danger"} text={"Get Blues Minor scale"} onClick={() => getScale(note, scales = "Blues_Minor" )} ></Buttons>
     </div>
   );
 };
