@@ -110,3 +110,19 @@ footer {
   margin-top: 30px;
   text-align: center;
 }
+
+.contentDiv{
+  display: flex;
+  justify-content:center;
+
+}
+
+.pianoDiv1{
+  display: flex;
+  justify-content:center;
+}
+
+.pianoDiv2{
+  display: flex;
+  justify-content:center;
+}

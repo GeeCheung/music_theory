@@ -34,15 +34,25 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Music Theory</h1>
-      <StoreNote note={note} setNote={setNote} />
-      <StoreInversion inversion={inversion} setInversion={setInversion} />
-      <StoreChords note={note} inversion={inversion} textValue={textValue} setTextValue={setTextValue}
-                   musictheory={musictheory} setnoteArray={setnoteArray}/>
-      <StoreScales note={note} musictheory={musictheory} setTextValue={setTextValue} setnoteArray={setnoteArray} />
-      <DisplayValueBox value={textValue}/>      
-      <Piano2 noteArray={noteArray} />
-      <Piano />
+      <h1 style={{textAlign:"center"}}>Music Theory</h1>
+      <div className="contentDiv">
+        <StoreNote note={note} setNote={setNote} />
+        <StoreInversion inversion={inversion} setInversion={setInversion} />
+        <StoreChords note={note} inversion={inversion} textValue={textValue} setTextValue={setTextValue}
+                    musictheory={musictheory} setnoteArray={setnoteArray}/>
+        <StoreScales note={note} musictheory={musictheory} setTextValue={setTextValue} setnoteArray={setnoteArray} />
+        
+      </div>
+      <DisplayValueBox value={textValue} /> 
+
+ 
+      <div className="pianoDiv1">
+        <Piano2 noteArray={noteArray} />
+      </div>
+      <br></br>
+      <div className="pianoDiv2">
+        <Piano />
+      </div>
       <Info />
     </div>
   );
