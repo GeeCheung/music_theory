@@ -1,5 +1,6 @@
 import { getFirestore } from "@firebase/firestore";
 import { initializeApp } from "firebase/app";
+
 const firebaseConfig = {
     apiKey: "AIzaSyBjvDIQhmciiv6TX3KxApDNhup_AyDhkAo",
     authDomain: "musictheory-c4fc7.firebaseapp.com",

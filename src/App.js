@@ -2,7 +2,6 @@ import { collection, getDocs } from "firebase/firestore";
 import React, { useEffect, useState } from 'react';
 import StoreChords from './components/Chords';
 import DisplayValueBox from './components/DisplayValue.js';
-import Info from './components/InfoText';
 import StoreNote from './components/Note.js';
 import { Piano } from './components/Piano.js';
 import { Piano2 } from './components/Piano_2.js';
@@ -25,7 +24,6 @@ const App = () => {
      
     const getMusicnotes = async () => {
       const data = await getDocs(musicnotesCollectionRef);
-      console.log(data);
       setMusictheory(data.docs);
     };
    
@@ -53,7 +51,7 @@ const App = () => {
       <div className="pianoDiv2">
         <Piano />
       </div>
-      <Info />
+   {/*    <Info /> */}
     </div>
   );
 }

@@ -3,7 +3,6 @@ import Buttons from './Buttons';
 
 const StoreChords = ({ note, setTextValue, musictheory, inversion, setnoteArray, scales, whatchord}) => {
 
-   //get the Dominant fifth note in the scale 
 const getChord = (note) =>  {
   
     if (note) {
@@ -11,7 +10,8 @@ const getChord = (note) =>  {
       musictheory.forEach(document => {
          if(document["id"] === scales){
              var getChord = document._document.data.value.mapValue.fields[note].stringValue.split(" ");
-
+             var [first, second , third, , fifth, ,seventh]  = getChord;
+             
              switch(whatchord) {
               case "fifth":
                 setnoteArray([getChord[4]]);
@@ -22,16 +22,16 @@ const getChord = (note) =>  {
                 setTextValue(`${note} relative minor fifth is ${getChord[5]}`); 
                 break;
               case "7th":
-                var [first , ,third , ,fifth, ,seventh]  = getChord;
-                var newArrayOfChords = [first , third, fifth, seventh];
-                 setnoteArray(newArrayOfChords);
+                var seventhchords = [first , third, fifth, seventh];
+                 setnoteArray(seventhchords);
                  setTextValue(`seventh chord for ${note} is ${first}, ${third}, ${fifth}, ${seventh}`); 
                 break;
               case "9th":
-                var [first, second , third, , fifth, ,seventh]  = getChord;
-                var newArrayOfChords = [first, second , third, fifth, seventh];
-                setnoteArray(newArrayOfChords);
+                var ninthchords = [first, second , third, fifth, seventh];
+                setnoteArray(ninthchords);
                 setTextValue(`Ninth chord for ${note} is ${first}, ${second}, ${third}, ${fifth}, ${seventh}`); 
+                break;
+              default:
                 break;
             }
          }
@@ -83,7 +83,7 @@ const getChord = (note) =>  {
     <div>
       <h3>Chords</h3>
       <Buttons color={"success"} text={"Get Dominant 5th"} scales = {"Major"} onClick={() => getChord(note, scales = "Major", whatchord ="fifth")} ></Buttons>
-      <Buttons color={"success"} text={"Get Triad Inversion"} onClick={() => getInversion(note, inversion, scales = "Major", whatchord ="Inversion")} ></Buttons>
+     {/*  <Buttons color={"success"} text={"Get Triad Inversion"} onClick={() => getInversion(note, inversion, scales = "Major", whatchord ="Inversion")} ></Buttons> */}
       <Buttons color={"success"} text={"Get 7th chord"} onClick={() => getChord(note, scales = "Major", whatchord= "7th")} ></Buttons>
       <Buttons color={"success"} text={"Get 9th chord"} onClick={() => getChord(note, scales = "Major", whatchord= "9th")} ></Buttons>
       <Buttons color={"success"} text={"Get Relative Minor"} onClick={() => getChord(note, scales = "Major", whatchord ="relative_minor")} ></Buttons>

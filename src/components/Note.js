@@ -1,24 +1,31 @@
-import React from 'react';
+import { React, useState } from 'react';
 import Buttons from './Buttons';
 
-
 const StoreNote = ({ note, setNote }) => {
+  
+  const [selectedNote, setSelectedNote] = useState('');
+
+  const handleNoteClick = (note) => {
+    setSelectedNote(note);
+    setNote(note);
+
+  };
+
   return (
     <div>
       <h3>Notes</h3>
-      <Buttons text={"C"} onClick={() => setNote("C")}></Buttons>
-      <Buttons text={"Db"} onClick={() => setNote("Db")}></Buttons>
-      <Buttons text={"D"} onClick={() => setNote("D")}></Buttons>
-      <Buttons text={"Eb"} onClick={() => setNote("Eb")}></Buttons>
-      <Buttons text={"E"} onClick={() => setNote("E")}></Buttons>
-      <Buttons text={"F"} onClick={() => setNote("F")}></Buttons>
-      <Buttons text={"Gb"} onClick={() => setNote("Gb")}></Buttons>
-      <Buttons text={"G"} onClick={() => setNote("G")}></Buttons>
-      <Buttons text={"Ab"} onClick={() => setNote("Ab")}></Buttons>
-      <Buttons text={"A"} onClick={() => setNote("A")}></Buttons>
-      <Buttons text={"Bb"} onClick={() => setNote("Bb")}></Buttons>
-      <Buttons text={"B"} onClick={() => setNote("B")}></Buttons>
-      <p>Stored note: {note}</p>
+      <Buttons text={"C"}  selectedNote={selectedNote}  onClick={() => handleNoteClick("C")}></Buttons>
+      <Buttons text={"Db"} selectedNote={selectedNote}  onClick={() => handleNoteClick("Db")}></Buttons>
+      <Buttons text={"D"} selectedNote={selectedNote} onClick={() => handleNoteClick("D")}></Buttons>
+      <Buttons text={"Eb"} selectedNote={selectedNote} onClick={() => handleNoteClick("Eb")}></Buttons>
+      <Buttons text={"E"}  selectedNote={selectedNote} onClick={() => handleNoteClick("E")}></Buttons>
+      <Buttons text={"F"}  selectedNote={selectedNote}onClick={() => handleNoteClick("F")}></Buttons>
+      <Buttons text={"Gb"} selectedNote={selectedNote} onClick={() => handleNoteClick("Gb")}></Buttons>
+      <Buttons text={"G"}  selectedNote={selectedNote} onClick={() => handleNoteClick("G")}></Buttons>
+      <Buttons text={"Ab"} selectedNote={selectedNote} onClick={() => handleNoteClick("Ab")}></Buttons>
+      <Buttons text={"A"}  selectedNote={selectedNote} onClick={() => handleNoteClick("A")}></Buttons>
+      <Buttons text={"Bb"} selectedNote={selectedNote} onClick={() => handleNoteClick("Bb")}></Buttons>
+      <Buttons text={"B"}  selectedNote={selectedNote} onClick={() => handleNoteClick("B")}></Buttons>
     </div>
   );
 };
