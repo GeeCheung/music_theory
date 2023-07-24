@@ -86,6 +86,7 @@ const getChord = (note) =>  {
       <Buttons color={"success"} text={"Get Triad Inversion"} onClick={() => getInversion(note, inversion, scales = "Major", whatchord ="Inversion")} ></Buttons>
       <Buttons color={"success"} text={"Get 7th chord"} onClick={() => getChord(note, scales = "Major", whatchord= "7th")} ></Buttons>
       <Buttons color={"success"} text={"Get 9th chord"} onClick={() => getChord(note, scales = "Major", whatchord= "9th")} ></Buttons>
+      <Buttons color={"success"} text={"Get Relative Minor"} onClick={() => getChord(note, scales = "Major", whatchord ="relative_minor")} ></Buttons>
      {/*  <Buttons color={"success"} text={"Get Augmented chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
       <Buttons color={"success"} text={"Get Dimminshed chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
       <Buttons color={"success"} text={"Get Dominant 7th"} onClick={() => getInversion(note, inversion)} ></Buttons>
@@ -95,7 +96,6 @@ const getChord = (note) =>  {
       <Buttons color={"success"} text={"Get Minor(Major7) chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
       <Buttons color={"success"} text={"Get half Dimminshed chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
       <Buttons color={"success"} text={"Get Dimminshed 7th chord"} onClick={() => getInversion(note, inversion)} ></Buttons> */}
-      <Buttons color={"success"} text={"Get Relative Minor"} onClick={() => getChord(note, scales = "Major", whatchord ="relative_minor")} ></Buttons>
     </div>
   );
 };
