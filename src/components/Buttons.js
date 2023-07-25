@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
-const Buttons  = ({ text, note, onClick, color, selectedNote, selectedChord, id, selectedScale, sle}) => {
+const Buttons  = ({ text, note, onClick, color, selectedNote, selectedChord, id, selectedScale, id_scale}) => {
 
   var classNameN = "highlighteddef"
   
@@ -13,8 +13,8 @@ if(id){
   classNameN = selectedChord ===  id ? 'highlightedC': "";
 }
 
-if(sle){
-  classNameN = selectedScale ===  sle ? 'highlightedS': "";
+if(id_scale){
+  classNameN = selectedScale === id_scale ? 'highlightedS': "";
 }
 
   return (
