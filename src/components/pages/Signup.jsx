@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { UserAuth } from '../../context/AuthContext';
 import './Signup.css';
-
 
 
 const Signup = () => {
   
-/*   const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('')
   const { createUser } = UserAuth();
@@ -24,7 +24,7 @@ const Signup = () => {
       setError(e.message);
       console.log(e.message);
     }
-  }; */
+  }; 
 
   return (
     <div className='outerSignupDiv'>
@@ -38,16 +38,16 @@ const Signup = () => {
             </Link>
           </p>
         
-        <Form>
+        <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control  type="email" placeholder="Enter email" />
+          <Form.Control  onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" />
             We'll never share your email with anyone else.
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control  type="password" placeholder="Password" />
+          <Form.Control   onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Check me out" />
