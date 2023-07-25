@@ -131,11 +131,11 @@ footer {
 }
 
 .highlighted:hover {
-    background-color: red;
+    background-color: rgb(0, 250, 12);
  }
 
  .highlighted {
-  background-color: red;
+  background-color: rgb(0, 250, 12);
 }  
 
 .highlightedC:hover {
@@ -155,12 +155,12 @@ footer {
   
 
   .highlightedS {
-    background-color: rgb(63, 0, 238);
+    background-color: rgb(0, 250, 12);
     }  
     
   
     .highlightedS:hover {
-      background-color: rgb(63, 0, 238);
+      background-color: rgb(0, 250, 12);
     }
     
   
