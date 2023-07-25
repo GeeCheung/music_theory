@@ -1,8 +1,16 @@
-import React from 'react';
+import { useState } from 'react';
 import Buttons from './Buttons';
 
 
-const StoreScales = ({ note, musictheory, setTextValue, setnoteArray, scales, pentantonic }) => {
+const StoreScales = ({ note, musictheory, setTextValue, setnoteArray, scales, pentantonic, insert }) => {
+
+
+  const [selectedScale, setSelectedScale] = useState('');
+
+  const handleScaleClick = (note, insert) => {
+    setSelectedScale(insert);
+    getScale(note);
+  };
 
 const getScale = (note) =>  {
   if (note) {
@@ -40,7 +48,7 @@ const getScale = (note) =>  {
         }
         
             setnoteArray(getscalesnotes);
-            setTextValue(`${note} scale is ${getscalesnotes}`); 
+            setTextValue(`${note} scale is ${getscalesnotes.join(" ")}`); 
        }
     });
    
@@ -51,13 +59,16 @@ const getScale = (note) =>  {
   
   return (
     <div>
-     <h3>Scales</h3>
-      <Buttons color={"danger"} text={"Get Major scale"} onClick={() => getScale(note, scales = "Major", pentantonic = false)} ></Buttons>
-      <Buttons color={"danger"} text={"Get Minor scale"} onClick={() => getScale(note, scales = "Minor" , pentantonic = false)} ></Buttons>
-      <Buttons color={"danger"} text={"Get Pentatonic Major scale"} onClick={() => getScale(note, scales = "Major", pentantonic = true)} ></Buttons>
-      <Buttons color={"danger"} text={"Get Pentatonic Minor scale"} onClick={() => getScale(note,  scales = "Minor", pentantonic = true)} ></Buttons>
-      <Buttons color={"danger"} text={"Get Blues Major scale"} onClick={() => getScale(note,  scales = "Blues_Major")} ></Buttons>
-      <Buttons color={"danger"} text={"Get Blues Minor scale"} onClick={() => getScale(note, scales = "Blues_Minor" )} ></Buttons>
+       <br/>
+     <h3 className='subh'>Scales</h3>
+     <div className='subh'>
+      <Buttons color={"light"} sle={"test"} text={"Get Major scale"} onClick={() => handleScaleClick(note, scales = "Major", pentantonic = false, insert = "test")} ></Buttons>
+      <Buttons color={"light"} sle={"2"} text={"Get Minor scale"} onClick={() => handleScaleClick(note, scales = "Minor" , pentantonic = false, '2')} ></Buttons>
+      <Buttons color={"light"}  text={"Get Pentatonic Major scale"} onClick={() => handleScaleClick(note, scales = "Major", pentantonic = true,  '3')} ></Buttons>
+      <Buttons color={"light"} text={"Get Pentatonic Minor scale"} onClick={() => handleScaleClick(note,  scales = "Minor", pentantonic = true,  '4')} ></Buttons>
+      <Buttons color={"light"} text={"Get Blues Major scale"} onClick={() => handleScaleClick(note,  scales = "Blues_Major")} ></Buttons>
+      <Buttons color={"light"} text={"Get Blues Minor scale"} onClick={() => handleScaleClick(note, scales = "Blues_Minor" )} ></Buttons>
+      </div>
     </div>
   );
 };

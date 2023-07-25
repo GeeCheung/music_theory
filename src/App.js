@@ -7,8 +7,10 @@ import Signup from './components/pages/Signup.jsx';
 const App = () => {
 
   return ( 
-    <div className="App">
-
+    <div>
+        <h1 className='contentDiv'>
+        Music Theory
+      </h1>
       <Routes>
         <Route path="/" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />

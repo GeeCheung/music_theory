@@ -7,7 +7,6 @@ import StoreNote from '../Note.js';
 import { Piano } from '../Piano.js';
 import { Piano2 } from '../Piano_2.js';
 import StoreScales from '../Scales';
-import StoreInversion from '../SetInversion.js';
 
 
 const Account = () => {
@@ -17,6 +16,7 @@ const Account = () => {
   var [inversion, setInversion] = useState();
   var [textValue, setTextValue] = useState();
   var [noteArray, setnoteArray] = useState([]);
+
 
   const musicnotesCollectionRef = collection(db, "musicnotes");
 
@@ -32,22 +32,23 @@ const Account = () => {
   
   return (
     <div>
-      <h1 style={{textAlign:"center"}}>Music Theory</h1>
+      <br />
       <div className="contentDiv">
         <StoreNote note={note} setNote={setNote} />
-        <StoreInversion inversion={inversion} setInversion={setInversion} />
+       {/*  <StoreInversion inversion={inversion} setInversion={setInversion} /> */}
         <StoreChords note={note} inversion={inversion} textValue={textValue} setTextValue={setTextValue}
                     musictheory={musictheory} setnoteArray={setnoteArray}/>
         <StoreScales note={note} musictheory={musictheory} setTextValue={setTextValue} setnoteArray={setnoteArray} />
         
       </div>
+
+      <div className="pianoDiv1">
       <DisplayValueBox value={textValue} /> 
+      </div>
+      
 
       <div className="pianoDiv1">
         <Piano2 noteArray={noteArray} />
-      </div>
-      <br></br>
-      <div className="pianoDiv2">
         <Piano />
       </div>
     </div>
