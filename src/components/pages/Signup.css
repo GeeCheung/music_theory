@@ -1,0 +1,7 @@
+.signupDiv{
+  max-width: fit-content;
+}
+.outerSignupDiv{
+  display: flex;
+  justify-content: center;
+}
