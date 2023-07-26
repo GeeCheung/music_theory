@@ -1,15 +1,11 @@
-import './Key.css';
-
+import "./Key.css";
 
 const Key2 = ({ note, key, noteArray }) => {
-
-
-  let keyClassName = "key"; 
+  let keyClassName = "key";
 
   const noteIsFlat = (note) => {
     return note.length > 1;
   };
-  
 
   const isFlat = noteIsFlat(note);
 
@@ -20,7 +16,6 @@ const Key2 = ({ note, key, noteArray }) => {
   if (noteArray.includes(note)) {
     keyClassName += " pressed";
   }
-
 
   let keyElement;
   if (isFlat) {
@@ -37,4 +32,3 @@ const Key2 = ({ note, key, noteArray }) => {
 };
 
 export { Key2 };
-
