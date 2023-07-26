@@ -37,29 +37,12 @@ const Signin = () => {
     }
   };
 
-  /*   const handleFacebookLogin = async (e) => {
-    setError('')
-    e.preventDefault();
-    try {
-      await facebookSignIn();
-    } catch (error) {
-      console.log(error.message);
-    }
-  }; */
-
   const handleResetPassword = async (e) => {
     e.preventDefault();
-    setError("");
     try {
-      if (email) {
-        forgotPassword(email);
-        alert("password email reset link sent");
-      } else {
-        alert("no email entered");
-      }
-    } catch (e) {
-      setError(e.message);
-      console.log(e.message);
+      navigate("/forgotpassword");
+    } catch (error) {
+      console.log(error.message);
     }
   };
 
@@ -67,11 +50,12 @@ const Signin = () => {
     <div className="outerSignupDiv">
       <div>
         <h1 className="contentDiv">Sign Into account</h1>
-        <p>
-          Do not have an account yet? <Link to="/signup">Sign up.</Link>
-          <p>
-            <Link onClick={handleResetPassword}>Forgot your password?</Link>
-          </p>
+
+        <p style={{ margin: "5px" }}>
+          Do not have an account yet?{" "}
+          <Link to="/signup" style={{ color: "white" }}>
+            Sign up.
+          </Link>
         </p>
 
         <Form onSubmit={handleSubmit}>
@@ -92,6 +76,11 @@ const Signin = () => {
               placeholder="Password"
             />
           </Form.Group>
+          <p>
+            <Link style={{ color: "white" }} onClick={handleResetPassword}>
+              Forgot your password?
+            </Link>
+          </p>
           <Button style={{ width: "400px" }} variant="primary" type="submit">
             Login
           </Button>
@@ -102,7 +91,6 @@ const Signin = () => {
             className="googlesignin"
             onClick={handleGoogleSignIn}
           ></GoogleButton>
-          {/* <Button onClick={handleFacebookLogin} style={{color: "white"}}  >Sign In with Facebook</Button>  */}
         </div>
       </div>
     </div>
