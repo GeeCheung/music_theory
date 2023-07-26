@@ -10,7 +10,7 @@ const App = () => {
 
   return ( 
     <div>
-        <h1 className='contentDiv'>
+        <h1 className='contentDiv'style={{color: "#cc0000"}}>
         Music Theory
       </h1>
       <AuthContextProvider>

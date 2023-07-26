@@ -24,6 +24,7 @@ const Account = () => {
       console.log(e.message);
     }
   };
+  
   const [musictheory,setMusictheory] = useState([]);
   var [note, setNote] = useState();
   var [inversion, setInversion] = useState();

@@ -22,7 +22,7 @@ const Signup = () => {
       navigate('/account')
     } catch (e) {
       setError(e.message);
-      console.log(e.message);
+      alert(e.message);
     }
   }; 
 
@@ -30,7 +30,7 @@ const Signup = () => {
     <div className='outerSignupDiv'>
       <div className='signupDiv'>
         
-          <h1 >Sign up for a free account</h1>
+          <h1 className='contentDiv' >Sign up for a free account</h1>
           <p>
             Already have an account yet?{' '}
             <Link to='/' className='underline'>
@@ -48,9 +48,6 @@ const Signup = () => {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control   onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
-        </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit

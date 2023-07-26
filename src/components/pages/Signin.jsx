@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import GoogleButton from 'react-google-button';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from "../../context/AuthContext";
 import './Signup.css';
-
 
 const Signin = () => {
 
@@ -12,7 +12,9 @@ const Signin = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { signIn } = UserAuth();
+  const { signIn, googleSignIn } = UserAuth();
+  const { forgotPassword,  } = UserAuth();
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,22 +23,53 @@ const Signin = () => {
       await signIn(email, password)
       navigate('/account')
     } catch (e) {
+      alert("Incorrect email address and password!")
       setError(e.message)
       console.log(e.message)
     }
   };
 
 
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+      navigate("/account");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    setError('')
+    try {
+      if(email){forgotPassword(email);
+      alert("password email reset link sent")
+    } else{
+      alert("no email entered")
+    }
+      
+    } catch (e) {
+      setError(e.message)
+      console.log(e.message)
+    }
+  };
+
+
+
   return (
   <div className='outerSignupDiv'>
     <div className='signupDiv'>
       
-        <h1 >Sign Into account</h1>
+        <h1  className='contentDiv'>Sign Into account</h1>
         <p>
           Do not have an account yet?{' '}
           <Link to='/signup' className='underline'>
             Sign up.
           </Link>
+          <p><Link onClick={handleResetPassword}>reset password</Link></p>
         </p>
       
       <Form  onSubmit={handleSubmit} >
@@ -50,13 +83,12 @@ const Signin = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control  onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button style={{width: "500px"}} variant="primary" type="submit">
         Submit
         </Button>
       </Form>
+      <br/>
+      <GoogleButton className='googlesignin' onClick={ handleGoogleSignIn }></GoogleButton>
     </div>
   </div>
   )
