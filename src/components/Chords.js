@@ -22,21 +22,21 @@ const getChord = (note) =>  {
              switch(whatchord) {
               case "fifth":
                 setnoteArray([getChord[4]]);
-                setTextValue(`${note} perfect fifth is ${getChord[4]}`); 
+                setTextValue(`${getChord[4]}`); 
                 break;
               case "relative_minor":
                 setnoteArray([getChord[5]]);
-                setTextValue(`${note} relative minor fifth is ${getChord[5]}`); 
+                setTextValue(`${getChord[5]}`); 
                 break;
               case "7th":
                 var seventhchords = [first , third, fifth, seventh];
                  setnoteArray(seventhchords);
-                 setTextValue(`seventh chord for ${note} is ${seventhchords.join(" ")}`); 
+                 setTextValue(`${seventhchords.join(" ")}`); 
                 break;
               case "9th":
                 var ninthchords = [first, second , third, fifth, seventh];
                 setnoteArray(ninthchords);
-                setTextValue(`Ninth chord for ${note} is ${ninthchords.join(" ")}`); 
+                setTextValue(`${ninthchords.join(" ")}`); 
                 break;
               default:
                 break;
@@ -44,6 +44,8 @@ const getChord = (note) =>  {
          }
       });
      
+    } else {
+      alert("Please select a note")
     }
 
   }

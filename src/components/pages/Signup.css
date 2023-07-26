@@ -1,11 +1,4 @@
-.signupDiv{
-  max-width: fit-content;
-}
-.outerSignupDiv{
+.outerSignupDiv {
   display: flex;
   justify-content: center;
-}
-
-.googlesignin{
-  max-width: max;
 }

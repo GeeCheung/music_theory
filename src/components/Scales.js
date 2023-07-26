@@ -48,10 +48,12 @@ const getScale = (note) =>  {
         }
         
             setnoteArray(getscalesnotes);
-            setTextValue(`${note} scale is ${getscalesnotes.join(" ")}`); 
+            setTextValue(`${getscalesnotes.join(" ")}`); 
        }
     });
    
+  } else {
+    alert("Please select a note")
   }
   
   }
