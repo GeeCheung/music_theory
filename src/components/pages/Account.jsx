@@ -4,12 +4,14 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import { db } from "../../firebase-config";
+import Buttons from "../Buttons";
 import StoreChords from "../Chords";
 import DisplayValueBox from "../DisplayValue.js";
 import StoreNote from "../Note.js";
 import { Piano } from "../Piano.js";
 import { Piano2 } from "../Piano_2.js";
 import StoreScales from "../Scales";
+import StackedExample from "../Sidebar/Sidebar";
 
 const Account = () => {
   const { user, logout } = UserAuth();
@@ -44,22 +46,20 @@ const Account = () => {
 
   return (
     <div>
-      {/* <div>
+      <div>
         <StackedExample />
-      </div> */}
+      </div>
 
       <div className="logout">
         <p style={{ margin: "3px" }}> User email: {user && user.email}</p>
       </div>
 
       <div className="logout">
-        <button
+        <Buttons
           color={"light"}
-          style={{ width: "60px", height: "30px" }}
+          text={"Logout"}
           onClick={handleLogout}
-        >
-          Logout
-        </button>
+        ></Buttons>
       </div>
 
       <div>

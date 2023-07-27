@@ -30,7 +30,7 @@ const Signup = () => {
         <h1 className="contentDiv">Sign up for an account</h1>
         <p>
           Already have an account yet?{" "}
-          <Link to="/" className="underline">
+          <Link style={{ color: "white" }} to="/" className="underline">
             Sign in.
           </Link>
         </p>
@@ -54,7 +54,7 @@ const Signup = () => {
             />
           </Form.Group>
           <Button style={{ width: "420px" }} variant="primary" type="submit">
-            Submit
+            Sign up
           </Button>
         </Form>
       </div>

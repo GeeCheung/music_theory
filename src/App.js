@@ -24,6 +24,14 @@ const App = () => {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/message"
+            element={
+              <ProtectedRoute>
+                <Signup />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </AuthContextProvider>
     </div>
