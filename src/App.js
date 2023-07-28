@@ -10,7 +10,6 @@ import { AuthContextProvider } from "./context/AuthContext";
 const App = () => {
   return (
     <div>
-      <h1 className="contentDiv">Music Theory</h1>
       <AuthContextProvider>
         <Routes>
           <Route path="/" element={<Signin />} />
@@ -21,14 +20,6 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Account />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/message"
-            element={
-              <ProtectedRoute>
-                <Signup />
               </ProtectedRoute>
             }
           />

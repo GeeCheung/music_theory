@@ -37,9 +37,30 @@ body {
   margin-bottom: 0px;
 }
 
-.logout {
-  display: flex;
-  justify-content: center;
+.right-button {
+  position: absolute;
+  top: 50%; /* Adjust this value as needed to vertically center the button */
+  right: 20px; /* Adjust this value to control the distance from the right side */
+  transform: translateY(
+    -50%
+  ); /* Vertically center the button relative to its container */
+}
+
+.right-align {
+  position: absolute;
+  top: 50%; /* Adjust this value as needed to vertically center the element */
+  right: 130px; /* Adjust this value to control the distance from the right side */
+  transform: translateY(
+    -50%
+  ); /* Vertically center the element relative to its container */
+}
+
+.centered-h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Impact, fantasy;
 }
 
 .notes {

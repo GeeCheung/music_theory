@@ -1,39 +1,50 @@
-import SideNav, { NavIcon, NavItem, NavText } from "@trendmicro/react-sidenav";
-import "@trendmicro/react-sidenav/dist/react-sidenav.css";
-import { useNavigate } from "react-router";
-import "./Sidebar.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Navbar from "react-bootstrap/Navbar";
+import { useNavigate } from "react-router-dom";
+import { UserAuth } from "../../context/AuthContext";
+import Buttons from "../Buttons";
 
-function StackedExample() {
+function Topnavbar() {
+  const { user, logout } = UserAuth();
   const navigate = useNavigate();
 
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate("/");
+      console.log("You are logged out");
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+
   return (
-    <SideNav
-      onSelect={(selected) => {
-        console.log(selected);
-        navigate("/" + selected);
-      }}
-      className="mysidenav"
-    >
-      <SideNav.Toggle />
-      <SideNav.Nav defaultSelected="home">
-        <NavItem eventKey="account">
-          <NavIcon>
-            <i className="fa fa-fw fa-home" style={{ fontSize: " 1.5em" }}></i>
-          </NavIcon>
-          <NavText>Home</NavText>
-        </NavItem>
-        <NavItem eventKey="message">
-          <NavIcon>
-            <i
-              className="fa fa-fw fa-message"
-              style={{ fontSize: " 1.5em" }}
-            ></i>
-          </NavIcon>
-          <NavText>Message</NavText>
-        </NavItem>
-      </SideNav.Nav>
-    </SideNav>
+    <Navbar bg="danger" data-bs-theme="dark">
+      <Container>
+        <Nav className="me-auto">
+          <Nav.Link href="#">Home</Nav.Link>
+          <Nav.Link href="#">Chords</Nav.Link>
+          <Nav.Link href="#">Scales</Nav.Link>
+          <NavDropdown title="Theory" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#"> Harmony </NavDropdown.Item>
+            <NavDropdown.Item href="#">keys</NavDropdown.Item>
+            <NavDropdown.Item href="#">notes </NavDropdown.Item>
+          </NavDropdown>
+          <h1 className="centered-h1">music theory</h1>
+          <div className="right-button">
+            <Buttons
+              color={"light"}
+              text={"Logout"}
+              onClick={handleLogout}
+            ></Buttons>
+          </div>
+        </Nav>
+      </Container>
+    </Navbar>
   );
 }
 
-export default StackedExample;
+export default Topnavbar;
