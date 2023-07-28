@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Link } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 
 const ForgotPassword = () => {
@@ -39,6 +40,12 @@ const ForgotPassword = () => {
         <Button style={{ width: "400px" }} variant="primary" type="submit">
           Send reset password link
         </Button>
+
+        <p>
+          <Link style={{ color: "white" }} to="/" className="underline">
+            Ready to sign in?
+          </Link>
+        </p>
       </Form>
     </div>
   );

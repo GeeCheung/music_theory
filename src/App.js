@@ -1,7 +1,9 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Account from "./components/pages/Account.jsx";
+import Basics from "./components/pages/Basics.jsx";
 import Forgotpassword from "./components/pages/ForgotPassword.jsx";
+import Intermediate from "./components/pages/Intermediate.jsx";
 import ProtectedRoute from "./components/pages/ProtectedRoute.js";
 import Signin from "./components/pages/Signin.jsx";
 import Signup from "./components/pages/Signup.jsx";
@@ -20,6 +22,22 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Account />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/basics"
+            element={
+              <ProtectedRoute>
+                <Basics />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/intermediate"
+            element={
+              <ProtectedRoute>
+                <Intermediate />
               </ProtectedRoute>
             }
           />

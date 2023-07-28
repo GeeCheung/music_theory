@@ -1,7 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase-config";
 import StoreChords from "../Chords";
 import DisplayValueBox from "../DisplayValue.js";
@@ -12,13 +11,11 @@ import StoreScales from "../Scales";
 import Topnavbar from "../Sidebar/Sidebar";
 
 const Account = () => {
-  const navigate = useNavigate();
-
   const [musictheory, setMusictheory] = useState([]);
-  var [note, setNote] = useState();
-  var [inversion, setInversion] = useState();
-  var [textValue, setTextValue] = useState();
-  var [noteArray, setnoteArray] = useState([]);
+  const [note, setNote] = useState();
+  const [inversion, setInversion] = useState();
+  const [textValue, setTextValue] = useState();
+  const [noteArray, setnoteArray] = useState([]);
 
   const musicnotesCollectionRef = collection(db, "musicnotes");
 

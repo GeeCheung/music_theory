@@ -40,7 +40,7 @@ body {
 .right-button {
   position: absolute;
   top: 50%; /* Adjust this value as needed to vertically center the button */
-  right: 20px; /* Adjust this value to control the distance from the right side */
+  right: 350px; /* Adjust this value to control the distance from the right side */
   transform: translateY(
     -50%
   ); /* Vertically center the button relative to its container */
@@ -66,6 +66,7 @@ body {
 .notes {
   margin-top: 15px;
   display: flex;
+
   justify-content: space-evenly;
 }
 
@@ -100,4 +101,22 @@ body {
 
 .highlighted {
   background-color: rgb(219, 61, 68);
+}
+
+.outerSignupDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.display-value-box {
+  padding: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.piano {
+  display: flex;
+  flex-direction: row;
 }

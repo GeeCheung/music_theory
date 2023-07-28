@@ -1,6 +1,3 @@
-import React from 'react';
-
-
 const StoreInversion = ({ inversion, setInversion }) => {
   return (
     <div>

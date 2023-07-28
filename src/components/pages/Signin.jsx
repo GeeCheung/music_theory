@@ -4,7 +4,6 @@ import Form from "react-bootstrap/Form";
 import GoogleButton from "react-google-button";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
-import "./Signup.css";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
