@@ -65,7 +65,7 @@ body {
 }
 
 .notes {
-  margin-top: 15px;
+  margin-top: 55px;
   display: flex;
 
   justify-content: space-evenly;
@@ -79,10 +79,6 @@ body {
 .scales {
   display: flex;
   justify-content: space-evenly;
-}
-
-.navbar {
-  flex-direction: flex-end;
 }
 
 .pianoDiv {
@@ -148,4 +144,9 @@ body {
   width: 100%;
   font-size: 16px;
   font-weight: bold;
+}
+
+.textcenter {
+  display: flex;
+  justify-content: center;
 }

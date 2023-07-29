@@ -50,7 +50,7 @@ function Topnavbar() {
               className={({ isActive }) =>
                 isActive ? "active" : "navbarstyle"
               }
-              to="/basics"
+              to="/blog"
             >
               BLOG
             </NavLink>
@@ -61,7 +61,7 @@ function Topnavbar() {
               className={({ isActive }) =>
                 isActive ? "active" : "navbarstyle"
               }
-              to="/basics"
+              to="/pricing"
             >
               PRICING
             </NavLink>
@@ -87,7 +87,7 @@ function Topnavbar() {
                 className={({ isActive }) =>
                   isActive ? "active" : "navbarstyle2"
                 }
-                to="/basics"
+                to="/intermediate"
               >
                 INTERMEDIATE
               </NavLink>

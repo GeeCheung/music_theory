@@ -1,6 +1,6 @@
 import Topnavbar from "../Sidebar/Sidebar";
 
-const Intermediate = () => {
+const Blog = () => {
   return (
     <div>
       <div>
@@ -10,10 +10,10 @@ const Intermediate = () => {
       <h1
         style={{ justifyContent: "center", display: "flex", marginTop: "50px" }}
       >
-        Intermediate
+        Blog
       </h1>
     </div>
   );
 };
 
-export default Intermediate;
+export default Blog;

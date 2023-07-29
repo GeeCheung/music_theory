@@ -11,7 +11,6 @@ const Signin = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { signIn, googleSignIn, facebookSignIn } = UserAuth();
-  const { forgotPassword } = UserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();

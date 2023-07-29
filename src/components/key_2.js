@@ -1,6 +1,6 @@
 import "./Key.css";
 
-const Key2 = ({ note, key, noteArray }) => {
+const Key2 = ({ note, noteArray }) => {
   let keyClassName = "key";
 
   const noteIsFlat = (note) => {

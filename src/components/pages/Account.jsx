@@ -1,10 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import {
-  default as srcSetLarge,
-  default as srcSetSmall,
-} from "../../background_1.jpg";
 import { db } from "../../firebase-config";
 import StoreChords from "../Chords";
 import DisplayValueBox from "../DisplayValue.js";
@@ -36,12 +32,6 @@ const Account = () => {
       <div>
         <Topnavbar />
       </div>
-
-      <img
-        srcSet={`${srcSetSmall} 100w, ${srcSetLarge} 500w`}
-        alt="header background"
-        className="absolute w-full h-full left-0 top-0 object-cover object-center"
-      />
 
       <div>
         <div className="notes">
