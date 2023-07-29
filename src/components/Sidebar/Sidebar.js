@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Navbar from "react-bootstrap/Navbar";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import Buttons from "../Buttons";
 
@@ -31,45 +31,80 @@ function Topnavbar() {
   };
 
   return (
-    <Navbar bg="dark" data-bs-theme="dark">
+    <Navbar className="navbarbg fixed-top" data-bs-theme="dark">
       <Container>
         <Nav className="me-auto">
           <Nav.Link>
-            <Link
-              style={{ color: "white", textDecoration: "none" }}
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active" : "navbarstyle"
+              }
               to="/account"
             >
-              Piano
-            </Link>
+              PIANO
+            </NavLink>
           </Nav.Link>
-          <NavDropdown title="Learn Music Theory" id="basic-nav-dropdown">
+
+          <Nav.Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active" : "navbarstyle"
+              }
+              to="/basics"
+            >
+              BLOG
+            </NavLink>
+          </Nav.Link>
+
+          <Nav.Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active" : "navbarstyle"
+              }
+              to="/basics"
+            >
+              PRICING
+            </NavLink>
+          </Nav.Link>
+
+          <NavDropdown
+            title="LEARN MUSIC THEORY"
+            id="basic-nav-dropdown"
+            style={{ fontSize: "16px", fontWeight: "bold" }}
+          >
             <NavDropdown.Item>
-              <Link
-                style={{ color: "white", textDecoration: "none" }}
-                to="/Basics"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active" : "navbarstyle2"
+                }
+                to="/basics"
               >
-                Basics
-              </Link>
+                BASICS
+              </NavLink>
             </NavDropdown.Item>
             <NavDropdown.Item>
-              <Link
-                style={{ color: "white", textDecoration: "none" }}
-                to="/intermediate"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive ? "active" : "navbarstyle2"
+                }
+                to="/basics"
               >
-                Intermediate
-              </Link>
+                INTERMEDIATE
+              </NavLink>
             </NavDropdown.Item>
           </NavDropdown>
-
           <h1 className="centered-h1">Gee's Music Theory</h1>
 
           <div className="right-button">
             {isAuthenticated ? (
-              <Buttons
-                color={"light"}
-                text={"Logout"}
-                onClick={handleLogout}
-              ></Buttons>
+              <div style={{ color: "white" }}>
+                {" "}
+                <Buttons
+                  color={"danger"}
+                  text={"Logout"}
+                  onClick={handleLogout}
+                ></Buttons>
+              </div>
             ) : (
               <Buttons
                 color={"light"}

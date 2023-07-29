@@ -1,11 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import {
+  default as srcSetLarge,
+  default as srcSetSmall,
+} from "../../background_1.jpg";
 import { db } from "../../firebase-config";
 import StoreChords from "../Chords";
 import DisplayValueBox from "../DisplayValue.js";
 import StoreNote from "../Note.js";
-import { Piano } from "../Piano.js";
 import { Piano2 } from "../Piano_2.js";
 import StoreScales from "../Scales";
 import Topnavbar from "../Sidebar/Sidebar";
@@ -33,6 +36,12 @@ const Account = () => {
       <div>
         <Topnavbar />
       </div>
+
+      <img
+        srcSet={`${srcSetSmall} 100w, ${srcSetLarge} 500w`}
+        alt="header background"
+        className="absolute w-full h-full left-0 top-0 object-cover object-center"
+      />
 
       <div>
         <div className="notes">
@@ -65,7 +74,7 @@ const Account = () => {
 
       <div className="pianoDiv">
         <Piano2 noteArray={noteArray} />
-        <Piano />
+        {/*    <Piano /> */}
       </div>
     </div>
   );

@@ -19,7 +19,6 @@ body {
 
 .btn {
   display: inline-block;
-  color: #000000;
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -40,7 +39,7 @@ body {
 .right-button {
   position: absolute;
   top: 50%; /* Adjust this value as needed to vertically center the button */
-  right: 350px; /* Adjust this value to control the distance from the right side */
+  right: 330px; /* Adjust this value to control the distance from the right side */
   transform: translateY(
     -50%
   ); /* Vertically center the button relative to its container */
@@ -60,7 +59,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-size: 37px;
   font-family: Impact, fantasy;
+  color: #f61a30;
 }
 
 .notes {
@@ -96,11 +97,11 @@ body {
 }
 
 .highlighted:hover {
-  background-color: rgb(219, 61, 68);
+  background-color: #f61a30;
 }
 
 .highlighted {
-  background-color: rgb(219, 61, 68);
+  background-color: #f61a30;
 }
 
 .outerSignupDiv {
@@ -119,4 +120,32 @@ body {
 .piano {
   display: flex;
   flex-direction: row;
+}
+
+.navbarbg {
+  background-color: #020815;
+}
+
+.active {
+  color: red;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbarstyle {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbarstyle2 {
+  color: white;
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
 }
