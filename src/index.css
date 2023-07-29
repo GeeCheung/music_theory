@@ -12,7 +12,7 @@ body {
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("../piano-background.jpg");
+    url("../src/content/piano-background.jpg");
   color: rgb(255, 255, 255);
   background-size: cover;
 }
@@ -29,6 +29,11 @@ body {
   font-family: inherit;
 }
 
+.btn-danger {
+  --bs-btn-bg: #f61a30;
+  --bs-btn-hover-bg: #f61a30;
+}
+
 .contentDiv {
   display: flex;
   justify-content: space-evenly;
@@ -40,6 +45,15 @@ body {
   position: absolute;
   top: 50%; /* Adjust this value as needed to vertically center the button */
   right: 330px; /* Adjust this value to control the distance from the right side */
+  transform: translateY(
+    -50%
+  ); /* Vertically center the button relative to its container */
+}
+
+.logonav {
+  position: absolute;
+  top: 50%; /* Adjust this value as needed to vertically center the button */
+  right: 760px; /* Adjust this value to control the distance from the right side */
   transform: translateY(
     -50%
   ); /* Vertically center the button relative to its container */
@@ -123,7 +137,7 @@ body {
 }
 
 .active {
-  color: red;
+  color: #f61a30;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;

@@ -95,6 +95,13 @@ function Topnavbar() {
           </NavDropdown>
           <h1 className="centered-h1">Gee's Music Theory</h1>
 
+          <img
+            src={require("../../content/pianokeys_logo.jpg")}
+            width="40"
+            height="40"
+            className="logonav"
+          />
+
           <div className="right-button">
             {isAuthenticated ? (
               <div style={{ color: "white" }}>

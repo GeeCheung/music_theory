@@ -29,7 +29,11 @@ const Basics = () => {
         </h1>
         <small
           className="textcenter"
-          style={{ fontSize: "16px", textAlign: "center", margin: "16px" }}
+          style={{
+            fontSize: "16px",
+            textAlign: "center",
+            margin: "16px",
+          }}
         >
           A group of notes that sound good together. <br />
           Here we'll take a look at three of the most common chords: Major,
@@ -39,7 +43,7 @@ const Basics = () => {
         <div className="textcenter">
           <div>
             <img
-              src={require("../../Major_Chords.png")}
+              src={require("../../content/Major_Chords.png")}
               style={{ marginRight: "20px" }}
             />
           </div>
