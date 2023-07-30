@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Buttons from "./Buttons";
 
 const StoreChords = ({
@@ -57,12 +59,12 @@ const StoreChords = ({
         }
       });
     } else {
-      alert("Please select a note");
+      toast.error("Please Select A Note");
     }
   };
 
   // get Inversion of the selected chord
-  const getInversion = (note, chord) => {
+  /*   const getInversion = (note, chord) => {
     if (note && chord) {
       musictheory.forEach((document) => {
         if (document["id"] === "Major") {
@@ -96,7 +98,7 @@ const StoreChords = ({
         }
       });
     }
-  };
+  }; */
 
   return (
     <div>

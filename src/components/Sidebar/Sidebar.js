@@ -50,9 +50,9 @@ function Topnavbar() {
               className={({ isActive }) =>
                 isActive ? "active" : "navbarstyle"
               }
-              to="/blog"
+              to="/quiz"
             >
-              BLOG
+              QUIZ
             </NavLink>
           </Nav.Link>
 
@@ -96,9 +96,9 @@ function Topnavbar() {
           <h1 className="centered-h1">Gee's Music Theory</h1>
 
           <img
-            src={require("../../content/pianokeys_logo.jpg")}
-            width="40"
-            height="40"
+            src={require("../../content/piano_keys.png")}
+            width="80"
+            height="80"
             className="logonav"
           />
 

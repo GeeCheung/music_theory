@@ -44,7 +44,7 @@ body {
 .right-button {
   position: absolute;
   top: 50%; /* Adjust this value as needed to vertically center the button */
-  right: 330px; /* Adjust this value to control the distance from the right side */
+  right: 18%; /* Adjust this value to control the distance from the right side */
   transform: translateY(
     -50%
   ); /* Vertically center the button relative to its container */
@@ -53,7 +53,7 @@ body {
 .logonav {
   position: absolute;
   top: 50%; /* Adjust this value as needed to vertically center the button */
-  right: 760px; /* Adjust this value to control the distance from the right side */
+  right: 38%; /* Adjust this value to control the distance from the right side */
   transform: translateY(
     -50%
   ); /* Vertically center the button relative to its container */
@@ -163,4 +163,13 @@ body {
 .textcenter {
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .centered-h1 {
+    display: none;
+  }
+  .logonav {
+    display: none;
+  }
 }

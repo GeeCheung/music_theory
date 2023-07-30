@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { UserAuth } from "../../context/AuthContext";
 
 const Signup = () => {
@@ -15,8 +17,12 @@ const Signup = () => {
     e.preventDefault();
     setError("");
     try {
-      await createUser(email, password);
-      navigate("/account");
+      if (email && password) {
+        await createUser(email, password);
+        navigate("/account");
+      } else {
+        toast.error("Please enter a email and password");
+      }
     } catch (e) {
       setError(e.message);
       alert(e.message);
@@ -55,6 +61,7 @@ const Signup = () => {
           <Button style={{ width: "420px" }} variant="primary" type="submit">
             Sign up
           </Button>
+          <ToastContainer position="top-center" />
         </Form>
       </div>
     </div>

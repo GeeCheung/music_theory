@@ -2,6 +2,8 @@ import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { UserAuth } from "../../context/AuthContext";
 
 const ForgotPassword = () => {
@@ -15,9 +17,9 @@ const ForgotPassword = () => {
     try {
       if (resetemail) {
         forgotPassword(resetemail);
-        alert("password email reset link sent");
+        toast.success("Password email reset link sent");
       } else {
-        alert("no email entered");
+        toast.error("No email entered");
       }
     } catch (e) {
       setError(e.message);
@@ -46,6 +48,8 @@ const ForgotPassword = () => {
             Ready to sign in?
           </Link>
         </p>
+
+        <ToastContainer position="top-center" />
       </Form>
     </div>
   );

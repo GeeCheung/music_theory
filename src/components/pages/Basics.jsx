@@ -71,6 +71,59 @@ const Basics = () => {
             ></iframe>
           </div>
         </div>
+        <h1 style={{ fontSize: "36px" }} className="textcenter">
+          Scales
+          <br />
+        </h1>
+        <small
+          className="textcenter"
+          style={{
+            fontSize: "16px",
+            textAlign: "center",
+            margin: "16px",
+          }}
+        >
+          Scales are fundamental building blocks in music, and they play a
+          crucial role in piano playing. A scale is a sequence of musical notes
+          arranged in ascending or descending order, usually spanning an octave.
+          <br />
+          Learning scales is essential for pianists as they provide a foundation
+          for understanding harmony, developing finger dexterity, and improving
+          overall technique.
+        </small>
+        <div className="textcenter">
+          <div>
+            <img
+              width="590"
+              height="670"
+              src={require("../../content/piano_major_scales.png")}
+              style={{ marginRight: "20px" }}
+            />
+          </div>
+          <div
+            style={{ flexDirection: "column", display: "flex", margin: "20px" }}
+          >
+            <iframe
+              style={{ marginBottom: "15px" }}
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/wBkvTQWKYEI"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/ETuU6_86KaI"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import Topnavbar from "../Sidebar/Sidebar";
 
-const Blog = () => {
+const Quiz = () => {
   return (
     <div>
       <div>
@@ -10,10 +10,10 @@ const Blog = () => {
       <h1
         style={{ justifyContent: "center", display: "flex", marginTop: "50px" }}
       >
-        Blog
+        Quiz
       </h1>
     </div>
   );
 };
 
-export default Blog;
+export default Quiz;

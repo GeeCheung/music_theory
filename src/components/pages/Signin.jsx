@@ -3,6 +3,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import GoogleButton from "react-google-button";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { UserAuth } from "../../context/AuthContext";
 
 const Signin = () => {
@@ -10,7 +12,7 @@ const Signin = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { signIn, googleSignIn, facebookSignIn } = UserAuth();
+  const { signIn, googleSignIn } = UserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +21,7 @@ const Signin = () => {
       await signIn(email, password);
       navigate("/account");
     } catch (e) {
-      alert("Incorrect email address and password!");
+      toast.error("Incorrect email address and password!");
       setError(e.message);
       console.log(e.message);
     }
@@ -91,6 +93,7 @@ const Signin = () => {
           ></GoogleButton>
         </div>
       </div>
+      <ToastContainer position="top-center" />
     </div>
   );
 };
