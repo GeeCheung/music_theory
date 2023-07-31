@@ -1,17 +1,14 @@
 import {
-  FacebookAuthProvider,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
-  signOut
-} from 'firebase/auth';
-import { createContext, useContext, useEffect, useState } from 'react';
-import { auth } from '../firebase-config';
-
-
+  signOut,
+} from "firebase/auth";
+import { createContext, useContext, useEffect, useState } from "react";
+import { auth } from "../firebase-config";
 
 const UserContext = createContext();
 
@@ -22,28 +19,22 @@ export const AuthContextProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-   const signIn = (email, password) =>  {
-    return signInWithEmailAndPassword(auth, email, password)
-   }
+  const signIn = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   const logout = () => {
-      return signOut(auth)
-  }
+    return signOut(auth);
+  };
 
   const forgotPassword = (email) => {
-    return sendPasswordResetEmail(auth, email)
-}
+    return sendPasswordResetEmail(auth, email);
+  };
 
-const googleSignIn = () => {
-  const googleAuthProvider = new GoogleAuthProvider();
-  return signInWithPopup(auth, googleAuthProvider)
-}
-
-
-const facebookSignIn = () => {
-  const provider = new FacebookAuthProvider();
-  return signInWithPopup(auth, provider)
-}
+  const googleSignIn = () => {
+    const googleAuthProvider = new GoogleAuthProvider();
+    return signInWithPopup(auth, googleAuthProvider);
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -56,7 +47,16 @@ const facebookSignIn = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ createUser, user, logout, signIn, forgotPassword, googleSignIn, facebookSignIn}}>
+    <UserContext.Provider
+      value={{
+        createUser,
+        user,
+        logout,
+        signIn,
+        forgotPassword,
+        googleSignIn,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

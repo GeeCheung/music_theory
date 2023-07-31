@@ -1,35 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { UserAuth } from "../../context/AuthContext";
 import { db } from "../../firebase-config";
-import StoreChords from "../Chords";
+import StoreChords from "../Chords/Chords";
 import DisplayValueBox from "../DisplayValue.js";
-import StoreNote from "../Note.js";
-import { Piano } from "../Piano.js";
-import { Piano2 } from "../Piano_2.js";
-import StoreScales from "../Scales";
+import StoreNote from "../Notes/Note.js";
+import StoreScales from "../Scales/Scales";
+import Topnavbar from "../Sidebar/Sidebar";
 
 const Account = () => {
-  const { user, logout } = UserAuth();
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-      navigate("/");
-      console.log("You are logged out");
-    } catch (e) {
-      console.log(e.message);
-    }
-  };
-
   const [musictheory, setMusictheory] = useState([]);
-  var [note, setNote] = useState();
-  var [inversion, setInversion] = useState();
-  var [textValue, setTextValue] = useState();
-  var [noteArray, setnoteArray] = useState([]);
+  const [note, setNote] = useState();
+  const [inversion, setInversion] = useState();
+  const [textValue, setTextValue] = useState();
+  const [noteArray, setnoteArray] = useState([]);
 
   const musicnotesCollectionRef = collection(db, "musicnotes");
 
@@ -44,22 +28,8 @@ const Account = () => {
 
   return (
     <div>
-      {/* <div>
-        <StackedExample />
-      </div> */}
-
-      <div className="logout">
-        <p style={{ margin: "3px" }}> User email: {user && user.email}</p>
-      </div>
-
-      <div className="logout">
-        <button
-          color={"light"}
-          style={{ width: "60px", height: "30px" }}
-          onClick={handleLogout}
-        >
-          Logout
-        </button>
+      <div>
+        <Topnavbar />
       </div>
 
       <div>
@@ -92,8 +62,8 @@ const Account = () => {
       </div>
 
       <div className="pianoDiv">
-        <Piano2 noteArray={noteArray} />
-        <Piano />
+        {/*  <Pianotokey noteArray={noteArray} /> */}
+        {/*    <Piano /> */}
       </div>
     </div>
   );

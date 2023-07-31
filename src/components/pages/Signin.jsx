@@ -3,16 +3,16 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import GoogleButton from "react-google-button";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { UserAuth } from "../../context/AuthContext";
-import "./Signup.css";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { signIn, googleSignIn, facebookSignIn } = UserAuth();
-  const { forgotPassword } = UserAuth();
+  const { signIn, googleSignIn } = UserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const Signin = () => {
       await signIn(email, password);
       navigate("/account");
     } catch (e) {
-      alert("Incorrect email address and password!");
+      toast.error("Incorrect email address and password!");
       setError(e.message);
       console.log(e.message);
     }
@@ -37,29 +37,12 @@ const Signin = () => {
     }
   };
 
-  /*   const handleFacebookLogin = async (e) => {
-    setError('')
-    e.preventDefault();
-    try {
-      await facebookSignIn();
-    } catch (error) {
-      console.log(error.message);
-    }
-  }; */
-
   const handleResetPassword = async (e) => {
     e.preventDefault();
-    setError("");
     try {
-      if (email) {
-        forgotPassword(email);
-        alert("password email reset link sent");
-      } else {
-        alert("no email entered");
-      }
-    } catch (e) {
-      setError(e.message);
-      console.log(e.message);
+      navigate("/forgotpassword");
+    } catch (error) {
+      console.log(error.message);
     }
   };
 
@@ -67,11 +50,12 @@ const Signin = () => {
     <div className="outerSignupDiv">
       <div>
         <h1 className="contentDiv">Sign Into account</h1>
-        <p>
-          Do not have an account yet? <Link to="/signup">Sign up.</Link>
-          <p>
-            <Link onClick={handleResetPassword}>Forgot your password?</Link>
-          </p>
+
+        <p style={{ margin: "5px" }}>
+          Do not have an account yet?{" "}
+          <Link to="/signup" style={{ color: "white" }}>
+            Sign up.
+          </Link>
         </p>
 
         <Form onSubmit={handleSubmit}>
@@ -92,6 +76,11 @@ const Signin = () => {
               placeholder="Password"
             />
           </Form.Group>
+          <p>
+            <Link style={{ color: "white" }} onClick={handleResetPassword}>
+              Forgot your password?
+            </Link>
+          </p>
           <Button style={{ width: "400px" }} variant="primary" type="submit">
             Login
           </Button>
@@ -102,9 +91,9 @@ const Signin = () => {
             className="googlesignin"
             onClick={handleGoogleSignIn}
           ></GoogleButton>
-          {/* <Button onClick={handleFacebookLogin} style={{color: "white"}}  >Sign In with Facebook</Button>  */}
         </div>
       </div>
+      <ToastContainer position="top-center" />
     </div>
   );
 };

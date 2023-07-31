@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { UserAuth } from "../../context/AuthContext";
-import "./Signup.css";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -16,8 +17,12 @@ const Signup = () => {
     e.preventDefault();
     setError("");
     try {
-      await createUser(email, password);
-      navigate("/account");
+      if (email && password) {
+        await createUser(email, password);
+        navigate("/account");
+      } else {
+        toast.error("Please enter a email and password");
+      }
     } catch (e) {
       setError(e.message);
       alert(e.message);
@@ -30,7 +35,7 @@ const Signup = () => {
         <h1 className="contentDiv">Sign up for an account</h1>
         <p>
           Already have an account yet?{" "}
-          <Link to="/" className="underline">
+          <Link style={{ color: "white" }} to="/" className="underline">
             Sign in.
           </Link>
         </p>
@@ -54,8 +59,9 @@ const Signup = () => {
             />
           </Form.Group>
           <Button style={{ width: "420px" }} variant="primary" type="submit">
-            Submit
+            Sign up
           </Button>
+          <ToastContainer position="top-center" />
         </Form>
       </div>
     </div>

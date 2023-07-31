@@ -1,6 +1,6 @@
-import "./Key.css";
+import "../../components/Key.css";
 
-const Key2 = ({ note, key, noteArray }) => {
+const Key2 = ({ note, noteArray }) => {
   let keyClassName = "key";
 
   const noteIsFlat = (note) => {
@@ -32,3 +32,5 @@ const Key2 = ({ note, key, noteArray }) => {
 };
 
 export { Key2 };
+
+/// Change all this logic///

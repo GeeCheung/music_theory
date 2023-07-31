@@ -12,14 +12,13 @@ body {
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("../piano-background.jpg");
+    url("../src/content/piano-background.jpg");
   color: rgb(255, 255, 255);
   background-size: cover;
 }
 
 .btn {
   display: inline-block;
-  color: #000000;
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -30,6 +29,11 @@ body {
   font-family: inherit;
 }
 
+.btn-danger {
+  --bs-btn-bg: #f61a30;
+  --bs-btn-hover-bg: #f61a30;
+}
+
 .contentDiv {
   display: flex;
   justify-content: space-evenly;
@@ -37,14 +41,47 @@ body {
   margin-bottom: 0px;
 }
 
-.logout {
-  display: flex;
-  justify-content: center;
+.right-button {
+  position: absolute;
+  top: 50%; /* Adjust this value as needed to vertically center the button */
+  right: 18%; /* Adjust this value to control the distance from the right side */
+  transform: translateY(
+    -50%
+  ); /* Vertically center the button relative to its container */
+}
+
+.logonav {
+  position: absolute;
+  top: 50%; /* Adjust this value as needed to vertically center the button */
+  right: 38%; /* Adjust this value to control the distance from the right side */
+  transform: translateY(
+    -50%
+  ); /* Vertically center the button relative to its container */
+}
+
+.right-align {
+  position: absolute;
+  top: 50%; /* Adjust this value as needed to vertically center the element */
+  right: 130px; /* Adjust this value to control the distance from the right side */
+  transform: translateY(
+    -50%
+  ); /* Vertically center the element relative to its container */
+}
+
+.centered-h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 37px;
+  font-family: Impact, fantasy;
+  color: #f61a30;
 }
 
 .notes {
-  margin-top: 15px;
+  margin-top: 55px;
   display: flex;
+
   justify-content: space-evenly;
 }
 
@@ -56,10 +93,6 @@ body {
 .scales {
   display: flex;
   justify-content: space-evenly;
-}
-
-.navbar {
-  flex-direction: flex-end;
 }
 
 .pianoDiv {
@@ -74,9 +107,76 @@ body {
 }
 
 .highlighted:hover {
-  background-color: rgb(0, 250, 12);
+  background-color: #f61a30;
 }
 
 .highlighted {
-  background-color: rgb(0, 250, 12);
+  background-color: #f61a30;
+}
+
+.outerSignupDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.display-value-box {
+  padding: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
+.piano {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbarbg {
+  background-color: #020815;
+}
+
+.active {
+  color: #f61a30;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbarstyle {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbarstyle2 {
+  color: white;
+  text-decoration: none;
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.textcenter {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  .centered-h1 {
+    display: none;
+  }
+  .logonav {
+    display: none;
+  }
+}
+
+.inputquiz {
+  margin: 5px;
+  width: 40px;
+  height: 30px;
+  display: block;
 }

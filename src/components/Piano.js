@@ -2,7 +2,6 @@ import _ from "lodash";
 import React from "react";
 
 import { KEY_TO_NOTE, NOTES, VALID_KEYS } from "../global/constants";
-import "./Piano.css";
 import { Key } from "./key";
 
 class Piano extends React.Component {
