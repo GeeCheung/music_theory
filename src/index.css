@@ -173,3 +173,10 @@ body {
     display: none;
   }
 }
+
+.inputquiz {
+  margin: 5px;
+  width: 40px;
+  height: 30px;
+  display: block;
+}

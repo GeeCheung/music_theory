@@ -50,7 +50,7 @@ function Topnavbar() {
               className={({ isActive }) =>
                 isActive ? "active" : "navbarstyle"
               }
-              to="/QUIZ"
+              to="/quiz"
             >
               QUIZ
             </NavLink>
