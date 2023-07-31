@@ -1,8 +1,8 @@
 import _ from "lodash";
-import { NOTES2 } from "../global/constants";
+import { NOTES2 } from "../../global/constants";
 import { Key2 } from "./key_2";
 
-const Piano2 = ({ noteArray }) => {
+const Pianotokey = ({ noteArray }) => {
   const keys = _.map(NOTES2, (note, index) => {
     return <Key2 key={index} note={note} noteArray={noteArray} />;
   });
@@ -14,4 +14,4 @@ const Piano2 = ({ noteArray }) => {
   );
 };
 
-export { Piano2 };
+export default Pianotokey;

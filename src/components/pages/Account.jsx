@@ -2,11 +2,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../../firebase-config";
-import StoreChords from "../Chords";
+import StoreChords from "../Chords/Chords";
 import DisplayValueBox from "../DisplayValue.js";
-import StoreNote from "../Note.js";
-import { Piano2 } from "../Piano_2.js";
-import StoreScales from "../Scales";
+import StoreNote from "../Notes/Note.js";
+import StoreScales from "../Scales/Scales";
 import Topnavbar from "../Sidebar/Sidebar";
 
 const Account = () => {
@@ -63,7 +62,7 @@ const Account = () => {
       </div>
 
       <div className="pianoDiv">
-        <Piano2 noteArray={noteArray} />
+        {/*  <Pianotokey noteArray={noteArray} /> */}
         {/*    <Piano /> */}
       </div>
     </div>

@@ -17,7 +17,6 @@ const Quiz = () => {
   const [inputValue5, setInputValue5] = useState("");
   const [inputValue6, setInputValue6] = useState("");
   const [inputValue7, setInputValue7] = useState("");
-  const [isHolding, setIsHolding] = useState(false);
 
   const scaleKeys = [
     "A",
@@ -31,7 +30,8 @@ const Quiz = () => {
     "Bb",
     "Db",
     "Eb",
-    "Gb",
+    "F#",
+    "F#/Gb",
   ];
 
   const [keyvalues, setKeyvalues] = useState("");
@@ -42,6 +42,7 @@ const Quiz = () => {
   useEffect(() => {
     const getMusicnotes = async () => {
       const data = await getDocs(musicnotesCollectionRef);
+      console.log(data.docs);
       setScalequiz(data.docs);
     };
     getMusicnotes();
@@ -129,7 +130,7 @@ const Quiz = () => {
       >
         Quiz
       </h1>
-      <p className="chords">All sharp notes are in wrtten in flat e.g Ab, Eb</p>
+
       <div className="chords">
         <Buttons
           color={"light"}

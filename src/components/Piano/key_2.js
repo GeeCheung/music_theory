@@ -1,4 +1,4 @@
-import "./Key.css";
+import "../../components/Key.css";
 
 const Key2 = ({ note, noteArray }) => {
   let keyClassName = "key";
@@ -32,3 +32,5 @@ const Key2 = ({ note, noteArray }) => {
 };
 
 export { Key2 };
+
+/// Change all this logic///

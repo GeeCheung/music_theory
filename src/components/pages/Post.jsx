@@ -1,6 +1,6 @@
 import Topnavbar from "../Sidebar/Sidebar";
 
-const Pricing = () => {
+const Post = () => {
   return (
     <div>
       <div>
@@ -10,10 +10,10 @@ const Pricing = () => {
       <h1
         style={{ justifyContent: "center", display: "flex", marginTop: "50px" }}
       >
-        Pricing
+        Post
       </h1>
     </div>
   );
 };
 
-export default Pricing;
+export default Post;

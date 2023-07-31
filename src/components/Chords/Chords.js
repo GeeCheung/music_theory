@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Buttons from "./Buttons";
+import Buttons from "../Buttons";
 
 const StoreChords = ({
   note,
@@ -108,8 +108,6 @@ const StoreChords = ({
         <Buttons
           color={"light"}
           text={"Get Dominant 5th"}
-          id={"fifth"}
-          selectedChord={selectedChord}
           onClick={() =>
             handleChordClick(note, (scales = "Major"), (whatchord = "fifth"))
           }
@@ -117,8 +115,6 @@ const StoreChords = ({
         <Buttons
           color={"light"}
           text={"Get Triad"}
-          id={"triads"}
-          selectedChord={selectedChord}
           onClick={() =>
             handleChordClick(note, (scales = "Major"), (whatchord = "triads"))
           }
@@ -126,8 +122,6 @@ const StoreChords = ({
         <Buttons
           color={"light"}
           text={"Get 7th chord"}
-          id={"7th"}
-          selectedChord={selectedChord}
           onClick={() =>
             handleChordClick(note, (scales = "Major"), (whatchord = "7th"))
           }
@@ -135,8 +129,6 @@ const StoreChords = ({
         <Buttons
           color={"light"}
           text={"Get 9th chord"}
-          id={"9th"}
-          selectedChord={selectedChord}
           onClick={() =>
             handleChordClick(note, (scales = "Major"), (whatchord = "9th"))
           }
@@ -144,8 +136,6 @@ const StoreChords = ({
         <Buttons
           color={"light"}
           text={"Get Relative Minor"}
-          id={"relative_minor"}
-          selectedChord={selectedChord}
           onClick={() =>
             handleChordClick(
               note,

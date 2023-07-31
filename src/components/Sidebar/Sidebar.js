@@ -61,9 +61,9 @@ function Topnavbar() {
               className={({ isActive }) =>
                 isActive ? "active" : "navbarstyle"
               }
-              to="/pricing"
+              to="/post"
             >
-              PRICING
+              POST
             </NavLink>
           </Nav.Link>
 
@@ -101,6 +101,22 @@ function Topnavbar() {
             height="80"
             className="logonav"
           />
+
+          <Nav.Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "active" : "navbarstyle"
+              }
+              style={{
+                position: "absolute",
+                top: "30%",
+                right: "24%",
+              }}
+              to="/contact-me"
+            >
+              CONTACT ME
+            </NavLink>
+          </Nav.Link>
 
           <div className="right-button">
             {isAuthenticated ? (

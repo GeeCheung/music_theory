@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Buttons from "./Buttons";
+import Buttons from "../Buttons";
 
 const StoreScales = ({
   note,
@@ -10,12 +9,8 @@ const StoreScales = ({
   setnoteArray,
   scales,
   pentantonic,
-  insert,
 }) => {
-  const [selectedScale, setSelectedScale] = useState("");
-
   const handleScaleClick = (note) => {
-    setSelectedScale(insert);
     getScale(note);
   };
 
@@ -68,77 +63,41 @@ const StoreScales = ({
       <div className="subh">
         <Buttons
           color={"light"}
-          id_scale={"1"}
           text={"Get Major scale"}
-          selectedScale={selectedScale}
           onClick={() =>
-            handleScaleClick(
-              note,
-              (scales = "Major"),
-              (pentantonic = false),
-              (insert = "1")
-            )
+            handleScaleClick(note, (scales = "Major"), (pentantonic = false))
           }
         ></Buttons>
         <Buttons
           color={"light"}
-          id_scale={"2"}
           text={"Get Minor scale"}
-          selectedScale={selectedScale}
           onClick={() =>
-            handleScaleClick(
-              note,
-              (scales = "Minor"),
-              (pentantonic = false),
-              (insert = "2")
-            )
+            handleScaleClick(note, (scales = "Minor"), (pentantonic = false))
           }
         ></Buttons>
         <Buttons
           color={"light"}
-          id_scale={"3"}
           text={"Get Pentatonic Major scale"}
-          selectedScale={selectedScale}
           onClick={() =>
-            handleScaleClick(
-              note,
-              (scales = "Major"),
-              (pentantonic = true),
-              (insert = "3")
-            )
+            handleScaleClick(note, (scales = "Major"), (pentantonic = true))
           }
         ></Buttons>
         <Buttons
           color={"light"}
-          id_scale={"4"}
           text={"Get Pentatonic Minor scale"}
-          selectedScale={selectedScale}
           onClick={() =>
-            handleScaleClick(
-              note,
-              (scales = "Minor"),
-              (pentantonic = true),
-              (insert = "4")
-            )
+            handleScaleClick(note, (scales = "Minor"), (pentantonic = true))
           }
         ></Buttons>
         <Buttons
           color={"light"}
-          id_scale={"5"}
           text={"Get Blues Major scale"}
-          selectedScale={selectedScale}
-          onClick={() =>
-            handleScaleClick(note, (scales = "Blues_Major"), (insert = "5"))
-          }
+          onClick={() => handleScaleClick(note, (scales = "Blues_Major"))}
         ></Buttons>
         <Buttons
           color={"light"}
-          id_scale={"6"}
           text={"Get Blues Minor scale"}
-          selectedScale={selectedScale}
-          onClick={() =>
-            handleScaleClick(note, (scales = "Blues_Minor"), (insert = "6"))
-          }
+          onClick={() => handleScaleClick(note, (scales = "Blues_Minor"))}
         ></Buttons>
         <ToastContainer position="top-center" />
       </div>
