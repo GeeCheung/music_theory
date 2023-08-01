@@ -1,31 +1,55 @@
+import emailjs from "@emailjs/browser";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState } from "react";
-import Topnavbar from "../Sidebar/Sidebar";
+import React, { useRef, useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
+import Footer from "../Footer/Footer";
+import Topnavbar from "../Navbars/TopNavbar";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [isAlertVisible, setIsAlertVisible] = React.useState(false);
+  const form = useRef();
+  const [Successemail, setSuccessemail] = useState("");
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_nmyohr3",
+        "template_qi8r8k8",
+        form.current,
+        "hzwfGGYCbC9o6vKAd"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          setSuccessemail("Great email sent!");
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(formData);
+  setTimeout(() => {
+    setIsAlertVisible(false);
+  }, 7000);
+
+  const handleButtonClick = () => {
+    setIsAlertVisible(true);
   };
 
   return (
     <div>
       <Topnavbar />
-      <div style={{ margin: "5%" }}>
-        <div className="row justify-content-center">
+      <h1 className="subh" style={{ marginTop: "3%" }}>
+        Contact Me
+      </h1>
+      <div style={{ marginTop: "0.5%" }}>
+        <div className="subh">
           <div className="col-md-6">
-            <form onSubmit={handleSubmit}>
+            <form ref={form} onSubmit={sendEmail}>
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
                   Name
@@ -35,8 +59,6 @@ const ContactForm = () => {
                   className="form-control"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -50,8 +72,6 @@ const ContactForm = () => {
                   className="form-control"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
                   required
                 />
               </div>
@@ -64,18 +84,37 @@ const ContactForm = () => {
                   className="form-control"
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
                   required
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary">
+              <button
+                type="submit"
+                className="btn btn-primary"
+                onClick={handleButtonClick}
+              >
                 Submit
               </button>
             </form>
+            {isAlertVisible && (
+              <div className="alert-container">
+                <div className="alert-inner">{Successemail}</div>
+              </div>
+            )}
           </div>
         </div>
+      </div>
+
+      <div className="subh">
+        {" "}
+        <img
+          className="profileimg"
+          src={require("../../content/profile_pic.jpg")}
+        />
+      </div>
+      <div className="subh">
+        {" "}
+        <Footer />
       </div>
     </div>
   );

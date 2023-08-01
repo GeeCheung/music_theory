@@ -4,9 +4,11 @@ import { useEffect, useState } from "react";
 import { db } from "../../firebase-config";
 import StoreChords from "../Chords/Chords";
 import DisplayValueBox from "../DisplayValue.js";
+import Footer from "../Footer/Footer";
+import Topnavbar from "../Navbars/TopNavbar";
 import StoreNote from "../Notes/Note.js";
+import Pianotokey from "../Piano/Piano_2";
 import StoreScales from "../Scales/Scales";
-import Topnavbar from "../Sidebar/Sidebar";
 
 const Account = () => {
   const [musictheory, setMusictheory] = useState([]);
@@ -62,8 +64,13 @@ const Account = () => {
       </div>
 
       <div className="pianoDiv">
-        {/*  <Pianotokey noteArray={noteArray} /> */}
+        <Pianotokey noteArray={noteArray} />
         {/*    <Piano /> */}
+      </div>
+      <br />
+      <div className="App">
+        {" "}
+        <Footer />
       </div>
     </div>
   );

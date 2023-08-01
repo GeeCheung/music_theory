@@ -1,4 +1,5 @@
-import Topnavbar from "../Sidebar/Sidebar";
+import Footer from "../Footer/Footer";
+import Topnavbar from "../Navbars/TopNavbar";
 
 const Basics = () => {
   return (
@@ -124,6 +125,10 @@ const Basics = () => {
             ></iframe>
           </div>
         </div>
+      </div>
+      <div className="App">
+        {" "}
+        <Footer />
       </div>
     </div>
   );

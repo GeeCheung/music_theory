@@ -59,7 +59,7 @@ const StoreScales = ({
   return (
     <div>
       <br />
-      <h3 className="subh">Scales</h3>
+      <h1 className="subh">Scales</h1>
       <div className="subh">
         <Buttons
           color={"light"}

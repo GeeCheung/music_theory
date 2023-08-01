@@ -1,22 +1,18 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import { collection, getDocs } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import "react-toastify/dist/ReactToastify.css";
+import React, { useEffect, useState } from "react";
 import { db } from "../../firebase-config";
 import Buttons from "../Buttons";
 import DisplayValueBox from "../DisplayValue.js";
-import Topnavbar from "../Sidebar/Sidebar";
+import Footer from "../Footer/Footer";
+import Topnavbar from "../Navbars/TopNavbar";
 
 const Quiz = () => {
-  const musicnotesCollectionRef = collection(db, "musicnotes");
   const [scalequiz, setScalequiz] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-  const [inputValue2, setInputValue2] = useState("");
-  const [inputValue3, setInputValue3] = useState("");
-  const [inputValue4, setInputValue4] = useState("");
-  const [inputValue5, setInputValue5] = useState("");
-  const [inputValue6, setInputValue6] = useState("");
-  const [inputValue7, setInputValue7] = useState("");
+  const [note, setNote] = useState("");
+  const [quizResult, setQuizResult] = useState("");
+  const [cheat, setCheat] = useState("");
+  const [inputValues, setInputValues] = useState(["", "", "", "", "", "", ""]);
+  const [keyvalues, setKeyvalues] = useState([]);
 
   const scaleKeys = [
     "A",
@@ -28,21 +24,15 @@ const Quiz = () => {
     "G",
     "Ab",
     "Bb",
-    "Db",
     "Eb",
     "F#",
-    "F#/Gb",
+    "C#",
   ];
 
-  const [keyvalues, setKeyvalues] = useState("");
-  const [note, setNote] = useState();
-  const [quizResult, setQuizResult] = useState("");
-  const [cheat, setCheat] = useState("");
-
   useEffect(() => {
+    const musicnotesCollectionRef = collection(db, "musicnotes");
     const getMusicnotes = async () => {
       const data = await getDocs(musicnotesCollectionRef);
-      console.log(data.docs);
       setScalequiz(data.docs);
     };
     getMusicnotes();
@@ -51,59 +41,37 @@ const Quiz = () => {
   const getScalekey = (note, scales) => {
     scalequiz.forEach((document) => {
       if (document["id"] === scales) {
-        var getkey =
+        const getkey =
           document._document.data.value.mapValue.fields[note].stringValue.split(
             " "
           );
         setKeyvalues(getkey);
         setNote(note);
+        setCheat(getkey.join(" "));
       }
     });
   };
 
-  const handleInputChange = (event, inputNumber) => {
-    const inputValue = event.target.value;
-    switch (inputNumber) {
-      case 1:
-        setInputValue(inputValue);
-        break;
-      case 2:
-        setInputValue2(inputValue);
-        break;
-      case 3:
-        setInputValue3(inputValue);
-        break;
-      case 4:
-        setInputValue4(inputValue);
-        break;
-      case 5:
-        setInputValue5(inputValue);
-        break;
-      case 6:
-        setInputValue6(inputValue);
-        break;
-      case 7:
-        setInputValue7(inputValue);
-        break;
-      default:
-        break;
-    }
+  const handleInputChange = (event, index) => {
+    const newInputValues = [...inputValues];
+    newInputValues[index] = event.target.value;
+    setInputValues(newInputValues);
   };
 
   const handleQuizCheck = () => {
-    if (
-      keyvalues[0] === inputValue &&
-      keyvalues[1] === inputValue2 &&
-      keyvalues[2] === inputValue3 &&
-      keyvalues[3] === inputValue4 &&
-      keyvalues[4] === inputValue5 &&
-      keyvalues[5] === inputValue6 &&
-      keyvalues[6] === inputValue7
-    ) {
-      setQuizResult("Success!");
-    } else {
-      setQuizResult("Incorrect!");
-    }
+    const isCorrect = inputValues.every(
+      (value, index) => value === keyvalues[index]
+    );
+    setQuizResult(isCorrect ? "Correct!" : "Incorrect!");
+  };
+
+  const handleClick = () => {
+    const randomIndex = Math.floor(Math.random() * scaleKeys.length);
+    const randomKey = scaleKeys[randomIndex];
+    getScalekey(randomKey, "Major");
+    setQuizResult("");
+    setCheat("");
+    setInputValues(["", "", "", "", "", "", ""]);
   };
 
   const handleCheat = () => {
@@ -112,116 +80,52 @@ const Quiz = () => {
     }
   };
 
-  const handleClick = () => {
-    const randomIndex = Math.floor(Math.random() * scaleKeys.length);
-    const randomKey = scaleKeys[randomIndex];
-    getScalekey(randomKey, "Major");
-    setCheat("");
-    setQuizResult("");
-  };
-
   return (
     <div>
-      <div>
-        <Topnavbar />
-      </div>
+      <Topnavbar />
       <h1
         style={{ justifyContent: "center", display: "flex", marginTop: "50px" }}
       >
         Quiz
       </h1>
+      <h6 className="subh">Major</h6>
 
       <div className="chords">
         <Buttons
           color={"light"}
           text={"Get random key"}
           onClick={handleClick}
-        ></Buttons>
+        />
       </div>
       <div>
         <DisplayValueBox value={note} />
       </div>
       <div className="chords">
-        <label>
-          1st{" "}
-          <input
-            className="inputquiz"
-            type="text"
-            value={inputValue}
-            name="myInput"
-            onChange={(event) => handleInputChange(event, 1)}
-          />{" "}
-        </label>
-        <label>
-          2nd{" "}
-          <input
-            className="inputquiz"
-            type="text"
-            value={inputValue2}
-            name="myInput"
-            onChange={(event) => handleInputChange(event, 2)}
-          />{" "}
-        </label>
-        <label>
-          3rd{" "}
-          <input
-            className="inputquiz"
-            type="text"
-            value={inputValue3}
-            name="myInput"
-            onChange={(event) => handleInputChange(event, 3)}
-          />{" "}
-        </label>
-        <label>
-          4th{" "}
-          <input
-            className="inputquiz"
-            type="text"
-            value={inputValue4}
-            name="myInput"
-            onChange={(event) => handleInputChange(event, 4)}
-          />{" "}
-        </label>
-        <label>
-          5th{" "}
-          <input
-            className="inputquiz"
-            type="text"
-            value={inputValue5}
-            name="myInput"
-            onChange={(event) => handleInputChange(event, 5)}
-          />{" "}
-        </label>
-        <label>
-          6th{" "}
-          <input
-            className="inputquiz"
-            type="text"
-            value={inputValue6}
-            name="myInput"
-            onChange={(event) => handleInputChange(event, 6)}
-          />{" "}
-        </label>
-        <label>
-          7th{" "}
-          <input
-            className="inputquiz"
-            type="text"
-            value={inputValue7}
-            name="myInput"
-            onChange={(event) => handleInputChange(event, 7)}
-          />{" "}
-        </label>
+        {inputValues.map((inputValue, index) => (
+          <label
+            key={index}
+            style={{ marginLeft: "10px", textAlign: "center" }}
+          >
+            {index + 1}{" "}
+            <input
+              className="inputquiz"
+              type="text"
+              value={inputValue}
+              name={`myInput${index}`}
+              onChange={(event) => handleInputChange(event, index)}
+            />
+          </label>
+        ))}
       </div>
       <div className="chords">
         <Buttons
           color={"light"}
           text={"Check your answers"}
           onClick={handleQuizCheck}
-        ></Buttons>
+        />
       </div>
       <div className="chords">
-        <Buttons color={"light"} text={"cheat"} onClick={handleCheat}></Buttons>
+        <Buttons color={"light"} text={"cheat"} onClick={handleCheat} />
       </div>
       <p
         style={{
@@ -229,21 +133,29 @@ const Quiz = () => {
           display: "flex",
           fontWeight: "bold",
           fontSize: "20px",
+          margin: "0px",
+          padding: "0px",
         }}
       >
         {cheat}
       </p>
       <p
         style={{
-          color: quizResult === "Success!" ? "green" : "red",
+          color: quizResult === "Correct!" ? "green" : "red",
           justifyContent: "center",
           display: "flex",
           fontWeight: "bold",
-          fontSize: "20px",
+          fontSize: "50px",
+          margin: "0px",
+          padding: "0px",
         }}
       >
         {quizResult}
       </p>
+      <div className="App">
+        {" "}
+        <Footer />
+      </div>
     </div>
   );
 };

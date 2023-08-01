@@ -3,22 +3,24 @@ import "../../components/Key.css";
 const Key2 = ({ note, noteArray }) => {
   let keyClassName = "key";
 
-  const noteIsFlat = (note) => {
+  const noteIsFlatOrSharp = (note) => {
     return note.length > 1;
   };
 
-  const isFlat = noteIsFlat(note);
+  const isFlatOrSharp = noteIsFlatOrSharp(note);
 
-  if (isFlat) {
+  if (isFlatOrSharp) {
     keyClassName += " flat";
   }
+
+  /// add some new  logic here///
 
   if (noteArray.includes(note)) {
     keyClassName += " pressed";
   }
 
   let keyElement;
-  if (isFlat) {
+  if (isFlatOrSharp) {
     keyElement = <div className={keyClassName}></div>;
   } else {
     keyElement = (
@@ -32,5 +34,3 @@ const Key2 = ({ note, noteArray }) => {
 };
 
 export { Key2 };
-
-/// Change all this logic///

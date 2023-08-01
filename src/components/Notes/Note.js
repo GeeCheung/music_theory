@@ -11,7 +11,7 @@ const StoreNote = ({ setNote, note }) => {
 
   return (
     <div>
-      <h3 className="subh">Notes</h3>
+      <h1 className="subh">Notes</h1>
       <div className="subh">
         <Buttons
           color={"light"}
@@ -23,11 +23,11 @@ const StoreNote = ({ setNote, note }) => {
         ></Buttons>
         <Buttons
           color={"light"}
-          text={"C#/Db"}
-          id={"Db"}
+          text={"C#"}
+          id={"C#"}
           note={note}
           selectedNote={selectedNote}
-          onClick={() => handleNoteClick("Db")}
+          onClick={() => handleNoteClick("C#")}
         ></Buttons>
         <Buttons
           color={"light"}
@@ -39,7 +39,7 @@ const StoreNote = ({ setNote, note }) => {
         ></Buttons>
         <Buttons
           color={"light"}
-          text={"D#/Eb"}
+          text={"Eb"}
           id={"Eb"}
           note={note}
           selectedNote={selectedNote}
@@ -63,11 +63,11 @@ const StoreNote = ({ setNote, note }) => {
         ></Buttons>
         <Buttons
           color={"light"}
-          text={"F#/Gb"}
-          id={"Gb"}
+          text={"F#"}
+          id={"F#"}
           note={note}
           selectedNote={selectedNote}
-          onClick={() => handleNoteClick("Gb")}
+          onClick={() => handleNoteClick("F#")}
         ></Buttons>
         <Buttons
           color={"light"}
@@ -79,7 +79,7 @@ const StoreNote = ({ setNote, note }) => {
         ></Buttons>
         <Buttons
           color={"light"}
-          text={"G#/Ab"}
+          text={"Ab"}
           id={"Ab"}
           note={note}
           selectedNote={selectedNote}
@@ -95,7 +95,7 @@ const StoreNote = ({ setNote, note }) => {
         ></Buttons>
         <Buttons
           color={"light"}
-          text={"A#/Bb"}
+          text={"Bb"}
           id={"Bb"}
           note={note}
           selectedNote={selectedNote}

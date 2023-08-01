@@ -180,3 +180,32 @@ body {
   height: 30px;
   display: block;
 }
+
+.App {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.displayuploaded {
+  display: flex;
+  border-image-width: 20px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profileimg {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  border: 10px solid #ffff;
+}
+
+.imageStyle {
+  width: "200px";
+  height: "150px";
+  display: inline-block;
+  margin: "5px";
+}
