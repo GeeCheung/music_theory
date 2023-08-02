@@ -20,9 +20,23 @@ const App = () => {
           <Route path="/" element={<Signin />} />
           <Route path="/forgotpassword" element={<Forgotpassword />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/quiz" element={<Quiz />} />
-          <Route path="/post" element={<Post />} />
           <Route path="/contact-me" element={<ContactForm />} />
+          <Route
+            path="/post"
+            element={
+              <ProtectedRoute>
+                <Post />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/quiz"
+            element={
+              <ProtectedRoute>
+                <Quiz />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/account"
             element={

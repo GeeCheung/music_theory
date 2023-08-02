@@ -103,7 +103,7 @@ const StoreChords = ({
   return (
     <div>
       <br />
-      <h1 className="subh">Chords</h1>
+      <h1 className="subh">Major Chords</h1>
       <div className="subh">
         <Buttons
           color={"light"}

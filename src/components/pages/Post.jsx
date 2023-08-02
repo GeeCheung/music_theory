@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { v4 } from "uuid";
 import { storage } from "../../firebase-config";
+import Buttons from "../Buttons";
 import Footer from "../Footer/Footer";
 import Topnavbar from "../Navbars/TopNavbar";
 
@@ -39,23 +40,29 @@ const Post = () => {
       </div>
 
       <h1
-        style={{ justifyContent: "center", display: "flex", marginTop: "50px" }}
+        style={{ justifyContent: "center", display: "flex", marginTop: "80px" }}
       >
         Post
       </h1>
+
       <input
         type="file"
         onChange={(event) => {
           setImageUpload(event.target.files[0]);
         }}
       />
-      <button onClick={uploadFile}> Upload Image</button>
-      <div style={{ marginRight: "5%", marginLeft: "9%" }}>
+
+      <Buttons color={"danger"} text={"Upload Image"} onClick={uploadFile}>
+        {" "}
+        Upload Image
+      </Buttons>
+
+      <div style={{ marginLeft: "6%", marginRight: "5%" }}>
         {" "}
         {imageUrls.map((url) => {
           return (
             <img
-              style={{ width: "200px", height: "250px", margin: "10px" }}
+              style={{ width: "300px", height: "350px", margin: "15px" }}
               src={url}
             />
           );

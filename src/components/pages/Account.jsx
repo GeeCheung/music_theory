@@ -34,7 +34,7 @@ const Account = () => {
         <Topnavbar />
       </div>
 
-      <div>
+      <div className="containeraccount">
         <div className="notes">
           <StoreNote note={note} setNote={setNote} />
         </div>
