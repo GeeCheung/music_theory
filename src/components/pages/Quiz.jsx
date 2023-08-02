@@ -13,6 +13,9 @@ const Quiz = () => {
   const [cheat, setCheat] = useState("");
   const [inputValues, setInputValues] = useState(["", "", "", "", "", "", ""]);
   const [keyvalues, setKeyvalues] = useState([]);
+  const [selectquiz, setSelectQuiz] = useState("Major");
+  const [time, setTime] = React.useState(0);
+  const [timerOn, setTimerOn] = React.useState(false);
 
   const scaleKeys = [
     "A",
@@ -63,15 +66,18 @@ const Quiz = () => {
       (value, index) => value === keyvalues[index]
     );
     setQuizResult(isCorrect ? "Correct!" : "Incorrect!");
+    setTimerOn(isCorrect ? false : true);
   };
 
   const handleClick = () => {
     const randomIndex = Math.floor(Math.random() * scaleKeys.length);
     const randomKey = scaleKeys[randomIndex];
-    getScalekey(randomKey, "Major");
+    getScalekey(randomKey, `${selectquiz}`);
     setQuizResult("");
     setCheat("");
     setInputValues(["", "", "", "", "", "", ""]);
+    setTimerOn(true);
+    setTime(0);
   };
 
   const handleCheat = () => {
@@ -79,6 +85,20 @@ const Quiz = () => {
       setCheat(`${keyvalues.join(" ")}`);
     }
   };
+
+  React.useEffect(() => {
+    let interval = null;
+
+    if (timerOn) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 10);
+      }, 10);
+    } else if (!timerOn) {
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval);
+  }, [timerOn]);
 
   return (
     <div>
@@ -88,7 +108,17 @@ const Quiz = () => {
       >
         Quiz
       </h1>
-      <h6 className="subh">Major</h6>
+
+      <div className="chords">
+        {" "}
+        <select
+          value={selectquiz}
+          onChange={(e) => setSelectQuiz(e.target.value)}
+        >
+          <option>Major</option>
+          <option>Minor</option>
+        </select>
+      </div>
 
       <div className="chords">
         <Buttons
@@ -152,6 +182,11 @@ const Quiz = () => {
       >
         {quizResult}
       </p>
+      <div className="timer">
+        <span>{("0" + Math.floor((time / 60000) % 60)).slice(-2)}:</span>
+        <span>{("0" + Math.floor((time / 1000) % 60)).slice(-2)}:</span>
+        <span>{("0" + ((time / 10) % 100)).slice(-2)}</span>
+      </div>
       <div className="App">
         {" "}
         <Footer />

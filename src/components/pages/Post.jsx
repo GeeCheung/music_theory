@@ -1,5 +1,6 @@
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import { v4 } from "uuid";
 import { storage } from "../../firebase-config";
 import Footer from "../Footer/Footer";
@@ -14,7 +15,7 @@ const Post = () => {
     if (imageUpload == null) return;
     const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
     uploadBytes(imageRef, imageUpload).then((snapshot) => {
-      alert("uploaded");
+      toast.success("Image Uploaded");
       getDownloadURL(snapshot.ref).then((url) => {
         setImageUrls((prev) => [...prev, url]);
       });
@@ -63,6 +64,7 @@ const Post = () => {
 
       <div className="app">
         {" "}
+        <ToastContainer position="top-center" />
         <Footer />
       </div>
     </div>

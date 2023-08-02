@@ -1,14 +1,13 @@
 import emailjs from "@emailjs/browser";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../Footer/Footer";
 import Topnavbar from "../Navbars/TopNavbar";
 
 const ContactForm = () => {
-  const [isAlertVisible, setIsAlertVisible] = React.useState(false);
   const form = useRef();
-  const [Successemail, setSuccessemail] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -23,21 +22,13 @@ const ContactForm = () => {
       .then(
         (result) => {
           console.log(result.text);
-          setSuccessemail("Great email sent!");
+          toast.success("Sent Email");
           form.current.reset();
         },
         (error) => {
           console.log(error.text);
         }
       );
-  };
-
-  setTimeout(() => {
-    setIsAlertVisible(false);
-  }, 7000);
-
-  const handleButtonClick = () => {
-    setIsAlertVisible(true);
   };
 
   return (
@@ -48,7 +39,7 @@ const ContactForm = () => {
       </h1>
       <div style={{ marginTop: "0.5%" }}>
         <div className="subh">
-          <div className="col-md-6">
+          <div className="col-md-5">
             <form ref={form} onSubmit={sendEmail}>
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
@@ -88,19 +79,10 @@ const ContactForm = () => {
                 />
               </div>
 
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={handleButtonClick}
-              >
+              <button type="submit" className="btn btn-danger">
                 Submit
               </button>
             </form>
-            {isAlertVisible && (
-              <div className="alert-container">
-                <div className="alert-inner">{Successemail}</div>
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -112,6 +94,7 @@ const ContactForm = () => {
           src={require("../../content/profile_pic.jpg")}
         />
       </div>
+      <ToastContainer position="top-center" />
       <div className="subh">
         {" "}
         <Footer />
