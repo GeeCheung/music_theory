@@ -57,10 +57,10 @@ const StoreScales = ({
   };
 
   return (
-    <div>
+    <div className="scales">
       <br />
-      <h1 className="subh">Scales</h1>
-      <div className="subh">
+      <h1>Scales</h1>
+      <div className="scales">
         <Buttons
           color={"light"}
           text={"Get Major scale"}

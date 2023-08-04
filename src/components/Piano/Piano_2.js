@@ -8,7 +8,7 @@ const Pianotokey = ({ noteArray }) => {
   });
 
   return (
-    <div>
+    <div className="pianoDiv">
       <div className="piano">{keys}</div>
     </div>
   );

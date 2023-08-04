@@ -10,9 +10,9 @@ const StoreNote = ({ setNote, note }) => {
   };
 
   return (
-    <div>
-      <h1 className="subh">Notes</h1>
-      <div className="subh">
+    <div className="notes">
+      <h1>Notes</h1>
+      <div>
         <Buttons
           color={"light"}
           text={"C"}

@@ -1,7 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Button from "react-bootstrap/Button";
 
-const Buttons = ({ text, note, onClick, color, selectedNote, id }) => {
+const Buttons = ({
+  text,
+  note,
+  onClick,
+  color,
+  selectedNote,
+  id,
+  className,
+}) => {
   if (note) {
     var className = note && selectedNote === id ? "highlighted" : "";
   } else {

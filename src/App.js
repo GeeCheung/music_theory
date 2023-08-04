@@ -7,7 +7,7 @@ import Forgotpassword from "./components/pages/ForgotPassword.jsx";
 import Intermediate from "./components/pages/Intermediate.jsx";
 import Post from "./components/pages/Post.jsx";
 import ProtectedRoute from "./components/pages/ProtectedRoute.js";
-import Quiz from "./components/pages/Quiz.jsx";
+import Quiz from "./components/pages/Quiz/Quiz.jsx";
 import Signin from "./components/pages/Signin.jsx";
 import Signup from "./components/pages/Signup.jsx";
 import { AuthContextProvider } from "./context/AuthContext";

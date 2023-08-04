@@ -13,7 +13,6 @@ import StoreScales from "../Scales/Scales";
 const Account = () => {
   const [musictheory, setMusictheory] = useState([]);
   const [note, setNote] = useState();
-  const [inversion, setInversion] = useState();
   const [textValue, setTextValue] = useState();
   const [noteArray, setnoteArray] = useState([]);
 
@@ -30,48 +29,27 @@ const Account = () => {
 
   return (
     <div>
-      <div>
-        <Topnavbar />
-      </div>
+      <Topnavbar />
 
       <div className="containeraccount">
-        <div className="notes">
-          <StoreNote note={note} setNote={setNote} />
-        </div>
-        <div className="chords">
-          <StoreChords
-            note={note}
-            inversion={inversion}
-            textValue={textValue}
-            setTextValue={setTextValue}
-            musictheory={musictheory}
-            setnoteArray={setnoteArray}
-          />
-        </div>
-
-        <div className="scales">
-          <StoreScales
-            note={note}
-            musictheory={musictheory}
-            setTextValue={setTextValue}
-            setnoteArray={setnoteArray}
-          />
-        </div>
-      </div>
-
-      <div>
+        <StoreNote note={note} setNote={setNote} />
+        <StoreChords
+          note={note}
+          textValue={textValue}
+          setTextValue={setTextValue}
+          musictheory={musictheory}
+          setnoteArray={setnoteArray}
+        />
+        <StoreScales
+          note={note}
+          musictheory={musictheory}
+          setTextValue={setTextValue}
+          setnoteArray={setnoteArray}
+        />
         <DisplayValueBox value={textValue} />
-      </div>
-
-      <div className="pianoDiv">
         <Pianotokey noteArray={noteArray} />
-        {/*    <Piano /> */}
       </div>
-      <br />
-      <div className="App">
-        {" "}
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 };

@@ -95,10 +95,8 @@ const ContactForm = () => {
         />
       </div>
       <ToastContainer position="top-center" />
-      <div className="subh">
-        {" "}
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 };

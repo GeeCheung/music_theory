@@ -35,15 +35,9 @@ const Post = () => {
 
   return (
     <div className="App">
-      <div>
-        <Topnavbar />
-      </div>
+      <Topnavbar />
 
-      <h1
-        style={{ justifyContent: "center", display: "flex", marginTop: "80px" }}
-      >
-        Post
-      </h1>
+      <h1 className="posttitle">Post</h1>
 
       <input
         type="file"
@@ -57,23 +51,14 @@ const Post = () => {
         Upload Image
       </Buttons>
 
-      <div style={{ marginLeft: "6%", marginRight: "5%" }}>
-        {" "}
+      <span style={{ marginLeft: "6%", marginRight: "5%" }}>
         {imageUrls.map((url) => {
-          return (
-            <img
-              style={{ width: "300px", height: "350px", margin: "15px" }}
-              src={url}
-            />
-          );
+          return <img src={url} className="imgsize" />;
         })}
-      </div>
+      </span>
 
-      <div className="app">
-        {" "}
-        <ToastContainer position="top-center" />
-        <Footer />
-      </div>
+      <ToastContainer position="top-center" />
+      <Footer />
     </div>
   );
 };
