@@ -1,23 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-const Timer = () => {
-  const [time, setTime] = useState(0);
-  const [timerOn, setTimerOn] = useState(false);
-
-  useEffect(() => {
-    let interval = null;
-
-    if (timerOn) {
-      interval = setInterval(() => {
-        setTime((prevTime) => prevTime + 10);
-      }, 10);
-    } else if (!timerOn) {
-      clearInterval(interval);
-    }
-
-    return () => clearInterval(interval);
-  }, [timerOn]);
-
+const Timer = ({ time }) => {
   return (
     <div>
       <div className="timer">

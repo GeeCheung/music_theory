@@ -1,17 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Score = () => {
-  const [score, setScore] = useState(0);
-  const [question, setQuestion] = useState(0);
-
-  const handleCorrectAnswer = () => {
-    setScore(score + 1);
-  };
-
-  const handleQuestions = () => {
-    setQuestion(question + 1);
-  };
-
+const Score = ({ score, question }) => {
   return (
     <div>
       <div className="timer">

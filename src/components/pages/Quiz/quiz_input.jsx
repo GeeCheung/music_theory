@@ -1,19 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { ToastContainer } from "react-toastify";
 import Buttons from "../../Buttons";
 
-const Quiz_input = () => {
-  const [scaleKeys, setscaleKeys] = useState([]);
-  const [keynote, setKeynote] = useState("");
-
-  const handleAddValue = (value) => {
-    if (scaleKeys.includes(value)) {
-      return;
-    }
-    setscaleKeys((prevValues) => [...prevValues, value]);
-    setKeynote(value);
-  };
-
+const Quiz_input = ({ handleAddValue, scaleKeys }) => {
   return (
     <div>
       <p className="quiz_type"> Select Keys:</p>

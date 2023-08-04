@@ -102,15 +102,50 @@ const Quiz = () => {
       const isCorrect = inputValues.every(
         (value, index) => value === keyvalues[index]
       );
-      /* handleQuestions(); */
+      handleQuestions();
       setQuizResult(isCorrect ? "Correct!" : "Incorrect!");
       setTimerOn(isCorrect ? false : true);
       if (isCorrect) {
-        /* handleCorrectAnswer(); */
+        handleCorrectAnswer();
         handleNewQ();
       }
     }
   };
+
+  const handleCheat = () => {
+    if (keyvalues) {
+      setCheat(`${keyvalues.join(" ")}`);
+    }
+  };
+
+  const handleAddValue = (value) => {
+    if (scaleKeys.includes(value)) {
+      return;
+    }
+    setscaleKeys((prevValues) => [...prevValues, value]);
+  };
+
+  const handleCorrectAnswer = () => {
+    setScore(score + 1);
+  };
+
+  const handleQuestions = () => {
+    setQuestion(question + 1);
+  };
+
+  useEffect(() => {
+    let interval = null;
+
+    if (timerOn) {
+      interval = setInterval(() => {
+        setTime((prevTime) => prevTime + 10);
+      }, 10);
+    } else if (!timerOn) {
+      clearInterval(interval);
+    }
+
+    return () => clearInterval(interval);
+  }, [timerOn]);
 
   return (
     <div>
@@ -129,8 +164,9 @@ const Quiz = () => {
         </select>
         <Buttons color={"light"} text={"Start"} onClick={StartQuiz}></Buttons>
         <Buttons color={"light"} text={"Reset"} onClick={resetkeys}></Buttons>
-        <DisplayValueBox value={note} />
       </div>
+
+      <DisplayValueBox value={note} />
 
       <div className="chords">
         {inputValues.map((inputValue, index) => (
@@ -155,13 +191,11 @@ const Quiz = () => {
         />
       </div>
 
-      <Cheat />
-
+      <Cheat handleCheat={handleCheat} cheat={cheat} />
       <p className="checkanwerresult">{quizResult}</p>
-
-      <Quiz_input />
-      <Score />
-      <Timer />
+      <Quiz_input handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
+      <Score score={score} question={question} />
+      <Timer time={time} />
       <Footer />
     </div>
   );

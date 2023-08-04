@@ -1,22 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Buttons from "../../Buttons";
 
-const Cheat = () => {
-  const [cheat, setCheat] = useState("");
-  const [keyvalues, setKeyvalues] = useState([]);
-
-  const handleCheat = () => {
-    if (keyvalues) {
-      setCheat(`${keyvalues.join(" ")}`);
-    }
-  };
+const Cheat = ({ cheat, handleCheat }) => {
   return (
     <div>
       <div className="chords">
         <Buttons color={"light"} text={"cheat"} onClick={handleCheat} />
       </div>
 
-      <p className="cheatbtn">{cheat}</p>
+      <p className="cheattext">{cheat}</p>
     </div>
   );
 };

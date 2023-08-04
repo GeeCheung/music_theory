@@ -233,7 +233,7 @@ body {
   justify-content: center;
 }
 
-.cheatbtn {
+.cheattext {
   justify-content: center;
   display: flex;
   font-weight: bold;
@@ -253,8 +253,8 @@ body {
   margin-top: 50px;
 }
 
-.checkanwerresult[quizResult="false"] {
-  color: "red";
+.checkanwerresult {
+  color: red;
   justify-content: center;
   display: flex;
   font-weight: bold;
