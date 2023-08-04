@@ -1,22 +1,25 @@
-import _ from 'lodash';
-import React from 'react';
+import _ from "lodash";
+import React from "react";
 
-import { NOTE_TO_KEY } from '../global/constants';
-import './Key.css';
+import { NOTE_TO_KEY } from "../../global/constants";
+import "./Key.css";
 
 class Key extends React.Component {
   noteIsFlat = (note) => {
     return note.length > 1;
-  }
+  };
 
   keyIsPressed = (note, pressedKeys) => {
     return _.includes(pressedKeys, NOTE_TO_KEY[note]);
-  }
+  };
 
   render() {
     let keyClassName = "key";
     const noteIsFlat = this.noteIsFlat(this.props.note);
-    const keyIsPressed = this.keyIsPressed(this.props.note, this.props.pressedKeys);
+    const keyIsPressed = this.keyIsPressed(
+      this.props.note,
+      this.props.pressedKeys
+    );
     if (noteIsFlat) {
       keyClassName += " flat";
     }
@@ -39,4 +42,3 @@ class Key extends React.Component {
 }
 
 export { Key };
-

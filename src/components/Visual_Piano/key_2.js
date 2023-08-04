@@ -1,4 +1,4 @@
-import "../../components/Key.css";
+import "./Key_2.css";
 
 const Key2 = ({ note, noteArray }) => {
   let keyClassName = "key";

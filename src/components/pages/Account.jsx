@@ -7,8 +7,8 @@ import DisplayValueBox from "../DisplayValue.js";
 import Footer from "../Footer/Footer";
 import Topnavbar from "../Navbars/TopNavbar";
 import StoreNote from "../Notes/Note.js";
-import Pianotokey from "../Piano/Piano_2";
 import StoreScales from "../Scales/Scales";
+import Pianotokey from "../Visual_Piano/Piano_2";
 
 const Account = () => {
   const [musictheory, setMusictheory] = useState([]);
