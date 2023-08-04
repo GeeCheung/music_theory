@@ -1,10 +1,10 @@
 import _ from "lodash";
 import React from "react";
 
-import { KEY_TO_NOTE, NOTES, VALID_KEYS } from "../global/constants";
+import { KEY_TO_NOTE, NOTES, VALID_KEYS } from "../../global/constants";
 import { Key } from "./key";
 
-class Piano extends React.Component {
+class Piano_hear extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -69,4 +69,4 @@ class Piano extends React.Component {
   }
 }
 
-export { Piano };
+export default Piano_hear;

@@ -31,7 +31,7 @@ const Basics = () => {
           <img src={require("../../content/Major_Chords.png")} />
         </div>
 
-        <div>
+        <div className="keyselection-column ">
           <iframe
             width="560"
             height="315"
@@ -75,7 +75,7 @@ const Basics = () => {
             src={require("../../content/piano_major_scales.png")}
           />
         </div>
-        <div>
+        <div className="keyselection-column ">
           <iframe
             width="560"
             height="315"

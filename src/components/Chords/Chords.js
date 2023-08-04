@@ -64,50 +64,46 @@ const StoreChords = ({
 
   return (
     <div className="chords">
-      <br />
-      <h1>Major Chords</h1>
-      <div>
-        <Buttons
-          color={"light"}
-          text={"Get Dominant 5th"}
-          onClick={() =>
-            handleChordClick(note, (scales = "Major"), (whatchord = "fifth"))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get Triad"}
-          onClick={() =>
-            handleChordClick(note, (scales = "Major"), (whatchord = "triads"))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get 7th chord"}
-          onClick={() =>
-            handleChordClick(note, (scales = "Major"), (whatchord = "7th"))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get 9th chord"}
-          onClick={() =>
-            handleChordClick(note, (scales = "Major"), (whatchord = "9th"))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get Relative Minor"}
-          onClick={() =>
-            handleChordClick(
-              note,
-              (scales = "Major"),
-              (whatchord = "relative_minor")
-            )
-          }
-        ></Buttons>
-        <ToastContainer position="top-center" />
-      </div>
+      <Buttons
+        color={"light"}
+        text={"Get Dominant 5th"}
+        onClick={() =>
+          handleChordClick(note, (scales = "Major"), (whatchord = "fifth"))
+        }
+      ></Buttons>
+      <Buttons
+        color={"light"}
+        text={"Get Triad"}
+        onClick={() =>
+          handleChordClick(note, (scales = "Major"), (whatchord = "triads"))
+        }
+      ></Buttons>
+      <Buttons
+        color={"light"}
+        text={"Get 7th chord"}
+        onClick={() =>
+          handleChordClick(note, (scales = "Major"), (whatchord = "7th"))
+        }
+      ></Buttons>
+      <Buttons
+        color={"light"}
+        text={"Get 9th chord"}
+        onClick={() =>
+          handleChordClick(note, (scales = "Major"), (whatchord = "9th"))
+        }
+      ></Buttons>
+      <Buttons
+        color={"light"}
+        text={"Get Relative Minor"}
+        onClick={() =>
+          handleChordClick(
+            note,
+            (scales = "Major"),
+            (whatchord = "relative_minor")
+          )
+        }
+      ></Buttons>
+      <ToastContainer position="top-center" />
     </div>
   );
 };

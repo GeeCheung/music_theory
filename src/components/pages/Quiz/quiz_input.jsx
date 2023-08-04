@@ -3,71 +3,80 @@ import { ToastContainer } from "react-toastify";
 import Buttons from "../../Buttons";
 
 const Quiz_input = ({ handleAddValue, scaleKeys }) => {
+  const isKeySelected = (key) => scaleKeys.includes(key);
   return (
     <div>
-      <p className="quiz_type"> Select Keys:</p>
+      <p style={{ fontWeight: "bold", margin: "0", fontSize: "20px" }}>
+        Select keys:
+      </p>
+      <div className="keyselection-div">
+        <div className="keyselection-column">
+          <Buttons
+            color={isKeySelected("C") ? "danger" : "light"}
+            text={"C"}
+            onClick={() => handleAddValue("C")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("D") ? "danger" : "light"}
+            text={"D"}
+            onClick={() => handleAddValue("D")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("E") ? "danger" : "light"}
+            text={"E"}
+            onClick={() => handleAddValue("E")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("F") ? "danger" : "light"}
+            text={"F"}
+            onClick={() => handleAddValue("F")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("G") ? "danger" : "light"}
+            text={"G"}
+            onClick={() => handleAddValue("G")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("A") ? "danger" : "light"}
+            text={"A"}
+            onClick={() => handleAddValue("A")}
+          ></Buttons>
+        </div>
+        <div className="keyselection-column">
+          <Buttons
+            color={isKeySelected("Ab") ? "danger" : "light"}
+            text={"Ab"}
+            onClick={() => handleAddValue("Ab")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("Bb") ? "danger" : "light"}
+            text={"Bb"}
+            onClick={() => handleAddValue("Bb")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("C#") ? "danger" : "light"}
+            text={"C#"}
+            onClick={() => handleAddValue("C#")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("Eb") ? "danger" : "light"}
+            text={"Eb"}
+            onClick={() => handleAddValue("Eb")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("F#") ? "danger" : "light"}
+            text={"F#"}
+            onClick={() => handleAddValue("F#")}
+          ></Buttons>
+          <Buttons
+            color={isKeySelected("B") ? "danger" : "light"}
+            text={"B"}
+            onClick={() => handleAddValue("B")}
+          ></Buttons>
 
-      <div className="keyselection">
-        <Buttons
-          color={"light"}
-          text={"C"}
-          onClick={() => handleAddValue("C")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"D"}
-          onClick={() => handleAddValue("D")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"E"}
-          onClick={() => handleAddValue("E")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"F"}
-          onClick={() => handleAddValue("F")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"G"}
-          onClick={() => handleAddValue("G")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"A"}
-          onClick={() => handleAddValue("A")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Ab"}
-          onClick={() => handleAddValue("Ab")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Bb"}
-          onClick={() => handleAddValue("Bb")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"C#"}
-          onClick={() => handleAddValue("C#")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Eb"}
-          onClick={() => handleAddValue("Eb")}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"F#"}
-          onClick={() => handleAddValue("F#")}
-        ></Buttons>
+          <ToastContainer position="top-center" />
+        </div>
       </div>
-
-      <p className="quiz_type">{scaleKeys}</p>
-
-      <ToastContainer position="top-center" />
     </div>
   );
 };

@@ -58,49 +58,45 @@ const StoreScales = ({
 
   return (
     <div className="scales">
-      <br />
-      <h1>Scales</h1>
-      <div className="scales">
-        <Buttons
-          color={"light"}
-          text={"Get Major scale"}
-          onClick={() =>
-            handleScaleClick(note, (scales = "Major"), (pentantonic = false))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get Minor scale"}
-          onClick={() =>
-            handleScaleClick(note, (scales = "Minor"), (pentantonic = false))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get Pentatonic Major scale"}
-          onClick={() =>
-            handleScaleClick(note, (scales = "Major"), (pentantonic = true))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get Pentatonic Minor scale"}
-          onClick={() =>
-            handleScaleClick(note, (scales = "Minor"), (pentantonic = true))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get Blues Major scale"}
-          onClick={() => handleScaleClick(note, (scales = "Blues_Major"))}
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get Blues Minor scale"}
-          onClick={() => handleScaleClick(note, (scales = "Blues_Minor"))}
-        ></Buttons>
-        <ToastContainer position="top-center" />
-      </div>
+      <Buttons
+        color={"light"}
+        text={"Get Major scale"}
+        onClick={() =>
+          handleScaleClick(note, (scales = "Major"), (pentantonic = false))
+        }
+      ></Buttons>
+      <Buttons
+        color={"light"}
+        text={"Get Minor scale"}
+        onClick={() =>
+          handleScaleClick(note, (scales = "Minor"), (pentantonic = false))
+        }
+      ></Buttons>
+      <Buttons
+        color={"light"}
+        text={"Get Pentatonic Major scale"}
+        onClick={() =>
+          handleScaleClick(note, (scales = "Major"), (pentantonic = true))
+        }
+      ></Buttons>
+      <Buttons
+        color={"light"}
+        text={"Get Pentatonic Minor scale"}
+        onClick={() =>
+          handleScaleClick(note, (scales = "Minor"), (pentantonic = true))
+        }
+      ></Buttons>
+      <Buttons
+        color={"light"}
+        text={"Get Blues Major scale"}
+        onClick={() => handleScaleClick(note, (scales = "Blues_Major"))}
+      ></Buttons>
+      <Buttons
+        color={"light"}
+        text={"Get Blues Minor scale"}
+        onClick={() => handleScaleClick(note, (scales = "Blues_Minor"))}
+      ></Buttons>
+      <ToastContainer position="top-center" />
     </div>
   );
 };
