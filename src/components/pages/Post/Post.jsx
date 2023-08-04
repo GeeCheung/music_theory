@@ -2,10 +2,10 @@ import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { v4 } from "uuid";
-import { storage } from "../../firebase-config";
-import Buttons from "../Buttons";
-import Footer from "../Footer/Footer";
-import Topnavbar from "../Navbars/TopNavbar";
+import { storage } from "../../../firebase-config";
+import Buttons from "../../Buttons";
+import Footer from "../../Footer/Footer";
+import Topnavbar from "../../Navbars/TopNavbar";
 
 const Post = () => {
   const [imageUpload, setImageUpload] = useState(null);

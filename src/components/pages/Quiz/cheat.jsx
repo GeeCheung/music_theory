@@ -5,7 +5,7 @@ const Cheat = ({ cheat, handleCheat }) => {
   return (
     <div>
       <div className="chords">
-        <Buttons color={"light"} text={"cheat"} onClick={handleCheat} />
+        <Buttons color={"light"} text={"Cheat"} onClick={handleCheat} />
       </div>
 
       <p className="cheattext">{cheat}</p>

@@ -8,6 +8,7 @@ import DisplayValueBox from "../../DisplayValue.js";
 import Footer from "../../Footer/Footer";
 import Topnavbar from "../../Navbars/TopNavbar";
 import Cheat from "./cheat";
+import Quizinfo from "./quiz_info";
 import Quiz_input from "./quiz_input";
 import Score from "./score";
 import Timer from "./timer";
@@ -25,7 +26,6 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [question, setQuestion] = useState(0);
   const [scaleKeys, setscaleKeys] = useState([]);
-  const [keynote, setKeynote] = useState("");
 
   useEffect(() => {
     const musicnotesCollectionRef = collection(db, "musicnotes");
@@ -76,6 +76,7 @@ const Quiz = () => {
     setNote();
     setscaleKeys([]);
     setKeyvalues([]);
+    setInputValues(["", "", "", "", "", "", ""]);
     setCheat("");
   };
 
@@ -150,52 +151,56 @@ const Quiz = () => {
   return (
     <div>
       <Topnavbar />
-
-      <h1 className="quiztitle">Quiz</h1>
-
-      <div className="quiz_type">
-        <select
-          className="form-select w-25 p-3 border rounded"
-          value={selectquiz}
-          onChange={(e) => setSelectQuiz(e.target.value)}
-        >
-          <option value="Major">Major</option>
-          <option value="Minor">Minor</option>
-        </select>
-        <Buttons color={"light"} text={"Start"} onClick={StartQuiz}></Buttons>
-        <Buttons color={"light"} text={"Reset"} onClick={resetkeys}></Buttons>
+      <div className="containerquiz">
+        <h1 className="quiztitle">Quiz</h1>
+        <div className="quiz_type">
+          <select
+            className="chords"
+            value={selectquiz}
+            onChange={(e) => setSelectQuiz(e.target.value)}
+          >
+            <option value="Major">Major</option>
+            <option value="Minor">Minor</option>
+          </select>
+        </div>
+        <div className="chords">
+          {" "}
+          <Buttons color={"light"} text={"Start"} onClick={StartQuiz}></Buttons>
+          <Buttons color={"light"} text={"Reset"} onClick={resetkeys}></Buttons>
+        </div>
+        <DisplayValueBox value={note} />
+        <div className="inputsquiz">
+          {" "}
+          {inputValues.map((inputValue, index) => (
+            <label key={index} className="inputvalues">
+              {index + 1}{" "}
+              <input
+                className="inputquiz"
+                type="text"
+                value={inputValue}
+                name={`myInput${index}`}
+                onChange={(event) => handleInputChange(event, index)}
+              />
+            </label>
+          ))}
+        </div>
+        <div className="chords">
+          <Buttons
+            color={"light"}
+            text={"Check your answers"}
+            onClick={handleQuizCheck}
+          />
+        </div>
+        <Cheat handleCheat={handleCheat} cheat={cheat} />
+        <p className="checkanwerresult">{quizResult}</p>
+        <Score score={score} question={question} />
+        <Timer time={time} />
+        <div className="keyselection">
+          {" "}
+          <Quiz_input handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
+        </div>
+        <Quizinfo />
       </div>
-
-      <DisplayValueBox value={note} />
-
-      <div className="chords">
-        {inputValues.map((inputValue, index) => (
-          <label key={index} className="inputvalues">
-            {index + 1}{" "}
-            <input
-              className="inputquiz"
-              type="text"
-              value={inputValue}
-              name={`myInput${index}`}
-              onChange={(event) => handleInputChange(event, index)}
-            />
-          </label>
-        ))}
-      </div>
-
-      <div className="chords">
-        <Buttons
-          color={"light"}
-          text={"Check your answers"}
-          onClick={handleQuizCheck}
-        />
-      </div>
-
-      <Cheat handleCheat={handleCheat} cheat={cheat} />
-      <p className="checkanwerresult">{quizResult}</p>
-      <Quiz_input handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
-      <Score score={score} question={question} />
-      <Timer time={time} />
       <Footer />
     </div>
   );

@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { UserAuth } from "../../context/AuthContext";
+import { UserAuth } from "../../../context/AuthContext";
 
 const ForgotPassword = () => {
   const [resetemail, setResetEmail] = useState("");

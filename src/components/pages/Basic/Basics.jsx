@@ -1,5 +1,5 @@
-import Footer from "../Footer/Footer";
-import Topnavbar from "../Navbars/TopNavbar";
+import Footer from "../../../components/Footer/Footer";
+import Topnavbar from "../../../components/Navbars/TopNavbar";
 
 const Basics = () => {
   return (
@@ -28,10 +28,10 @@ const Basics = () => {
 
       <div className="textcenter">
         <div>
-          <img src={require("../../content/Major_Chords.png")} />
+          <img src={require("../../../content/Major_Chords.png")} />
         </div>
 
-        <div>
+        <div className="keyselection-column ">
           <iframe
             width="560"
             height="315"
@@ -72,10 +72,10 @@ const Basics = () => {
           <img
             width="590"
             height="670"
-            src={require("../../content/piano_major_scales.png")}
+            src={require("../../../content/piano_major_scales.png")}
           />
         </div>
-        <div>
+        <div className="keyselection-column ">
           <iframe
             width="560"
             height="315"

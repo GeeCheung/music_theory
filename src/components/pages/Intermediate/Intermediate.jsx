@@ -1,4 +1,4 @@
-import Topnavbar from "../Navbars/TopNavbar";
+import Topnavbar from "../../Navbars/TopNavbar";
 
 const Intermediate = () => {
   return (
