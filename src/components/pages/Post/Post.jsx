@@ -10,17 +10,21 @@ import Topnavbar from "../../Navbars/TopNavbar";
 const Post = () => {
   const [imageUpload, setImageUpload] = useState(null);
   const [imageUrls, setImageUrls] = useState([]);
+  const [disabled, setDisabled] = useState(true);
 
   const imagesListRef = ref(storage, "images/");
   const uploadFile = () => {
-    if (imageUpload == null) return;
-    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
-    uploadBytes(imageRef, imageUpload).then((snapshot) => {
-      toast.success("Image Uploaded");
-      getDownloadURL(snapshot.ref).then((url) => {
-        setImageUrls((prev) => [...prev, url]);
+    if (imageUpload == null) {
+      toast.error("No File Chosen");
+    } else {
+      const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+      uploadBytes(imageRef, imageUpload).then((snapshot) => {
+        toast.success("Image Uploaded");
+        getDownloadURL(snapshot.ref).then((url) => {
+          setImageUrls((prev) => [...prev, url]);
+        });
       });
-    });
+    }
   };
 
   useEffect(() => {
@@ -43,10 +47,16 @@ const Post = () => {
         type="file"
         onChange={(event) => {
           setImageUpload(event.target.files[0]);
+          if (event.target.files[0]) setDisabled(false);
         }}
       />
 
-      <Buttons color={"danger"} text={"Upload Image"} onClick={uploadFile}>
+      <Buttons
+        disabled={disabled}
+        color={"danger"}
+        text={"Upload Image"}
+        onClick={uploadFile}
+      >
         {" "}
         Upload Image
       </Buttons>

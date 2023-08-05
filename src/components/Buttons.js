@@ -9,6 +9,7 @@ const Buttons = ({
   selectedNote,
   id,
   className,
+  disabled,
 }) => {
   if (note) {
     var className = note && selectedNote === id ? "highlighted" : "";
@@ -17,7 +18,12 @@ const Buttons = ({
   }
 
   return (
-    <Button variant={color} className={className} onClick={onClick}>
+    <Button
+      disabled={disabled}
+      variant={color}
+      className={className}
+      onClick={onClick}
+    >
       {text}
     </Button>
   );

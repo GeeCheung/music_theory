@@ -62,6 +62,12 @@ class Piano_hear extends React.Component {
 
     return (
       <div>
+        <h1 className="textcenter">Play the Piano on your keyboard</h1>
+        <p className="textcenter">
+          z = C, s= Db, x = D, d = Eb, c = E, v = F, g = F#, b = G, h = Ab, n =
+          A, j= Bb, m = B
+        </p>
+
         <div className="piano">{keys}</div>
         <div>{audioFiles}</div>
       </div>

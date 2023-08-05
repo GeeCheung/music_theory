@@ -130,6 +130,7 @@ body {
 .piano {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .navbarbg {
@@ -182,6 +183,13 @@ body {
   border-radius: 10px;
 }
 
+.owncorrect {
+  background-color: rgb(46, 194, 46);
+}
+
+.ownincorrect {
+  background-color: rgb(247, 31, 31);
+}
 .App {
   width: 100vw;
   height: auto;

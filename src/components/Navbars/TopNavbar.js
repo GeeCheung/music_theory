@@ -82,16 +82,6 @@ function Topnavbar() {
                 BASICS
               </NavLink>
             </NavDropdown.Item>
-            <NavDropdown.Item>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "active" : "navbarstyle2"
-                }
-                to="/intermediate"
-              >
-                INTERMEDIATE
-              </NavLink>
-            </NavDropdown.Item>
           </NavDropdown>
           <h1 className="centered-h1">Gee's Music Theory</h1>
 

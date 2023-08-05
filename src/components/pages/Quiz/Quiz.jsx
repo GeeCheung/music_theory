@@ -26,6 +26,8 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [question, setQuestion] = useState(0);
   const [scaleKeys, setscaleKeys] = useState([]);
+  const [isCorrect, setIsCorrect] = useState();
+  const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
     const musicnotesCollectionRef = collection(db, "musicnotes");
@@ -62,6 +64,7 @@ const Quiz = () => {
       setTime(0);
       setScore(0);
       setQuestion(0);
+      setDisabled(false);
     } else {
       toast.error("Please Select at least 1 Key");
     }
@@ -78,6 +81,7 @@ const Quiz = () => {
     setKeyvalues([]);
     setInputValues(["", "", "", "", "", "", ""]);
     setCheat("");
+    setDisabled(true);
   };
 
   const handleInputChange = (event, index) => {
@@ -92,6 +96,12 @@ const Quiz = () => {
 
     getScalekey(randomKey, `${selectquiz}`);
     setQuizResult("");
+    setIsCorrect(true);
+
+    setTimeout(() => {
+      setIsCorrect();
+    }, 130);
+
     setInputValues(["", "", "", "", "", "", ""]);
     setCheat("");
     setTimerOn(true);
@@ -103,12 +113,20 @@ const Quiz = () => {
       const isCorrect = inputValues.every(
         (value, index) => value === keyvalues[index]
       );
+
       handleQuestions();
       setQuizResult(isCorrect ? "Correct!" : "Incorrect!");
       setTimerOn(isCorrect ? false : true);
+
       if (isCorrect) {
         handleCorrectAnswer();
         handleNewQ();
+      } else if (!isCorrect) {
+        setInputValues(["", "", "", "", "", "", ""]);
+        setIsCorrect(false);
+        setTimeout(() => {
+          setIsCorrect();
+        }, 130);
       }
     }
   };
@@ -175,7 +193,13 @@ const Quiz = () => {
             <label key={index} className="inputvalues">
               {index + 1}{" "}
               <input
-                className="inputquiz"
+                className={`inputquiz ${
+                  isCorrect
+                    ? "owncorrect"
+                    : isCorrect === false
+                    ? "ownincorrect"
+                    : ""
+                }`}
                 type="text"
                 value={inputValue}
                 name={`myInput${index}`}
@@ -186,17 +210,16 @@ const Quiz = () => {
         </div>
         <div className="chords">
           <Buttons
+            disabled={disabled}
             color={"light"}
             text={"Check your answers"}
             onClick={handleQuizCheck}
           />
         </div>
-        <Cheat handleCheat={handleCheat} cheat={cheat} />
-        <p className="checkanwerresult">{quizResult}</p>
+        <Cheat handleCheat={handleCheat} cheat={cheat} disabled={disabled} />
         <Score score={score} question={question} />
         <Timer time={time} />
         <div className="keyselection">
-          {" "}
           <Quiz_input handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
         </div>
         <Quizinfo />

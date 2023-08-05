@@ -7,8 +7,8 @@ import DisplayValueBox from "../../DisplayValue.js";
 import Footer from "../../Footer/Footer";
 import Topnavbar from "../../Navbars/TopNavbar";
 import StoreNote from "../../Notes/Note.js";
+import Piano_hear from "../../Play_Piano/Piano";
 import StoreScales from "../../Scales/Scales";
-import Pianotokey from "../../Visual_Piano/Piano_2";
 
 const Account = () => {
   const [musictheory, setMusictheory] = useState([]);
@@ -47,7 +47,7 @@ const Account = () => {
           setnoteArray={setnoteArray}
         />
         <DisplayValueBox value={textValue} />
-        <Pianotokey noteArray={noteArray} />
+        <Piano_hear />
       </div>
       <Footer />
     </div>

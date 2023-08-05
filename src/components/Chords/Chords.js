@@ -58,7 +58,7 @@ const StoreChords = ({
         }
       });
     } else {
-      toast.error("Please Select A Note");
+      toast.error("Please select a key");
     }
   };
 
