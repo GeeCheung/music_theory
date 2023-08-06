@@ -1,0 +1,16 @@
+.posttitle {
+  justify-content: center;
+  display: flex;
+  margin-top: 80px;
+}
+
+.setpostwidth {
+  margin-left: "6%";
+  margin-right: "5%";
+} /* Not working for setting post width of size rn using inline rn */
+
+.imgsize {
+  width: 300px;
+  height: 350px;
+  margin: 15px;
+}

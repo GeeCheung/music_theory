@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import Buttons from "../Buttons";
+import "./Note.css";
 
 const StoreNote = ({ setNote, note }) => {
   const [selectedNote, setSelectedNote] = useState("");

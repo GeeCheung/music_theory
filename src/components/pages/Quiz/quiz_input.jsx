@@ -5,7 +5,7 @@ import Buttons from "../../Buttons";
 const Quiz_input = ({ handleAddValue, scaleKeys }) => {
   const isKeySelected = (key) => scaleKeys.includes(key);
   return (
-    <div>
+    <div className="keyselection">
       <p style={{ fontWeight: "bold", margin: "0", fontSize: "20px" }}>
         Select keys:
       </p>

@@ -7,6 +7,8 @@ import Buttons from "../../Buttons";
 import DisplayValueBox from "../../DisplayValue.js";
 import Footer from "../../Footer/Footer";
 import Topnavbar from "../../Navbars/TopNavbar";
+import Leaderboard from "./Leaderbaord/Leaderboard";
+import "./Quiz.css";
 import Cheat from "./cheat";
 import Quizinfo from "./quiz_info";
 import Quiz_input from "./quiz_input";
@@ -28,6 +30,8 @@ const Quiz = () => {
   const [scaleKeys, setscaleKeys] = useState([]);
   const [isCorrect, setIsCorrect] = useState();
   const [disabled, setDisabled] = useState(true);
+  const [storedtime, setStoredtime] = useState(0);
+  const [storednote, setStorednote] = useState("");
 
   useEffect(() => {
     const musicnotesCollectionRef = collection(db, "musicnotes");
@@ -105,6 +109,8 @@ const Quiz = () => {
     setInputValues(["", "", "", "", "", "", ""]);
     setCheat("");
     setTimerOn(true);
+    setStoredtime(time);
+    setStorednote(note);
     setTime(0);
   };
 
@@ -219,10 +225,9 @@ const Quiz = () => {
         <Cheat handleCheat={handleCheat} cheat={cheat} disabled={disabled} />
         <Score score={score} question={question} />
         <Timer time={time} />
-        <div className="keyselection">
-          <Quiz_input handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
-        </div>
+        <Quiz_input handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
         <Quizinfo />
+        <Leaderboard storedtime={storedtime} note={storednote} />
       </div>
       <Footer />
     </div>

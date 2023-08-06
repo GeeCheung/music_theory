@@ -1,6 +1,7 @@
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Buttons from "../Buttons";
+import "./Scales.css";
 
 const StoreScales = ({
   note,

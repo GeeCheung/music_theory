@@ -9,6 +9,7 @@ import Topnavbar from "../../Navbars/TopNavbar";
 import StoreNote from "../../Notes/Note.js";
 import Piano_hear from "../../Play_Piano/Piano";
 import StoreScales from "../../Scales/Scales";
+import "./Account.css";
 
 const Account = () => {
   const [musictheory, setMusictheory] = useState([]);

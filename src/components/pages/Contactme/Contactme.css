@@ -1,0 +1,12 @@
+.profileimg {
+  height: 235px;
+  width: 215px;
+  border-radius: 50%;
+  border: 10px solid #ffff;
+}
+
+.subh {
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+}

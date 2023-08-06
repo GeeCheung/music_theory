@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import Buttons from "../Buttons";
+import "./TopNavbar.css";
 
 function Topnavbar() {
   const { user, logout } = UserAuth();

@@ -3,9 +3,7 @@ import React from "react";
 const Score = ({ score, question }) => {
   return (
     <div className="timer">
-      <p>
-        Score: {score}/{question}
-      </p>
+      Score: {score}/{question}
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Buttons from "../Buttons";
+import "./Chords.css";
 
 const StoreChords = ({
   note,

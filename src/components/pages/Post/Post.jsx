@@ -6,6 +6,7 @@ import { storage } from "../../../firebase-config";
 import Buttons from "../../Buttons";
 import Footer from "../../Footer/Footer";
 import Topnavbar from "../../Navbars/TopNavbar";
+import "./Post.css";
 
 const Post = () => {
   const [imageUpload, setImageUpload] = useState(null);
