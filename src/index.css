@@ -6,11 +6,6 @@
   padding: 0;
 }
 
-body {
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-}
-
 .btn {
   display: inline-block;
   border: none;
@@ -21,11 +16,4 @@ body {
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
-}
-
-.btn-danger {
-  margin-right: 10px;
-  --bs-btn-bg: transparent;
-  --bs-btn-hover-bg: transparent;
-  --bs-btn-active-bg: transparent;
 }

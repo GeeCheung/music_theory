@@ -4,7 +4,7 @@ import Buttons from "../../Buttons";
 const Cheat = ({ handleCheat, disabled }) => {
   return (
     <div>
-      <div className="chords">
+      <div className="quiz_class">
         <Buttons
           disabled={disabled}
           color={"light"}

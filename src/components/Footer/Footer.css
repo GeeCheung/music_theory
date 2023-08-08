@@ -1,13 +1,8 @@
 .footer {
-  width: 100vw;
+  width: 100%;
   height: auto;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-@media (max-width: 768px) {
-  .footer {
-    display: none;
-  }
+  font-size: 14px;
 }

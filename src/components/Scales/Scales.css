@@ -1,6 +1,6 @@
 .scales {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

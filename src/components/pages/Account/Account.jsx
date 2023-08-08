@@ -32,7 +32,7 @@ const Account = () => {
     <div>
       <Topnavbar />
 
-      <div className="containeraccount">
+      <div>
         <StoreNote note={note} setNote={setNote} />
         <StoreChords
           note={note}

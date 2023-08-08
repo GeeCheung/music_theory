@@ -5,10 +5,7 @@ import Buttons from "../../Buttons";
 const Quiz_input = ({ handleAddValue, scaleKeys }) => {
   const isKeySelected = (key) => scaleKeys.includes(key);
   return (
-    <div className="keyselection">
-      <p style={{ fontWeight: "bold", margin: "0", fontSize: "20px" }}>
-        Select keys:
-      </p>
+    <div>
       <div className="keyselection-div">
         <div className="keyselection-column">
           <Buttons
@@ -26,6 +23,8 @@ const Quiz_input = ({ handleAddValue, scaleKeys }) => {
             text={"E"}
             onClick={() => handleAddValue("E")}
           ></Buttons>
+        </div>
+        <div className="keyselection-column">
           <Buttons
             color={isKeySelected("F") ? "danger" : "light"}
             text={"F"}
@@ -58,6 +57,8 @@ const Quiz_input = ({ handleAddValue, scaleKeys }) => {
             text={"C#"}
             onClick={() => handleAddValue("C#")}
           ></Buttons>
+        </div>
+        <div className="keyselection-column">
           <Buttons
             color={isKeySelected("Eb") ? "danger" : "light"}
             text={"Eb"}

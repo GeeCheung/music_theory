@@ -1,7 +1,6 @@
 .notes {
-  margin-top: 55px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

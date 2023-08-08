@@ -184,11 +184,11 @@ const Quiz = () => {
   return (
     <div>
       <Topnavbar />
-      <div className="containerquiz">
-        <h1 className="quiztitle">Quiz</h1>
+      <div>
+        <Quizinfo />
         <div className="quiz_type">
           <select
-            className="chords"
+            className="quiz_class"
             value={selectquiz}
             onChange={(e) => setSelectQuiz(e.target.value)}
           >
@@ -196,7 +196,8 @@ const Quiz = () => {
             <option value="Minor">Minor</option>
           </select>
         </div>
-        <div className="chords">
+        <Quiz_input handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
+        <div className="quiz_class">
           {" "}
           <Buttons color={"light"} text={"Start"} onClick={StartQuiz}></Buttons>
           <Buttons color={"light"} text={"Reset"} onClick={resetkeys}></Buttons>
@@ -205,7 +206,7 @@ const Quiz = () => {
         <div className="inputsquiz">
           {" "}
           {inputValues.map((inputValue, index) => (
-            <label key={index} className="inputvalues">
+            <label key={index}>
               {index + 1}{" "}
               <input
                 className={`inputquiz ${
@@ -223,7 +224,7 @@ const Quiz = () => {
             </label>
           ))}
         </div>
-        <div className="chords">
+        <div className="quiz_class">
           <Buttons
             disabled={disabled}
             color={"light"}
@@ -234,8 +235,6 @@ const Quiz = () => {
         <Cheat handleCheat={handleCheat} cheat={cheat} disabled={disabled} />
         <Score score={score} question={question} />
         <Timer time={time} />
-        <Quiz_input handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
-        <Quizinfo />
         <Leaderboard storedtime={storedtime} note={storednote} />
       </div>
       <Footer />

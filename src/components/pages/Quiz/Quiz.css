@@ -1,19 +1,17 @@
-.containerquiz {
-  width: 1300px;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: darkslategrey;
-  border: 5px solid #ccc;
-}
-
-.quiztitle {
+.quizsubtitle {
+  margin-top: 1%;
   justify-content: center;
   display: flex;
+  text-align: center;
+  font-size: 18px;
   font-weight: bold;
-  margin-top: 50px;
 }
-
+.quiztext {
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-size: 12px;
+}
 .quiz_type {
   display: flex;
   justify-content: center;
@@ -23,10 +21,6 @@
 .inputsquiz {
   display: flex;
   justify-content: center;
-}
-
-.inputvalues {
-  margin-left: 5px;
   text-align: center;
 }
 
@@ -48,29 +42,11 @@
   background-color: rgb(247, 31, 31);
 }
 
-.cheattext {
-  justify-content: center;
-  display: flex;
-  font-weight: bold;
-  font-size: 20px;
-  margin: 0px;
-  padding: 0px;
-}
-
-.checkanwerresult {
-  color: red;
-  justify-content: center;
-  display: flex;
-  font-weight: bold;
-  font-size: 35px;
-  margin: 0px;
-  padding: 0px;
-}
-
-.timer {
+.timer,
+.score {
   display: flex;
   justify-content: center;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: bold;
 }
 
@@ -86,79 +62,14 @@
   justify-content: center;
 }
 
-.input_container {
+.quiz_class {
   display: flex;
+  justify-content: center;
 }
 
-.keyselection {
-  position: absolute;
-  top: 80px;
-  right: 490px;
-  width: 120px;
-}
-
-.boldthis {
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.quizinfo {
-  position: absolute;
-  top: 120px;
-  left: 400px;
-  width: 250px;
-}
-
-@media (max-width: 768px) {
-  .containerquiz {
-    display: none;
-  }
-
+@media (min-width: 768px) {
   .quizinfo {
-    display: none;
-  }
-  .boldthis {
-    display: none;
-  }
-  .keyselection {
-    display: none;
-  }
-  .input_container {
-    display: none;
-  }
-  .keyselection-div {
-    display: none;
-  }
-  .keyselection-column {
-    display: none;
-  }
-  .timer {
-    display: none;
-  }
-  .checkanwerresult {
-    display: none;
-  }
-  .cheattext {
-    display: none;
-  }
-
-  .quiztitle {
-    display: none;
-  }
-
-  .quiz_type {
-    display: none;
-  }
-
-  .inputsquiz {
-    display: none;
-  }
-
-  .inputvalues {
-    display: none;
-  }
-
-  .inputquiz {
-    display: none;
+    width: 40%;
+    margin-left: 30%;
   }
 }

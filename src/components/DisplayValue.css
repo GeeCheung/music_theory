@@ -1,7 +1,6 @@
 .display-value-box {
-  padding: 10px;
   font-size: 40px;
   font-weight: bold;
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgb(5, 5, 5);
 }
