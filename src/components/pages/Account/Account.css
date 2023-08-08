@@ -1,7 +1,8 @@
-.containeraccount {
-  width: 55%;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f61a303f;
-  border: 5px solid #ccc;
+@media (width >= 1360px) {
+  .containeraccount {
+    width: 55%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: darkslategray;
+  }
 }

@@ -14,3 +14,17 @@
   height: 350px;
   margin: 15px;
 }
+
+.post {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .post {
+    display: none;
+  }
+}

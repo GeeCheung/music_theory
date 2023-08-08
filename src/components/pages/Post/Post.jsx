@@ -39,7 +39,7 @@ const Post = () => {
   }, []);
 
   return (
-    <div className="App">
+    <div className="post">
       <Topnavbar />
 
       <h1 className="posttitle">Post</h1>

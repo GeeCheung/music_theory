@@ -1,7 +1,7 @@
 import React from "react";
 import Buttons from "../../Buttons";
 
-const Cheat = ({ cheat, handleCheat, disabled }) => {
+const Cheat = ({ handleCheat, disabled }) => {
   return (
     <div>
       <div className="chords">
@@ -12,8 +12,6 @@ const Cheat = ({ cheat, handleCheat, disabled }) => {
           onClick={handleCheat}
         />
       </div>
-
-      <p className="cheattext">{cheat}</p>
     </div>
   );
 };

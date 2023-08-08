@@ -60,40 +60,40 @@ const StoreScales = ({
   return (
     <div className="scales">
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"Get Major scale"}
         onClick={() =>
           handleScaleClick(note, (scales = "Major"), (pentantonic = false))
         }
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"Get Minor scale"}
         onClick={() =>
           handleScaleClick(note, (scales = "Minor"), (pentantonic = false))
         }
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"Get Pentatonic Major scale"}
         onClick={() =>
           handleScaleClick(note, (scales = "Major"), (pentantonic = true))
         }
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"Get Pentatonic Minor scale"}
         onClick={() =>
           handleScaleClick(note, (scales = "Minor"), (pentantonic = true))
         }
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"Get Blues Major scale"}
         onClick={() => handleScaleClick(note, (scales = "Blues_Major"))}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"Get Blues Minor scale"}
         onClick={() => handleScaleClick(note, (scales = "Blues_Minor"))}
       ></Buttons>

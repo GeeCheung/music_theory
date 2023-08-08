@@ -84,7 +84,7 @@ function Topnavbar() {
               </NavLink>
             </NavDropdown.Item>
           </NavDropdown>
-          <h1 className="centered-h1">Gee's Music Theory</h1>
+          <h1 className="centered-h1">Music Theory - 101</h1>
 
           <img
             src={require("../../content/piano_keys.png")}

@@ -1,9 +1,9 @@
 .navbarbg {
-  background-color: #020815;
+  background-color: #101820ff;
 }
 
 .active {
-  color: #a7450d;
+  color: #f2aa4cff;
   text-decoration: none;
   font-size: 16px;
   font-weight: bold;
@@ -33,7 +33,7 @@
   transform: translate(-50%, -50%);
   font-size: 37px;
   font-family: Impact, fantasy;
-  color: #a7450d;
+  color: #f2aa4cff;
 }
 
 .logonav {
@@ -48,4 +48,16 @@
   top: 50%;
   right: 18%;
   transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  .right-button {
+    display: none;
+  }
+  .me-auto {
+    display: none;
+  }
+  .navbarbg {
+    display: none;
+  }
 }

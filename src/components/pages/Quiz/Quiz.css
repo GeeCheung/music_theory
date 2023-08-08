@@ -3,7 +3,7 @@
   height: auto;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f61a303f;
+  background-color: darkslategrey;
   border: 5px solid #ccc;
 }
 
@@ -31,6 +31,8 @@
 }
 
 .inputquiz {
+  display: flex;
+  justify-content: center;
   margin: 5px;
   width: 50px;
   height: 40px;
@@ -72,13 +74,6 @@
   font-weight: bold;
 }
 
-.keyselection {
-  flex-direction: column;
-  width: 20%;
-  margin: 0 auto;
-  justify-content: center;
-}
-
 .keyselection-column {
   display: flex;
   flex-direction: column;
@@ -112,4 +107,58 @@
   top: 120px;
   left: 400px;
   width: 250px;
+}
+
+@media (max-width: 768px) {
+  .containerquiz {
+    display: none;
+  }
+
+  .quizinfo {
+    display: none;
+  }
+  .boldthis {
+    display: none;
+  }
+  .keyselection {
+    display: none;
+  }
+  .input_container {
+    display: none;
+  }
+  .keyselection-div {
+    display: none;
+  }
+  .keyselection-column {
+    display: none;
+  }
+  .timer {
+    display: none;
+  }
+  .checkanwerresult {
+    display: none;
+  }
+  .cheattext {
+    display: none;
+  }
+
+  .quiztitle {
+    display: none;
+  }
+
+  .quiz_type {
+    display: none;
+  }
+
+  .inputsquiz {
+    display: none;
+  }
+
+  .inputvalues {
+    display: none;
+  }
+
+  .inputquiz {
+    display: none;
+  }
 }

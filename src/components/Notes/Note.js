@@ -13,7 +13,7 @@ const StoreNote = ({ setNote, note }) => {
   return (
     <div className="notes">
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"C"}
         id={"C"}
         note={note}
@@ -21,7 +21,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("C")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"C#"}
         id={"C#"}
         note={note}
@@ -29,7 +29,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("C#")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"D"}
         id={"D"}
         note={note}
@@ -37,7 +37,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("D")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"Eb"}
         id={"Eb"}
         note={note}
@@ -45,7 +45,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("Eb")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"E"}
         id={"E"}
         note={note}
@@ -53,7 +53,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("E")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"F"}
         id={"F"}
         note={note}
@@ -61,7 +61,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("F")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"F#"}
         id={"F#"}
         note={note}
@@ -69,7 +69,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("F#")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"G"}
         id={"G"}
         note={note}
@@ -77,7 +77,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("G")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"Ab"}
         id={"Ab"}
         note={note}
@@ -85,7 +85,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("Ab")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"A"}
         id={"A"}
         note={note}
@@ -93,7 +93,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("A")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"Bb"}
         id={"Bb"}
         note={note}
@@ -101,7 +101,7 @@ const StoreNote = ({ setNote, note }) => {
         onClick={() => handleNoteClick("Bb")}
       ></Buttons>
       <Buttons
-        color={"light"}
+        color={"dark"}
         text={"B"}
         id={"B"}
         note={note}

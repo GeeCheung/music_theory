@@ -60,7 +60,9 @@ const Quiz = () => {
     if (scaleKeys.length != 0) {
       const randomIndex = Math.floor(Math.random() * scaleKeys.length);
       const randomKey = scaleKeys[randomIndex];
+
       getScalekey(randomKey, `${selectquiz}`);
+
       setQuizResult("");
       setCheat("");
       setInputValues(["", "", "", "", "", "", ""]);
@@ -94,11 +96,20 @@ const Quiz = () => {
     setInputValues(newInputValues);
   };
 
-  const handleNewQ = () => {
-    const randomIndex = Math.floor(Math.random() * scaleKeys.length);
-    const randomKey = scaleKeys[randomIndex];
+  const handleNewQ = (note) => {
+    var randomIndex = Math.floor(Math.random() * scaleKeys.length);
+    var randomKey = scaleKeys[randomIndex];
+
+    if (scaleKeys.length > 1) {
+      while (note == randomKey) {
+        randomIndex = Math.floor(Math.random() * scaleKeys.length);
+        randomKey = scaleKeys[randomIndex];
+        getScalekey(randomKey, `${selectquiz}`);
+      }
+    }
 
     getScalekey(randomKey, `${selectquiz}`);
+
     setQuizResult("");
     setIsCorrect(true);
 
@@ -126,7 +137,7 @@ const Quiz = () => {
 
       if (isCorrect) {
         handleCorrectAnswer();
-        handleNewQ();
+        handleNewQ(note);
       } else if (!isCorrect) {
         setInputValues(["", "", "", "", "", "", ""]);
         setIsCorrect(false);
@@ -138,9 +149,7 @@ const Quiz = () => {
   };
 
   const handleCheat = () => {
-    if (keyvalues) {
-      setCheat(`${keyvalues.join(" ")}`);
-    }
+    setInputValues([...keyvalues]);
   };
 
   const handleAddValue = (value) => {
