@@ -1,63 +1,103 @@
-.navbarbg {
-  background-color: #101820ff;
-}
-
 .active {
-  color: #f2aa4cff;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
+  background-color: red;
 }
 
-.navbarstyle {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f172a;
+  position: sticky;
+  top: 0;
+  height: 3.5rem;
 }
 
-.navbarstyle2 {
-  color: white;
+nav .title {
+  font-size: 1.5rem;
+  margin: 1rem;
+  font-weight: bold;
   text-decoration: none;
+  color: white;
   display: block;
-  height: 100%;
+  text-align: left;
   width: 100%;
-  font-size: 16px;
-  font-weight: bold;
 }
 
-.centered-h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 37px;
-  font-family: Impact, fantasy;
-  color: #f2aa4cff;
+nav ul {
+  display: flex;
+  margin-top: 1.1rem;
 }
 
-.logonav {
-  position: absolute;
-  top: 50%;
-  right: 38%;
-  transform: translateY(-50%);
+nav ul li {
+  list-style: none;
 }
 
-.right-button {
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 7%;
+}
+
+nav ul li a:not(.active):hover {
+  background-color: lightgrey;
+}
+
+nav .menu {
+  display: none;
   position: absolute;
-  top: 50%;
-  right: 18%;
-  transform: translateY(-50%);
+  top: 0.75rem;
+  right: 0.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.25rem;
+  height: 2rem;
+}
+
+nav .menu span {
+  height: 0.4rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+
+@media (max-width: 480px) {
+  nav .menu {
+    display: flex;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+  nav ul.open {
+    display: flex;
+    padding: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    margin: 0.2rem 0.5rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .right-button {
-    display: none;
-  }
-  .me-auto {
-    display: none;
-  }
-  .navbarbg {
+  nav .title {
     display: none;
   }
 }

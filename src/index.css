@@ -24,22 +24,8 @@ body {
 }
 
 .btn-danger {
-  --bs-btn-bg: #f2aa4cff;
-  --bs-btn-hover-bg: #f2aa4cff;
-}
-
-.contentDiv {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 15px;
-  margin-bottom: 0px;
-}
-
-@media (max-width: 1768px) {
-  .centered-h1 {
-    display: none;
-  }
-  .logonav {
-    display: none;
-  }
+  margin-right: 10px;
+  --bs-btn-bg: transparent;
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-active-bg: transparent;
 }

@@ -1,9 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Navbar from "react-bootstrap/Navbar";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import Buttons from "../Buttons";
 import "./TopNavbar.css";
@@ -31,105 +28,54 @@ function Topnavbar() {
     }
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <Navbar className="navbarbg fixed-top" data-bs-theme="dark">
-      <Container>
-        <Nav className="me-auto">
-          <Nav.Link>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "active" : "navbarstyle"
-              }
-              to="/account"
-            >
-              PIANO
-            </NavLink>
-          </Nav.Link>
+    <nav>
+      <img
+        src={require("../../content/piano_keys.png")}
+        width="80px"
+        height="80px"
+      />
+      <Link to="/" className="title">
+        Music Theory - 101
+      </Link>
 
-          <Nav.Link>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "active" : "navbarstyle"
-              }
-              to="/quiz"
-            >
-              QUIZ
-            </NavLink>
-          </Nav.Link>
-
-          <Nav.Link>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "active" : "navbarstyle"
-              }
-              to="/post"
-            >
-              POST
-            </NavLink>
-          </Nav.Link>
-
-          <NavDropdown
-            title="LEARN MUSIC THEORY"
-            id="basic-nav-dropdown"
-            style={{ fontSize: "16px", fontWeight: "bold" }}
-          >
-            <NavDropdown.Item>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "active" : "navbarstyle2"
-                }
-                to="/basics"
-              >
-                BASICS
-              </NavLink>
-            </NavDropdown.Item>
-          </NavDropdown>
-          <h1 className="centered-h1">Music Theory - 101</h1>
-
-          <img
-            src={require("../../content/piano_keys.png")}
-            width="80"
-            height="80"
-            className="logonav"
-          />
-
-          <Nav.Link>
-            <NavLink
-              className={({ isActive }) =>
-                isActive ? "active" : "navbarstyle"
-              }
-              style={{
-                position: "absolute",
-                top: "30%",
-                right: "24%",
-              }}
-              to="/contact-me"
-            >
-              CONTACT ME
-            </NavLink>
-          </Nav.Link>
-
-          <div className="right-button">
-            {isAuthenticated ? (
-              <div style={{ color: "white" }}>
-                {" "}
-                <Buttons
-                  color={"danger"}
-                  text={"Logout"}
-                  onClick={handleLogout}
-                ></Buttons>
-              </div>
-            ) : (
-              <Buttons
-                color={"light"}
-                text={"Sign in"}
-                onClick={signinbutton}
-              ></Buttons>
-            )}
-          </div>
-        </Nav>
-      </Container>
-    </Navbar>
+      <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul className={menuOpen ? "open" : ""}>
+        <li>
+          <NavLink to="/account">Account</NavLink>
+        </li>
+        <li>
+          <NavLink to="/quiz">Quiz</NavLink>
+        </li>
+        <li>
+          <NavLink to="/basics">Basics</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact-me">Contact</NavLink>
+        </li>
+        <div className="btnlogout">
+          {isAuthenticated ? (
+            <Buttons
+              color={"danger"}
+              text={"Logout"}
+              onClick={handleLogout}
+            ></Buttons>
+          ) : (
+            <Buttons
+              color={"danger"}
+              text={"Sign in"}
+              onClick={signinbutton}
+            ></Buttons>
+          )}
+        </div>
+      </ul>
+    </nav>
   );
 }
 
