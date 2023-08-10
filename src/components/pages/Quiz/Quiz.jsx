@@ -11,14 +11,13 @@ import Leaderboard from "./Leaderbaord/Leaderboard";
 import "./Quiz.css";
 import Cheat from "./cheat";
 import Quizinfo from "./quiz_info";
-import Quiz_input from "./quiz_input";
+import QuizInput from "./quiz_input";
 import Score from "./score";
 import Timer from "./timer";
 
 const Quiz = () => {
   const [scalequiz, setScalequiz] = useState([]);
   const [note, setNote] = useState("");
-  const [quizResult, setQuizResult] = useState("");
   const [cheat, setCheat] = useState("");
   const [inputValues, setInputValues] = useState(["", "", "", "", "", "", ""]);
   const [keyvalues, setKeyvalues] = useState([]);
@@ -57,13 +56,12 @@ const Quiz = () => {
   };
 
   const StartQuiz = () => {
-    if (scaleKeys.length != 0) {
+    if (scaleKeys.length !== 0) {
       const randomIndex = Math.floor(Math.random() * scaleKeys.length);
       const randomKey = scaleKeys[randomIndex];
 
       getScalekey(randomKey, `${selectquiz}`);
 
-      setQuizResult("");
       setCheat("");
       setInputValues(["", "", "", "", "", "", ""]);
       setTimerOn(true);
@@ -79,7 +77,7 @@ const Quiz = () => {
   const resetkeys = () => {
     setTime(0);
     setTimerOn(false);
-    setQuizResult("");
+
     setQuestion(0);
     setScore(0);
     setNote();
@@ -101,7 +99,7 @@ const Quiz = () => {
     var randomKey = scaleKeys[randomIndex];
 
     if (scaleKeys.length > 1) {
-      while (note == randomKey) {
+      while (note === randomKey) {
         randomIndex = Math.floor(Math.random() * scaleKeys.length);
         randomKey = scaleKeys[randomIndex];
         getScalekey(randomKey, `${selectquiz}`);
@@ -110,7 +108,6 @@ const Quiz = () => {
 
     getScalekey(randomKey, `${selectquiz}`);
 
-    setQuizResult("");
     setIsCorrect(true);
 
     setTimeout(() => {
@@ -132,7 +129,6 @@ const Quiz = () => {
       );
 
       handleQuestions();
-      setQuizResult(isCorrect ? "Correct!" : "Incorrect!");
       setTimerOn(isCorrect ? false : true);
 
       if (isCorrect) {
@@ -184,59 +180,59 @@ const Quiz = () => {
   return (
     <div>
       <Topnavbar />
-      <div>
-        <Quizinfo />
-        <div className="quiz_type">
-          <select
-            className="quiz_class"
-            value={selectquiz}
-            onChange={(e) => setSelectQuiz(e.target.value)}
-          >
-            <option value="Major">Major</option>
-            <option value="Minor">Minor</option>
-          </select>
-        </div>
-        <Quiz_input handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
-        <div className="quiz_class">
-          {" "}
-          <Buttons color={"light"} text={"Start"} onClick={StartQuiz}></Buttons>
-          <Buttons color={"light"} text={"Reset"} onClick={resetkeys}></Buttons>
-        </div>
-        <DisplayValueBox value={note} />
-        <div className="inputsquiz">
-          {" "}
-          {inputValues.map((inputValue, index) => (
-            <label key={index}>
-              {index + 1}{" "}
-              <input
-                className={`inputquiz ${
-                  isCorrect
-                    ? "owncorrect"
-                    : isCorrect === false
-                    ? "ownincorrect"
-                    : ""
-                }`}
-                type="text"
-                value={inputValue}
-                name={`myInput${index}`}
-                onChange={(event) => handleInputChange(event, index)}
-              />
-            </label>
-          ))}
-        </div>
-        <div className="quiz_class">
-          <Buttons
-            disabled={disabled}
-            color={"light"}
-            text={"Check your answers"}
-            onClick={handleQuizCheck}
-          />
-        </div>
-        <Cheat handleCheat={handleCheat} cheat={cheat} disabled={disabled} />
-        <Score score={score} question={question} />
-        <Timer time={time} />
-        <Leaderboard storedtime={storedtime} note={storednote} />
+
+      <Quizinfo />
+      <div className="quiz_type">
+        <select
+          value={selectquiz}
+          onChange={(e) => setSelectQuiz(e.target.value)}
+        >
+          <option value="Major">Major</option>
+          <option value="Minor">Minor</option>
+        </select>
       </div>
+      <QuizInput handleAddValue={handleAddValue} scaleKeys={scaleKeys} />
+      <div className="quiz_class">
+        {" "}
+        <Buttons color={"success"} text={"Start"} onClick={StartQuiz}></Buttons>
+        <Buttons color={"danger"} text={"Reset"} onClick={resetkeys}></Buttons>
+      </div>
+      <DisplayValueBox value={note} />
+      <div className="inputsquiz">
+        {" "}
+        {inputValues.map((inputValue, index) => (
+          <label key={index}>
+            {index + 1}{" "}
+            <input
+              className={`inputquiz ${
+                isCorrect
+                  ? "owncorrect"
+                  : isCorrect === false
+                  ? "ownincorrect"
+                  : ""
+              }`}
+              type="text"
+              value={inputValue}
+              name={`myInput${index}`}
+              onChange={(event) => handleInputChange(event, index)}
+            />
+          </label>
+        ))}
+      </div>
+      <div className="quiz_class">
+        <Buttons
+          disabled={disabled}
+          color={"light"}
+          text={"Submit"}
+          onClick={handleQuizCheck}
+        />
+        <Cheat handleCheat={handleCheat} cheat={cheat} disabled={disabled} />
+      </div>
+
+      <Score score={score} question={question} />
+      <Timer time={time} />
+      <Leaderboard storedtime={storedtime} note={storednote} />
+
       <Footer />
     </div>
   );

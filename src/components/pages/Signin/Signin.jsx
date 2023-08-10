@@ -24,7 +24,6 @@ const Signin = () => {
     } catch (e) {
       toast.error("Incorrect email address and password!");
       setError(e.message);
-      console.log(e.message);
     }
   };
 
@@ -48,17 +47,12 @@ const Signin = () => {
   };
 
   return (
-    <div className="outerSignupDiv">
+    <div className="outerSigninDiv">
       <div>
-        <h1 className="contentDiv">Sign Into account</h1>
-
-        <p style={{ margin: "5px" }}>
-          Do not have an account yet?{" "}
-          <Link to="/signup" style={{ color: "white" }}>
-            Sign up.
-          </Link>
+        <h1>Sign Into account</h1>
+        <p>
+          Do not have an account yet? <Link to="/signup">Sign up.</Link>
         </p>
-
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -78,21 +72,14 @@ const Signin = () => {
             />
           </Form.Group>
           <p>
-            <Link style={{ color: "white" }} onClick={handleResetPassword}>
-              Forgot your password?
-            </Link>
+            <Link onClick={handleResetPassword}>Forgot your password?</Link>
           </p>
           <Button style={{ width: "400px" }} variant="primary" type="submit">
             Login
           </Button>
         </Form>
-        <p className="contentDiv">OR</p>
-        <div className="contentDiv">
-          <GoogleButton
-            className="googlesignin"
-            onClick={handleGoogleSignIn}
-          ></GoogleButton>
-        </div>
+        OR
+        <GoogleButton onClick={handleGoogleSignIn}></GoogleButton>
       </div>
       <ToastContainer position="top-center" />
     </div>

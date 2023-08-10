@@ -3,8 +3,32 @@
   justify-content: center;
 }
 
-@media (max-width: 768px) {
+.scales-dropdown {
+  display: none;
+  justify-content: center;
+}
+
+.pentatonic-dropdown {
+  display: none;
+  justify-content: center;
+  margin: 3% auto;
+}
+
+@media (min-width: 0px) and (max-width: 786px) {
+  .scales-dropdown {
+    display: flex;
+    justify-content: center;
+    margin: 3% auto;
+  }
+
+  .pentatonic-dropdown {
+    display: flex;
+    justify-content: center;
+    margin: 3% auto;
+  }
+
   .scales {
     display: none;
+    justify-content: center;
   }
 }

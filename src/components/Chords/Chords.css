@@ -3,8 +3,19 @@
   justify-content: center;
 }
 
-@media (max-width: 768px) {
+.chord-dropdown {
+  display: none;
+  justify-content: center;
+}
+
+@media (min-width: 0px) and (max-width: 786px) {
+  .chord-dropdown {
+    display: flex;
+    justify-content: center;
+    margin: 3% auto;
+  }
   .chords {
     display: none;
+    justify-content: center;
   }
 }

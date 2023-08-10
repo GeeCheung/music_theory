@@ -19,6 +19,15 @@ const StoreChords = ({
     getChord(note, scales, whatchord);
   };
 
+  const chordOptions = [
+    { value: "", label: "Select a chord" },
+    { value: "fifth", label: "Dominant 5th" },
+    { value: "triads", label: "Triad" },
+    { value: "7th", label: "7th chord" },
+    { value: "9th", label: "9th chord" },
+    { value: "relative_minor", label: "Relative Minor" },
+  ];
+
   const getChord = (note) => {
     if (note) {
       musictheory.forEach((document) => {
@@ -64,47 +73,67 @@ const StoreChords = ({
   };
 
   return (
-    <div className="chords">
-      <Buttons
-        color={"dark"}
-        text={"Get Dominant 5th"}
-        onClick={() =>
-          handleChordClick(note, (scales = "Major"), (whatchord = "fifth"))
-        }
-      ></Buttons>
-      <Buttons
-        color={"dark"}
-        text={"Get Triad"}
-        onClick={() =>
-          handleChordClick(note, (scales = "Major"), (whatchord = "triads"))
-        }
-      ></Buttons>
-      <Buttons
-        color={"dark"}
-        text={"Get 7th chord"}
-        onClick={() =>
-          handleChordClick(note, (scales = "Major"), (whatchord = "7th"))
-        }
-      ></Buttons>
-      <Buttons
-        color={"dark"}
-        text={"Get 9th chord"}
-        onClick={() =>
-          handleChordClick(note, (scales = "Major"), (whatchord = "9th"))
-        }
-      ></Buttons>
-      <Buttons
-        color={"dark"}
-        text={"Get Relative Minor"}
-        onClick={() =>
+    <div>
+      <select
+        className="chord-dropdown"
+        value={selectedChord}
+        onChange={(e) =>
           handleChordClick(
             note,
             (scales = "Major"),
-            (whatchord = "relative_minor")
+            (whatchord = e.target.value)
           )
         }
-      ></Buttons>
-      <ToastContainer position="top-center" />
+      >
+        {chordOptions.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+
+      <div className="chords">
+        <Buttons
+          color={"dark"}
+          text={"Get Dominant 5th"}
+          onClick={() =>
+            handleChordClick(note, (scales = "Major"), (whatchord = "fifth"))
+          }
+        ></Buttons>
+        <Buttons
+          color={"dark"}
+          text={"Get Triad"}
+          onClick={() =>
+            handleChordClick(note, (scales = "Major"), (whatchord = "triads"))
+          }
+        ></Buttons>
+        <Buttons
+          color={"dark"}
+          text={"Get 7th chord"}
+          onClick={() =>
+            handleChordClick(note, (scales = "Major"), (whatchord = "7th"))
+          }
+        ></Buttons>
+        <Buttons
+          color={"dark"}
+          text={"Get 9th chord"}
+          onClick={() =>
+            handleChordClick(note, (scales = "Major"), (whatchord = "9th"))
+          }
+        ></Buttons>
+        <Buttons
+          color={"dark"}
+          text={"Get Relative Minor"}
+          onClick={() =>
+            handleChordClick(
+              note,
+              (scales = "Major"),
+              (whatchord = "relative_minor")
+            )
+          }
+        ></Buttons>
+        <ToastContainer position="top-center" />
+      </div>
     </div>
   );
 };

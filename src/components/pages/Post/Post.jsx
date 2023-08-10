@@ -39,34 +39,35 @@ const Post = () => {
   }, []);
 
   return (
-    <div className="post">
+    <div>
       <Topnavbar />
+      <div className="post">
+        <input
+          type="file"
+          onChange={(event) => {
+            setImageUpload(event.target.files[0]);
+            if (event.target.files[0]) setDisabled(false);
+          }}
+        />
 
-      <h1 className="posttitle">Post</h1>
+        <Buttons
+          disabled={disabled}
+          color={"danger"}
+          text={"Upload Image"}
+          onClick={uploadFile}
+        >
+          {" "}
+          Upload Image
+        </Buttons>
+      </div>
 
-      <input
-        type="file"
-        onChange={(event) => {
-          setImageUpload(event.target.files[0]);
-          if (event.target.files[0]) setDisabled(false);
-        }}
-      />
-
-      <Buttons
-        disabled={disabled}
-        color={"danger"}
-        text={"Upload Image"}
-        onClick={uploadFile}
-      >
-        {" "}
-        Upload Image
-      </Buttons>
-
-      <span style={{ marginLeft: "6%", marginRight: "5%" }}>
-        {imageUrls.map((url) => {
-          return <img src={url} className="imgsize" />;
-        })}
-      </span>
+      <div className="img-container">
+        <span>
+          {imageUrls.map((url) => {
+            return <img src={url} className="imgsize" />;
+          })}
+        </span>
+      </div>
 
       <ToastContainer position="top-center" />
       <Footer />

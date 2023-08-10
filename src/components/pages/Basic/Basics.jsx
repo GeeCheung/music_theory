@@ -7,20 +7,20 @@ const Basics = () => {
     <div>
       <Topnavbar />
 
-      <p>
+      <p className="basictextcenter">
         <strong>Why learn basic music theory?</strong>
       </p>
 
-      <>
+      <p className="basictextcenter">
         Do you want to be able to make your own music, build your own chord
         progressions, or even improvise your own melodies? Do you want to skip
         all the jargon and complicated symbols? <br /> With Gee Music Theory,
         you'll learn basic music theory the simple way with bite-sized lessons,
         no confusing notation, and no instruments required!
-      </>
+      </p>
 
-      <h1>Chords</h1>
-      <p>
+      <h1 className="basictextcenter">Chords</h1>
+      <p className="basictextcenter">
         A group of notes that sound good together. <br />
         Here we'll take a look at three of the most common chords: Major, Minor,
         and Diminished. These are all known as Triads, simply a chord with three

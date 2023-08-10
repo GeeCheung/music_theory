@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserAuth } from "../../../context/AuthContext";
+import "./ForgotPassword.css";
 
 const ForgotPassword = () => {
   const [resetemail, setResetEmail] = useState("");
@@ -28,7 +29,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="contentDiv">
+    <div className="forgotpassword">
       <Form onSubmit={handleResetPassword}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -44,7 +45,7 @@ const ForgotPassword = () => {
         </Button>
 
         <p>
-          <Link style={{ color: "white" }} to="/" className="underline">
+          <Link to="/" className="underline">
             Ready to sign in?
           </Link>
         </p>

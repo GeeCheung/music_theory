@@ -8,13 +8,14 @@ import "./TopNavbar.css";
 function Topnavbar() {
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const isAuthenticated = !!user;
 
   const handleLogout = async () => {
     try {
       await logout();
       navigate("/");
-      console.log("You are logged out");
     } catch (e) {
       console.log(e.message);
     }
@@ -27,8 +28,6 @@ function Topnavbar() {
       console.log(e.message);
     }
   };
-
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav>
@@ -46,15 +45,19 @@ function Topnavbar() {
         <span></span>
         <span></span>
       </div>
+
       <ul className={menuOpen ? "open" : ""}>
         <li>
-          <NavLink to="/account">Account</NavLink>
+          <NavLink to="/account">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/quiz">Quiz</NavLink>
+          <NavLink to="/quiz">Piano Quiz</NavLink>
         </li>
         <li>
           <NavLink to="/basics">Basics</NavLink>
+        </li>
+        <li>
+          <NavLink to="/post">Post</NavLink>
         </li>
         <li>
           <NavLink to="/contact-me">Contact</NavLink>
@@ -62,13 +65,13 @@ function Topnavbar() {
         <div className="btnlogout">
           {isAuthenticated ? (
             <Buttons
-              color={"danger"}
+              color={"secondary"}
               text={"Logout"}
               onClick={handleLogout}
             ></Buttons>
           ) : (
             <Buttons
-              color={"danger"}
+              color={"secondary"}
               text={"Sign in"}
               onClick={signinbutton}
             ></Buttons>

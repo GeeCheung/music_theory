@@ -4,7 +4,6 @@ import Account from "./components/pages/Account/Account.jsx";
 import Basics from "./components/pages/Basic/Basics.jsx";
 import ContactForm from "./components/pages/Contactme/Contactme.jsx";
 import Forgotpassword from "./components/pages/Forgetpassword/ForgotPassword.jsx";
-import Intermediate from "./components/pages/Intermediate/Intermediate.jsx";
 import Post from "./components/pages/Post/Post.jsx";
 import ProtectedRoute from "./components/pages/ProtectedRoute.js";
 import Quiz from "./components/pages/Quiz/Quiz.jsx";
@@ -50,14 +49,6 @@ const App = () => {
             element={
               <ProtectedRoute>
                 <Basics />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/intermediate"
-            element={
-              <ProtectedRoute>
-                <Intermediate />
               </ProtectedRoute>
             }
           />

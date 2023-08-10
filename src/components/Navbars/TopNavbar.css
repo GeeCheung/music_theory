@@ -1,5 +1,10 @@
 .active {
-  background-color: red;
+  background-color: beige;
+  color: black;
+}
+
+nav ul li a:not(.active):hover {
+  background-color: lightgrey;
 }
 
 nav {
@@ -26,6 +31,7 @@ nav .title {
 nav ul {
   display: flex;
   margin-top: 10px;
+  width: 50%;
 }
 
 nav ul li {
@@ -40,10 +46,6 @@ nav ul li a {
   margin: 0 0.5rem;
   border-radius: 0.5rem;
   margin-top: 7%;
-}
-
-nav ul li a:not(.active):hover {
-  background-color: lightgrey;
 }
 
 nav .menu {
@@ -64,7 +66,7 @@ nav .menu span {
   border-radius: 0.2rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 1000px) {
   nav .menu {
     display: flex;
   }
@@ -98,11 +100,10 @@ nav .menu span {
   .btnlogout {
     display: flex;
     justify-content: center;
-    margin-left: 10px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   nav .title {
     display: none;
   }

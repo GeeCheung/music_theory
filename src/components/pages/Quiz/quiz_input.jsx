@@ -2,75 +2,75 @@ import React from "react";
 import { ToastContainer } from "react-toastify";
 import Buttons from "../../Buttons";
 
-const Quiz_input = ({ handleAddValue, scaleKeys }) => {
+const QuizInput = ({ handleAddValue, scaleKeys }) => {
   const isKeySelected = (key) => scaleKeys.includes(key);
   return (
     <div>
       <div className="keyselection-div">
         <div className="keyselection-column">
           <Buttons
-            color={isKeySelected("C") ? "danger" : "light"}
+            color={isKeySelected("C") ? "dark" : "light"}
             text={"C"}
             onClick={() => handleAddValue("C")}
           ></Buttons>
           <Buttons
-            color={isKeySelected("D") ? "danger" : "light"}
+            color={isKeySelected("D") ? "dark" : "light"}
             text={"D"}
             onClick={() => handleAddValue("D")}
           ></Buttons>
           <Buttons
-            color={isKeySelected("E") ? "danger" : "light"}
+            color={isKeySelected("E") ? "dark" : "light"}
             text={"E"}
             onClick={() => handleAddValue("E")}
           ></Buttons>
         </div>
         <div className="keyselection-column">
           <Buttons
-            color={isKeySelected("F") ? "danger" : "light"}
+            color={isKeySelected("F") ? "dark" : "light"}
             text={"F"}
             onClick={() => handleAddValue("F")}
           ></Buttons>
           <Buttons
-            color={isKeySelected("G") ? "danger" : "light"}
+            color={isKeySelected("G") ? "dark" : "light"}
             text={"G"}
             onClick={() => handleAddValue("G")}
           ></Buttons>
           <Buttons
-            color={isKeySelected("A") ? "danger" : "light"}
+            color={isKeySelected("A") ? "dark" : "light"}
             text={"A"}
             onClick={() => handleAddValue("A")}
           ></Buttons>
         </div>
         <div className="keyselection-column">
           <Buttons
-            color={isKeySelected("Ab") ? "danger" : "light"}
+            color={isKeySelected("Ab") ? "dark" : "light"}
             text={"Ab"}
             onClick={() => handleAddValue("Ab")}
           ></Buttons>
           <Buttons
-            color={isKeySelected("Bb") ? "danger" : "light"}
+            color={isKeySelected("Bb") ? "dark" : "light"}
             text={"Bb"}
             onClick={() => handleAddValue("Bb")}
           ></Buttons>
           <Buttons
-            color={isKeySelected("C#") ? "danger" : "light"}
+            color={isKeySelected("C#") ? "dark" : "light"}
             text={"C#"}
             onClick={() => handleAddValue("C#")}
           ></Buttons>
         </div>
         <div className="keyselection-column">
           <Buttons
-            color={isKeySelected("Eb") ? "danger" : "light"}
+            color={isKeySelected("Eb") ? "dark" : "light"}
             text={"Eb"}
             onClick={() => handleAddValue("Eb")}
           ></Buttons>
           <Buttons
-            color={isKeySelected("F#") ? "danger" : "light"}
+            color={isKeySelected("F#") ? "dark" : "light"}
             text={"F#"}
             onClick={() => handleAddValue("F#")}
           ></Buttons>
           <Buttons
-            color={isKeySelected("B") ? "danger" : "light"}
+            color={isKeySelected("B") ? "dark" : "light"}
             text={"B"}
             onClick={() => handleAddValue("B")}
           ></Buttons>
@@ -82,4 +82,4 @@ const Quiz_input = ({ handleAddValue, scaleKeys }) => {
   );
 };
 
-export default Quiz_input;
+export default QuizInput;

@@ -26,17 +26,16 @@ const Signup = () => {
       }
     } catch (e) {
       setError(e.message);
-      alert(e.message);
     }
   };
 
   return (
     <div className="outerSignupDiv">
-      <div className="signupDiv">
-        <h1 className="contentDiv">Sign up for an account</h1>
+      <div>
+        <h1>Sign up for an account</h1>
         <p>
           Already have an account yet?{" "}
-          <Link style={{ color: "white" }} to="/" className="underline">
+          <Link to="/" className="underline">
             Sign in.
           </Link>
         </p>
