@@ -3,10 +3,10 @@ import React from "react";
 const Quizinfo = () => {
   return (
     <div className="quizinfo">
-      <h4 className="quizsubtitle">
+      <h1 className="quiztitle">
         {" "}
         Welcome to the ultimate scale practice session!{" "}
-      </h4>
+      </h1>
       <p className="quiztext">
         Get ready to master scales and elevate your musical prowess. Begin by
         selecting your desired keys and hitting that start button. The journey

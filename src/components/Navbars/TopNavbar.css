@@ -1,37 +1,40 @@
-.active {
-  background-color: beige;
-  color: black;
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap");
+
+/* .active {
+  background-color: rgb(202, 187, 189);
 }
 
 nav ul li a:not(.active):hover {
-  background-color: lightgrey;
+  background-color: transparent;
 }
-
+ */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0f172a;
-  color: white;
+  background-color: white;
   position: sticky;
   top: 0;
+  border-bottom: 1px solid white; /* Add this line */
 }
 
 nav .title {
-  font-size: 1.5rem;
-  margin: 1rem;
-  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.3rem;
   text-decoration: none;
-  color: white;
-  display: block;
-  text-align: left;
-  width: 100%;
+  color: rgb(0, 0, 0);
+  width: 35%;
+  font-family: "Kanit", sans-serif;
+  flex-grow: 2;
 }
 
 nav ul {
   display: flex;
-  margin-top: 10px;
-  width: 50%;
+  margin: 1%;
+  font-size: 1.3rem;
+  font-family: sans-serif;
+  flex-wrap: no-wrap;
 }
 
 nav ul li {
@@ -41,11 +44,10 @@ nav ul li {
 nav ul li a {
   display: block;
   text-decoration: none;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 0.5rem;
   margin: 0 0.5rem;
   border-radius: 0.5rem;
-  margin-top: 7%;
 }
 
 nav .menu {
@@ -62,8 +64,17 @@ nav .menu {
 nav .menu span {
   height: 0.4rem;
   width: 100%;
-  background-color: #fff;
+  background-color: #000000;
   border-radius: 0.2rem;
+}
+
+nav .btnlogout {
+  display: flex;
+  justify-content: center;
+  padding: 7.25px;
+  border: 0px;
+  color: rgb(0, 0, 0);
+  background-color: transparent;
 }
 
 @media (max-width: 1000px) {
@@ -95,11 +106,6 @@ nav .menu span {
 
   nav ul li a {
     margin: 0.2rem 0.5rem;
-  }
-
-  .btnlogout {
-    display: flex;
-    justify-content: center;
   }
 }
 

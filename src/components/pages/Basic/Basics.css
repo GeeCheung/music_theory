@@ -2,3 +2,55 @@
   display: flex;
   justify-content: center;
 }
+
+.title_basics {
+  margin-top: 0.5%;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.chordstext,
+.introtext,
+.scalestext {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 1% auto;
+  font-size: 21.06px;
+}
+
+.youtubeembedded {
+  display: flex;
+  justify-content: center;
+  margin: 2% auto;
+}
+
+@media (max-width: 768px) {
+  .youtubeembedded {
+    width: 320px;
+    height: 250px;
+    margin: 10%;
+  }
+
+  .chordstext,
+  .introtext,
+  .scalestext {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 2% auto;
+    font-size: 18px;
+  }
+
+  .title_basics {
+    margin-top: 1%;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+  }
+}

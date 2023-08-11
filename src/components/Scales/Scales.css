@@ -8,27 +8,50 @@
   justify-content: center;
 }
 
+.scales_label {
+  display: none;
+  justify-content: center;
+}
+
 .pentatonic-dropdown {
   display: none;
   justify-content: center;
   margin: 3% auto;
 }
 
+.pentatonic_label {
+  display: none;
+  justify-content: center;
+  margin: 0%;
+}
+
 @media (min-width: 0px) and (max-width: 786px) {
   .scales-dropdown {
     display: flex;
     justify-content: center;
-    margin: 3% auto;
-  }
-
-  .pentatonic-dropdown {
-    display: flex;
-    justify-content: center;
-    margin: 3% auto;
+    margin: 1% auto;
   }
 
   .scales {
     display: none;
     justify-content: center;
+  }
+
+  .scales_label {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
+  }
+
+  .pentatonic-dropdown {
+    display: flex;
+    justify-content: center;
+    margin: 1% auto;
+  }
+
+  .pentatonic_label {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
   }
 }

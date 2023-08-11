@@ -39,7 +39,7 @@ const Post = () => {
   }, []);
 
   return (
-    <div>
+    <div className="postpage">
       <Topnavbar />
       <div className="post">
         <input
@@ -52,7 +52,7 @@ const Post = () => {
 
         <Buttons
           disabled={disabled}
-          color={"danger"}
+          color={"secondary"}
           text={"Upload Image"}
           onClick={uploadFile}
         >

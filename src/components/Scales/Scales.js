@@ -81,9 +81,10 @@ const StoreScales = ({
 
   return (
     <div>
+      <p className="scales_label">Select a scale:</p>
       <select
         className="scales-dropdown"
-        value={selectedScale}
+        value={scales}
         onChange={(e) =>
           handleScaleClick(
             note,
@@ -98,10 +99,10 @@ const StoreScales = ({
           </option>
         ))}
       </select>
-
+      <p className="pentatonic_label">Select a Pentatonic:</p>
       <select
         className="pentatonic-dropdown"
-        value={pentatonic}
+        value={pentantonic}
         onChange={(e) =>
           handleScaleClick(
             note,

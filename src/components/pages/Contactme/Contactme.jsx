@@ -32,11 +32,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
+    <div className="contactmepage">
       <Topnavbar />
-      <h1 className="subh" style={{ marginTop: "3%" }}>
-        Contact Me
-      </h1>
+      <h1 className="title_contactme">Contact Me</h1>
       <div style={{ marginTop: "0.5%" }}>
         <div className="subh">
           <div className="col-md-5">

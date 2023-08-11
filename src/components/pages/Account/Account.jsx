@@ -29,7 +29,7 @@ const Account = () => {
   }, []);
 
   return (
-    <div>
+    <div className="accountpage">
       <Topnavbar />
 
       <div>

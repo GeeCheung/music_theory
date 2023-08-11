@@ -74,6 +74,7 @@ const StoreChords = ({
 
   return (
     <div>
+      <p className="chord_label">Select a chord type:</p>
       <select
         className="chord-dropdown"
         value={selectedChord}

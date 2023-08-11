@@ -8,14 +8,24 @@
   justify-content: center;
 }
 
+.note_label {
+  display: none;
+  justify-content: center;
+}
+
 @media (min-width: 0px) and (max-width: 786px) {
   .note-dropdown {
     display: flex;
     justify-content: center;
-    margin: 3% auto;
+    margin: 1% auto;
   }
   .notes {
     display: none;
     justify-content: center;
+  }
+  .note_label {
+    display: flex;
+    justify-content: center;
+    margin: 0%;
   }
 }

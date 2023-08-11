@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
-import Buttons from "../Buttons";
 import "./TopNavbar.css";
 
 function Topnavbar() {
@@ -30,7 +30,7 @@ function Topnavbar() {
   };
 
   return (
-    <nav>
+    <motion.nav>
       <img
         src={require("../../content/piano_keys.png")}
         width="80px"
@@ -48,13 +48,13 @@ function Topnavbar() {
 
       <ul className={menuOpen ? "open" : ""}>
         <li>
-          <NavLink to="/account">Home</NavLink>
+          <NavLink to="/basics">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/quiz">Piano Quiz</NavLink>
+          <NavLink to="/account">Learn</NavLink>
         </li>
         <li>
-          <NavLink to="/basics">Basics</NavLink>
+          <NavLink to="/quiz">Quiz Yourself</NavLink>
         </li>
         <li>
           <NavLink to="/post">Post</NavLink>
@@ -62,23 +62,15 @@ function Topnavbar() {
         <li>
           <NavLink to="/contact-me">Contact</NavLink>
         </li>
-        <div className="btnlogout">
-          {isAuthenticated ? (
-            <Buttons
-              color={"secondary"}
-              text={"Logout"}
-              onClick={handleLogout}
-            ></Buttons>
-          ) : (
-            <Buttons
-              color={"secondary"}
-              text={"Sign in"}
-              onClick={signinbutton}
-            ></Buttons>
-          )}
-        </div>
+        {isAuthenticated ? (
+          <button className="btnlogout" onClick={handleLogout}>
+            Logout
+          </button>
+        ) : (
+          <button onClick={signinbutton}>Sign in</button>
+        )}
       </ul>
-    </nav>
+    </motion.nav>
   );
 }
 

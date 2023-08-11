@@ -10,3 +10,27 @@
   justify-content: space-evenly;
   font-weight: bold;
 }
+
+.title_contactme {
+  margin-top: 1%;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.contactmepage {
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .title_contactme {
+    margin-top: 1%;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    font-size: 27px;
+    font-weight: bold;
+  }
+}

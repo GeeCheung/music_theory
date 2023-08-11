@@ -27,6 +27,7 @@ const StoreNote = ({ setNote, note }) => {
 
   return (
     <div>
+      <p className="note_label">Select a note:</p>
       <select
         className="note-dropdown"
         value={selectedNote}

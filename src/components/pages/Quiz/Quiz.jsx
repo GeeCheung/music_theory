@@ -178,7 +178,7 @@ const Quiz = () => {
   }, [timerOn]);
 
   return (
-    <div>
+    <div className="quizpage">
       <Topnavbar />
 
       <Quizinfo />
@@ -195,7 +195,11 @@ const Quiz = () => {
       <div className="quiz_class">
         {" "}
         <Buttons color={"success"} text={"Start"} onClick={StartQuiz}></Buttons>
-        <Buttons color={"danger"} text={"Reset"} onClick={resetkeys}></Buttons>
+        <Buttons
+          color={"secondary"}
+          text={"Reset"}
+          onClick={resetkeys}
+        ></Buttons>
       </div>
       <DisplayValueBox value={note} />
       <div className="inputsquiz">
