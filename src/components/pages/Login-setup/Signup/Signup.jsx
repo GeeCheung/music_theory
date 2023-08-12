@@ -58,7 +58,7 @@ const Signup = () => {
               placeholder="Password"
             />
           </Form.Group>
-          <Button style={{ width: "420px" }} variant="primary" type="submit">
+          <Button variant="primary" type="submit">
             Sign up
           </Button>
           <ToastContainer position="top-center" />

@@ -35,8 +35,8 @@ const ContactForm = () => {
     <div className="contactmepage">
       <Topnavbar />
       <h1 className="title_contactme">Contact Me</h1>
-      <div style={{ marginTop: "0.5%" }}>
-        <div className="subh">
+      <div>
+        <div className="contactmecenter">
           <div className="col-md-5">
             <form ref={form} onSubmit={sendEmail}>
               <div className="mb-3">
@@ -77,20 +77,12 @@ const ContactForm = () => {
                 />
               </div>
 
-              <button type="submit" className="btn btn-danger">
+              <button type="submit" className="btn btn_contactme_submit">
                 Submit
               </button>
             </form>
           </div>
         </div>
-      </div>
-
-      <div className="subh">
-        {" "}
-        <img
-          className="profileimg"
-          src={require("../../../content/profile_pic.jpg")}
-        />
       </div>
       <ToastContainer position="top-center" />
 

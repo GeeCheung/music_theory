@@ -31,7 +31,7 @@ const Signin = () => {
     e.preventDefault();
     try {
       await googleSignIn();
-      navigate("/account");
+      navigate("/basics");
     } catch (error) {
       console.log(error.message);
     }
@@ -74,7 +74,7 @@ const Signin = () => {
           <p>
             <Link onClick={handleResetPassword}>Forgot your password?</Link>
           </p>
-          <Button style={{ width: "400px" }} variant="primary" type="submit">
+          <Button variant="primary" type="submit">
             Login
           </Button>
         </Form>

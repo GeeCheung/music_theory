@@ -3,11 +3,7 @@
   justify-content: center;
 }
 
-.chord-dropdown {
-  display: none;
-  justify-content: center;
-}
-
+.chord-dropdown,
 .chord_label {
   display: none;
   justify-content: center;

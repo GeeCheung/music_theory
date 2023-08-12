@@ -1,43 +1,27 @@
-.basictextcenter {
+.herosection {
   display: flex;
-  justify-content: center;
-}
-
-.title_basics {
-  margin-top: 0.5%;
-  justify-content: center;
-  display: flex;
+  justify-content: space-evenly;
   text-align: center;
-  font-size: 45px;
-  font-weight: bold;
+  align-items: center;
 }
 
-.chordstext,
-.introtext,
-.scalestext {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin: 1% auto;
+.heroimg {
+  width: 45%;
+  margin-right: 2%;
+}
+
+.herotitle {
+  font-family: "Kanit";
+  font-size: 50px;
+}
+
+.herotext {
   font-size: 21.06px;
-}
-
-.youtubeembedded {
-  display: flex;
-  justify-content: center;
-  margin: 2% auto;
+  margin: 0% 10%;
 }
 
 @media (max-width: 768px) {
-  .youtubeembedded {
-    width: 320px;
-    height: 250px;
-    margin: 10%;
-  }
-
-  .chordstext,
-  .introtext,
-  .scalestext {
+  .introtext {
     display: flex;
     flex-direction: column;
     width: 95%;
@@ -45,12 +29,12 @@
     font-size: 18px;
   }
 
-  .title_basics {
-    margin-top: 1%;
-    justify-content: center;
-    display: flex;
-    text-align: center;
-    font-size: 27px;
-    font-weight: bold;
+  .herotitle {
+    font-family: "Kanit";
+    font-size: 30px;
+  }
+
+  .heroimg {
+    display: none;
   }
 }

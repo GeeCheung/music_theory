@@ -15,7 +15,7 @@ nav {
   background-color: white;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid white; /* Add this line */
+  border-bottom: 1px solid white;
 }
 
 nav .title {
@@ -35,6 +35,7 @@ nav ul {
   font-size: 1.3rem;
   font-family: sans-serif;
   flex-wrap: no-wrap;
+  font-family: "Kanit";
 }
 
 nav ul li {
