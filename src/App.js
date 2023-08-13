@@ -3,12 +3,12 @@ import { Route, Routes } from "react-router-dom";
 import Account from "./components/pages/Account/Account.jsx";
 import Basics from "./components/pages/Basic/Basics.jsx";
 import ContactForm from "./components/pages/Contactme/Contactme.jsx";
-import Forgotpassword from "./components/pages/Forgetpassword/ForgotPassword.jsx";
+import Forgotpassword from "./components/pages/Login-setup/Forgetpassword/ForgotPassword.jsx";
+import Signin from "./components/pages/Login-setup/Signin/Signin.jsx";
+import Signup from "./components/pages/Login-setup/Signup/Signup.jsx";
 import Post from "./components/pages/Post/Post.jsx";
 import ProtectedRoute from "./components/pages/ProtectedRoute.js";
 import Quiz from "./components/pages/Quiz/Quiz.jsx";
-import Signin from "./components/pages/Signin/Signin.jsx";
-import Signup from "./components/pages/Signup/Signup.jsx";
 import { AuthContextProvider } from "./context/AuthContext";
 
 const App = () => {
