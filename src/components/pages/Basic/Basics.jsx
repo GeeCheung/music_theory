@@ -41,6 +41,7 @@ const Basics = () => {
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ x: [-250, 0], opacity: 1 }}
           transition={{ duration: 1 }}
+          viewport={{ once: true }}
           style={{ margin: "3%" }}
           className="item"
         >
@@ -58,7 +59,8 @@ const Basics = () => {
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ x: [250, 0], opacity: 1 }}
           transition={{ duration: 1 }}
-          className="herogroup item"
+          viewport={{ once: true }}
+          className="herogroup item framer"
         >
           <h1 className="herotitle">What You'll Learn</h1>
           <p className="herotext">
@@ -75,23 +77,27 @@ const Basics = () => {
 
       <div className="colswidth">
         <div className="cols">
+          <img
+            className="learnpiano"
+            src={require("../../../content/learn-piano.jpg")}
+            alt="Hero Background"
+          />
+
           <p className="colstext">
-            <h1>hello</h1>
-            In our basic music theory course, you'll discover the fundamental
-            concepts that form the backbone of all music. From understanding
-            scales and keys to creating memorable melodies, our lessons will
-          </p>
-          <p className="colstext">
-            <h1>hello</h1>
-            In our basic music theory course, you'll discover the fundamental
-            concepts that form the backbone of all music. From understanding
-            scales and keys to creating memorable melodies, our lessons will
-          </p>
-          <p className="colstext">
-            <h1>hello</h1>
-            In our basic music theory course, you'll discover the fundamental
-            concepts that form the backbone of all music. From understanding
-            scales and keys to creating memorable melodies, our lessons will
+            <h1>Music Theory Made Easy</h1>
+            In the foundational music theory course we offer, you will explore
+            the essential principles that underlie all music. Starting from
+            grasping scales and keys to crafting memorable melodies, our
+            instructional modules will lead you through every phase of this
+            musical expedition. Regardless of whether you are an absolute novice
+            or an individual aiming to renew their understanding, our course is
+            meticulously crafted to assist you in constructing a strong bedrock
+            in music theory.
+            <Link to="/account">
+              <button type="submit" className="btn btn_learn_submit">
+                learn ♪
+              </button>
+            </Link>
           </p>
         </div>
       </div>
@@ -101,6 +107,7 @@ const Basics = () => {
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ y: [-50, 0], opacity: 1 }}
           transition={{ duration: 1 }}
+          viewport={{ once: true }}
           className="herogroup"
         >
           <h1 className="herotitle">What You'll Learn</h1>
@@ -118,6 +125,7 @@ const Basics = () => {
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ y: [-50, 0], opacity: 1 }}
           transition={{ duration: 1 }}
+          viewport={{ once: true }}
           style={{ margin: "3%" }}
         >
           {" "}

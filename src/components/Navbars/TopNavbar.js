@@ -48,7 +48,7 @@ function Topnavbar() {
 
       <ul className={menuOpen ? "open" : ""}>
         <li>
-          <NavLink to="/basics">Home</NavLink>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
           <NavLink to="/account">Learn</NavLink>
@@ -56,19 +56,19 @@ function Topnavbar() {
         <li>
           <NavLink to="/quiz">Quiz Yourself</NavLink>
         </li>
-        <li>
+        {/*  <li>
           <NavLink to="/post">Post</NavLink>
-        </li>
-        <li>
+        </li> */}
+        {/*  <li>
           <NavLink to="/contact-me">Contact</NavLink>
-        </li>
-        {isAuthenticated ? (
+        </li> */}
+        {/*      {isAuthenticated ? (
           <button className="btnlogout" onClick={handleLogout}>
             Logout
           </button>
         ) : (
           <button onClick={signinbutton}>Sign in</button>
-        )}
+        )} */}
       </ul>
     </motion.nav>
   );
