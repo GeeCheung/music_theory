@@ -1,4 +1,11 @@
 import emailjs from "@emailjs/browser";
+import {
+  faFacebook,
+  faGithub,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -33,7 +40,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <div className="footer">
-      <form ref={form} onSubmit={sendEmail} className="contactme">
+      {/*   <form ref={form} onSubmit={sendEmail} className="contactme">
         <div>
           <label htmlFor="name" className="form-label">
             Name
@@ -75,9 +82,25 @@ const Footer = () => {
         <button type="submit" className="btn btn_contactme_submit">
           Submit
         </button>
-      </form>
-
+      </form> */}
       <ToastContainer position="top-center" />
+      <div>
+        <a href="https://instagram.com" style={{ color: "black" }}>
+          {" "}
+          <FontAwesomeIcon icon={faInstagram} className="socials" />{" "}
+        </a>
+        <a
+          href="https://github.com/GeeCheung/music_theory"
+          style={{ color: "black" }}
+        >
+          {" "}
+          <FontAwesomeIcon icon={faGithub} className="socials" />
+        </a>
+        <a href="https://facebook.com" style={{ color: "black" }}>
+          {" "}
+          <FontAwesomeIcon icon={faFacebook} className="socials" />
+        </a>
+      </div>
       <footer>{`Copyright © GeeMusic_Theory ${year}`}</footer>
     </div>
   );

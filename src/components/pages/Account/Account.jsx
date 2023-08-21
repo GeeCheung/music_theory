@@ -7,7 +7,7 @@ import DisplayValueBox from "../../DisplayValue.js";
 import Footer from "../../Footer/Footer";
 import Topnavbar from "../../Navbars/TopNavbar";
 import StoreNote from "../../Notes/Note.js";
-import Piano_hear from "../../Play_Piano/Piano";
+import Playable_piano from "../../Playable_Piano/Playable_piano";
 import StoreScales from "../../Scales/Scales";
 import "./Account.css";
 
@@ -48,8 +48,8 @@ const Account = () => {
           setnoteArray={setnoteArray}
         />
         <DisplayValueBox value={textValue} />
-        <Piano_hear />
       </div>
+      <Playable_piano />
       <Footer />
     </div>
   );

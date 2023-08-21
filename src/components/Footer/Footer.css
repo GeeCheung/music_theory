@@ -27,6 +27,12 @@
   font-family: "Kanit";
 }
 
+.socials {
+  font-size: 3rem;
+  margin: 20px;
+  color: white;
+}
+
 @media (max-width: 768px) {
   .btn_contactme_submit {
     width: auto;
