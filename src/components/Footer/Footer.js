@@ -85,7 +85,10 @@ const Footer = () => {
       </form> */}
       <ToastContainer position="top-center" />
       <div>
-        <a href="https://instagram.com" style={{ color: "black" }}>
+        <a
+          href="https://www.instagram.com/gcheung_g"
+          style={{ color: "black" }}
+        >
           {" "}
           <FontAwesomeIcon icon={faInstagram} className="socials" />{" "}
         </a>
@@ -96,7 +99,10 @@ const Footer = () => {
           {" "}
           <FontAwesomeIcon icon={faGithub} className="socials" />
         </a>
-        <a href="https://facebook.com" style={{ color: "black" }}>
+        <a
+          href="https://www.facebook.com/gee.cheung.503"
+          style={{ color: "black" }}
+        >
           {" "}
           <FontAwesomeIcon icon={faFacebook} className="socials" />
         </a>

@@ -40,7 +40,7 @@ const Basics = () => {
         <motion.div
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ x: [-250, 0], opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.1 }}
           viewport={{ once: true }}
           style={{ margin: "3%" }}
           className="item"
@@ -58,19 +58,19 @@ const Basics = () => {
         <motion.div
           initial={{ x: 0, opacity: 0 }}
           whileInView={{ x: [250, 0], opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1.1 }}
           viewport={{ once: true }}
           className="herogroup item framer"
         >
-          <h1 className="herotitle">What You'll Learn</h1>
+          <h1 className="herotitle">Understanding Chords</h1>
           <p className="herotext">
-            In our basic music theory course, you'll discover the fundamental
-            concepts that form the backbone of all music. From understanding
-            scales and keys to creating memorable melodies, our lessons will
-            guide you through each step of the musical journey. Whether you're a
-            complete beginner or someone looking to refresh their knowledge, our
-            course is designed to help you build a solid foundation in music
-            theory.
+            In summary, chords are important in music because they establish
+            harmony, tonality, and progression, support melodies, contribute to
+            the emotional expression, create texture and timbre, provide a
+            structural framework, and add variety and interest to musical
+            compositions. They are essential tools for composers, songwriters,
+            and musicians to convey emotions, tell stories, and create
+            compelling musical experiences.
           </p>
         </motion.div>
       </div>

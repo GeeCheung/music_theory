@@ -5,6 +5,8 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { UserAuth } from "../../context/AuthContext";
 import "./TopNavbar.css";
 
+import NavDropdown from "react-bootstrap/NavDropdown";
+
 function Topnavbar() {
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
@@ -31,11 +33,13 @@ function Topnavbar() {
 
   return (
     <motion.nav>
-      <img
-        src={require("../../content/piano_keys.png")}
-        width="80px"
-        height="80px"
-      />
+      <a href="/account">
+        <img
+          src={require("../../content/piano_keys.png")}
+          width="80px"
+          height="80px"
+        />{" "}
+      </a>
       <Link to="/" className="title">
         Music Theory - 101
       </Link>
@@ -51,11 +55,16 @@ function Topnavbar() {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/account">Learn</NavLink>
+          <NavDropdown title="Learn" id="basic-nav-dropdown" className="drop">
+            <NavDropdown.Item href="/account">
+              Understanding Chords & Scales
+            </NavDropdown.Item>
+          </NavDropdown>
         </li>
         <li>
           <NavLink to="/quiz">Quiz Yourself</NavLink>
         </li>
+
         {/*  <li>
           <NavLink to="/post">Post</NavLink>
         </li> */}

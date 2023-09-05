@@ -232,9 +232,12 @@ const Quiz = () => {
         />
         <Cheat handleCheat={handleCheat} cheat={cheat} disabled={disabled} />
       </div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        {" "}
+        <Score score={score} question={question} />
+        <Timer time={time} />
+      </div>
 
-      <Score score={score} question={question} />
-      <Timer time={time} />
       <Leaderboard storedtime={storedtime} note={storednote} />
 
       <Footer />
