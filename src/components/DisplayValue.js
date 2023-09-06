@@ -1,9 +1,7 @@
+import "./DisplayValue.css";
+
 const DisplayValueBox = ({ value }) => {
-  return (
-    <div className="display-value-box">
-      <p>{value}</p>
-    </div>
-  );
+  return <div className="display-value-box">{value}</div>;
 };
 
 export default DisplayValueBox;

@@ -1,0 +1,22 @@
+.imgsize {
+  width: 300px;
+  height: 300px;
+  margin: 30px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 40px 40px;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.postpage {
+  height: 100vh;
+}

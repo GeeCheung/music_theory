@@ -1,0 +1,140 @@
+.herosection {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
+}
+
+.heroimg {
+  width: 45%;
+  margin-right: 2%;
+}
+
+.herotitle {
+  font-family: "Kanit";
+  font-size: 50px;
+}
+
+.herotext {
+  font-size: 21.06px;
+  margin: 0% 10%;
+}
+
+.btn_basics_submit,
+.btn_basics_submit:hover,
+.btn_basics_submit:active {
+  border-radius: 25px !important;
+  background-color: black;
+  color: rgb(255, 255, 255) !important;
+  font-family: "Kanit";
+}
+
+.btn_learn_submit,
+.btn_learn_submit:hover,
+.btn_learn_submit:active {
+  border-radius: 25px !important;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0) !important;
+  font-family: "Kanit";
+  font-weight: bold;
+}
+.herogroup {
+  width: 800px;
+}
+
+.colswidth {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+}
+
+.cols {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 1920px;
+  z-index: 1;
+}
+
+.colstext {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  margin-top: 10%;
+  text-align: center;
+  align-items: center;
+  width: 500px;
+}
+
+.youtubevid {
+  width: 800px;
+  height: 400px;
+}
+
+@media (max-width: 1440px) {
+  .youtubevid {
+    width: auto;
+    height: auto;
+  }
+  .learnpiano {
+    width: 600px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cols {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .colstext {
+    width: 350px;
+    display: flex;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .learnpiano {
+    width: 390px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .introtext {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 2% auto;
+    font-size: 18px;
+  }
+
+  .herotitle {
+    font-family: "Kanit";
+    font-size: 30px;
+  }
+
+  .heroimg {
+    display: none;
+  }
+
+  .herosection {
+    flex-wrap: wrap;
+  }
+
+  .youtubevid {
+    width: auto;
+    height: auto;
+  }
+
+  .item:nth-child(1) {
+    order: 2;
+  }
+
+  .item:nth-child(2) {
+    order: 1;
+  }
+}

@@ -5,16 +5,16 @@ const NOTES = ["c", "df", "d", "ef", "e", "f", "gf", "g", "af", "a", "bf", "b"];
 
 const NOTES2 = [
   "C",
-  ["C#", "Db"],
+  "C#",
   "D",
-  ["D#", "Eb"],
+  "Eb",
   "E",
   "F",
-  ["F#", "Gb"],
+  "F#",
   "G",
-  ["G#", "Ab"],
+  "Ab",
   "A",
-  ["A#", "Bb"],
+  "Bb",
   "B",
 ];
 

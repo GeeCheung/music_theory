@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Buttons from "../Buttons";
+import "./Chords.css";
 
 const StoreChords = ({
   note,
   setTextValue,
   musictheory,
-  inversion,
   setnoteArray,
   scales,
   whatchord,
@@ -18,6 +17,15 @@ const StoreChords = ({
     setSelectedChord(whatchord);
     getChord(note, scales, whatchord);
   };
+
+  const chordOptions = [
+    { value: "", label: "Select a chord" },
+    { value: "fifth", label: "Dominant 5th" },
+    { value: "triads", label: "Triad" },
+    { value: "7th", label: "7th chord" },
+    { value: "9th", label: "9th chord" },
+    { value: "relative_minor", label: "Relative Minor" },
+  ];
 
   const getChord = (note) => {
     if (note) {
@@ -59,102 +67,28 @@ const StoreChords = ({
         }
       });
     } else {
-      toast.error("Please Select A Note");
+      toast.error("Please select a key");
     }
   };
 
-  // get Inversion of the selected chord
-  /*   const getInversion = (note, chord) => {
-    if (note && chord) {
-      musictheory.forEach((document) => {
-        if (document["id"] === "Major") {
-          var inversion =
-            document._document.data.value.mapValue.fields[note].stringValue;
-          var [first, , third, , fifth] = inversion.split(" ");
-
-          if (chord === "Root") {
-            var newArrayOfChords = [first, third, fifth];
-            setnoteArray(newArrayOfChords);
-            setTextValue(
-              `${chord} for ${note} is ${first}, ${third}, ${fifth}`
-            );
-          } else {
-            if (chord === "First") {
-              newArrayOfChords = [third, fifth, first];
-              setnoteArray(newArrayOfChords);
-              setTextValue(
-                `${chord} inversion for  ${note} is ${third}, ${fifth}, ${first}`
-              );
-            }
-
-            if (chord === "Second") {
-              newArrayOfChords = [fifth, first, third];
-              setnoteArray(newArrayOfChords);
-              setTextValue(
-                `${chord} inversion for ${note} is ${fifth}, ${first}, ${third}`
-              );
-            }
-          }
-        }
-      });
-    }
-  }; */
-
   return (
     <div>
-      <br />
-      <h3 className="subh">Chords</h3>
-      <div className="subh">
-        <Buttons
-          color={"light"}
-          text={"Get Dominant 5th"}
-          onClick={() =>
-            handleChordClick(note, (scales = "Major"), (whatchord = "fifth"))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get Triad"}
-          onClick={() =>
-            handleChordClick(note, (scales = "Major"), (whatchord = "triads"))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get 7th chord"}
-          onClick={() =>
-            handleChordClick(note, (scales = "Major"), (whatchord = "7th"))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get 9th chord"}
-          onClick={() =>
-            handleChordClick(note, (scales = "Major"), (whatchord = "9th"))
-          }
-        ></Buttons>
-        <Buttons
-          color={"light"}
-          text={"Get Relative Minor"}
-          onClick={() =>
-            handleChordClick(
-              note,
-              (scales = "Major"),
-              (whatchord = "relative_minor")
-            )
-          }
-        ></Buttons>
-
-        {/* <Buttons color={"success"} text={"Get Augmented chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
-      <Buttons color={"success"} text={"Get Dimminshed chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
-      <Buttons color={"success"} text={"Get Dominant 7th"} onClick={() => getInversion(note, inversion)} ></Buttons>
-      <Buttons color={"success"} text={"Get Augmented 7th chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
-      <Buttons color={"success"} text={"Get Dominant 7th b5 chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
-      <Buttons color={"success"} text={"Get Minor 7th chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
-      <Buttons color={"success"} text={"Get Minor(Major7) chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
-      <Buttons color={"success"} text={"Get half Dimminshed chord"} onClick={() => getInversion(note, inversion)} ></Buttons>
-      <Buttons color={"success"} text={"Get Dimminshed 7th chord"} onClick={() => getInversion(note, inversion)} ></Buttons> */}
-      </div>
+      <select
+        value={selectedChord}
+        onChange={(e) =>
+          handleChordClick(
+            note,
+            (scales = "Major"),
+            (whatchord = e.target.value)
+          )
+        }
+      >
+        {chordOptions.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };
