@@ -14,7 +14,8 @@ const StoreScales = ({
   const [selectedScale, setSelectedScale] = useState("");
   const [pentatonic, setPentatonic] = useState(false);
 
-  const handleScaleClick = (note) => {
+  const handleScaleClick = (note, whatscale) => {
+    setSelectedScale(whatscale);
     getScale(note);
   };
 
@@ -65,6 +66,7 @@ const StoreScales = ({
   };
 
   const scaleOptions = [
+    { value: "", label: "Select a Scale" },
     { value: "Major", label: "Major scale" },
     { value: "Minor", label: "Minor scale" },
     { value: "Blues_Major", label: "Blues Major scale" },
@@ -82,7 +84,6 @@ const StoreScales = ({
         value={selectedScale}
         onChange={(e) => handleScaleClick(note, (scales = e.target.value))}
       >
-        <option value="">Select a scale</option>
         {scaleOptions.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
